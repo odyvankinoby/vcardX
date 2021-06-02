@@ -11,6 +11,10 @@
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
 		36B883C226676B630028437B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883C126676B630028437B /* Preview Assets.xcassets */; };
+		36B883CA2667B0340028437B /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883C92667B0340028437B /* ContactsView.swift */; };
+		36B883CC2667B3A30028437B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883CB2667B3A30028437B /* SettingsView.swift */; };
+		36B883CE2667D5D30028437B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B883CD2667D5D30028437B /* LaunchScreen.storyboard */; };
+		36B883D02667DB1A0028437B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883CF2667DB1A0028437B /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		36B883BE26676B630028437B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B883C126676B630028437B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36B883C326676B630028437B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36B883C92667B0340028437B /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		36B883CB2667B3A30028437B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		36B883CD2667D5D30028437B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = vcardX/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		36B883CF2667DB1A0028437B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,13 @@
 			children = (
 				36B883BA26676B610028437B /* vcardXApp.swift */,
 				36B883BC26676B610028437B /* ContentView.swift */,
+				36B883C92667B0340028437B /* ContactsView.swift */,
+				36B883CB2667B3A30028437B /* SettingsView.swift */,
 				36B883BE26676B630028437B /* Assets.xcassets */,
 				36B883C326676B630028437B /* Info.plist */,
 				36B883C026676B630028437B /* Preview Content */,
+				36B883CD2667D5D30028437B /* LaunchScreen.storyboard */,
+				36B883CF2667DB1A0028437B /* UserSettings.swift */,
 			);
 			path = vcardX;
 			sourceTree = "<group>";
@@ -126,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B883CE2667D5D30028437B /* LaunchScreen.storyboard in Resources */,
 				36B883C226676B630028437B /* Preview Assets.xcassets in Resources */,
 				36B883BF26676B630028437B /* Assets.xcassets in Resources */,
 			);
@@ -138,7 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B883CA2667B0340028437B /* ContactsView.swift in Sources */,
+				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
+				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
 				36B883BB26676B610028437B /* vcardXApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,10 +293,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,10 +316,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
