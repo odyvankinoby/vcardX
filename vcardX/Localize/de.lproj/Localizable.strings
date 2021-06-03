@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  vcardX
+
+  Created by Nicolas Ott on 03.06.21.
+  
+*/
+
+// VCARDX
+"loc_vcard" = "vCard";
+"loc_contacts" = "Kontakte";
+"loc_settings" = "Einstellungen";
+"loc_madewithlove" = "Handgemacht mit ❤️ in München.";
+
+// CONTENTVIEW
+"loc_lastname" = "Nachname";
+"loc_firstname" = "Vorname";
+"loc_mobile" = "Mobil";
+"loc_landline" = "Festnetz";
+"loc_email" = "EMail";
+"loc_www" = "Website";
+"loc_business" = "Beruflich";
+"loc_private" = "Privat";
+"loc_business_data" = "Berufliche Daten";
+"loc_private_data" = "Private Daten";
+
+// CONTACTSVIEW
+"loc_search" = "Suchwort";
+
+// CUSTOMVIEW
+"loc_custom" = "Eigener QR Code";
+
+// SETTINGSVIEW
+
+// ABOUTVIEW
+"loc_support" = "Support";
+"loc_feedback" = "Feedback";
+"loc_contact" = "Kontakt";
+"loc_about" = "Über";
+
+// WIDGET

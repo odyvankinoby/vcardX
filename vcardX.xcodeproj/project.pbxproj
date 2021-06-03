@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36B883BB26676B610028437B /* vcardXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* vcardXApp.swift */; };
+		3600A5DE2668BED900703A1D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5D82668BED900703A1D /* AboutView.swift */; };
+		3600A5E12668BED900703A1D /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DB2668BED900703A1D /* Modifiers.swift */; };
+		3600A5E22668BED900703A1D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
+		3600A5E32668BED900703A1D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DD2668BED900703A1D /* CustomView.swift */; };
+		3600A5E62668C0A700703A1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3600A5E82668C0A700703A1D /* Localizable.strings */; };
+		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
 		36B883C226676B630028437B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883C126676B630028437B /* Preview Assets.xcassets */; };
@@ -18,8 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3600A5D82668BED900703A1D /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		3600A5DB2668BED900703A1D /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		3600A5DC2668BED900703A1D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		3600A5DD2668BED900703A1D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		3600A5E72668C0A700703A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3600A5E92668C0AE00703A1D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36B883BA26676B610028437B /* vcardXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcardXApp.swift; sourceTree = "<group>"; };
+		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		36B883BC26676B610028437B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		36B883BE26676B630028437B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B883C126676B630028437B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -41,6 +52,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3600A5EA2668C45200703A1D /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				3600A5DD2668BED900703A1D /* CustomView.swift */,
+				36B883C92667B0340028437B /* ContactsView.swift */,
+			);
+			path = V2;
+			sourceTree = "<group>";
+		};
+		3600A5EB2668C46B00703A1D /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				3600A5DC2668BED900703A1D /* Localization.swift */,
+				3600A5E82668C0A700703A1D /* Localizable.strings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
+		3600A5EC2668C48B00703A1D /* Modifiers+Model */ = {
+			isa = PBXGroup;
+			children = (
+				3600A5DB2668BED900703A1D /* Modifiers.swift */,
+				36B883CF2667DB1A0028437B /* UserSettings.swift */,
+			);
+			path = "Modifiers+Model";
+			sourceTree = "<group>";
+		};
 		36B883AE26676B610028437B = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +98,17 @@
 		36B883B926676B610028437B /* vcardX */ = {
 			isa = PBXGroup;
 			children = (
-				36B883BA26676B610028437B /* vcardXApp.swift */,
+				36B883BA26676B610028437B /* App.swift */,
 				36B883BC26676B610028437B /* ContentView.swift */,
-				36B883C92667B0340028437B /* ContactsView.swift */,
 				36B883CB2667B3A30028437B /* SettingsView.swift */,
+				3600A5D82668BED900703A1D /* AboutView.swift */,
+				3600A5EB2668C46B00703A1D /* Localize */,
+				3600A5EC2668C48B00703A1D /* Modifiers+Model */,
 				36B883BE26676B630028437B /* Assets.xcassets */,
 				36B883C326676B630028437B /* Info.plist */,
-				36B883C026676B630028437B /* Preview Content */,
 				36B883CD2667D5D30028437B /* LaunchScreen.storyboard */,
-				36B883CF2667DB1A0028437B /* UserSettings.swift */,
+				3600A5EA2668C45200703A1D /* V2 */,
+				36B883C026676B630028437B /* Preview Content */,
 			);
 			path = vcardX;
 			sourceTree = "<group>";
@@ -122,6 +162,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 36B883AE26676B610028437B;
 			productRefGroup = 36B883B826676B610028437B /* Products */;
@@ -139,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B883CE2667D5D30028437B /* LaunchScreen.storyboard in Resources */,
+				3600A5E62668C0A700703A1D /* Localizable.strings in Resources */,
 				36B883C226676B630028437B /* Preview Assets.xcassets in Resources */,
 				36B883BF26676B630028437B /* Assets.xcassets in Resources */,
 			);
@@ -153,13 +195,29 @@
 			files = (
 				36B883CA2667B0340028437B /* ContactsView.swift in Sources */,
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
+				3600A5E12668BED900703A1D /* Modifiers.swift in Sources */,
+				3600A5E32668BED900703A1D /* CustomView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
 				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
-				36B883BB26676B610028437B /* vcardXApp.swift in Sources */,
+				3600A5DE2668BED900703A1D /* AboutView.swift in Sources */,
+				3600A5E22668BED900703A1D /* Localization.swift in Sources */,
+				36B883BB26676B610028437B /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3600A5E82668C0A700703A1D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3600A5E72668C0A700703A1D /* en */,
+				3600A5E92668C0AE00703A1D /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		36B883C426676B630028437B /* Debug */ = {
@@ -284,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -307,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

@@ -19,7 +19,7 @@ struct ContactsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView(text: $searchText, placeholder: "Type here")
+                SearchBarView(text: $searchText, placeholder: "...")
                 List{
                     
                     ForEach(self.store.contacts.filter{
@@ -45,14 +45,15 @@ struct ContactsView: View {
                         Button(action: {
                             self.tabSelected = 2
                         }) {
-                            Image(systemName: "gearshape").foregroundColor(Color("primeInverted"))
+                            Image(systemName: "gearshape").foregroundColor(Color.primeInverted)
+
                         }
                     }
                 }
                 
             }
-            .background(Color("primeInverted"))
-            .navigationBarTitle("Contacts", displayMode: .automatic).allowsTightening(true)
+            .background(Color.primeInverted)
+            .navigationBarTitle(loc_contacts, displayMode: .automatic).allowsTightening(true)
         }
     }
 }

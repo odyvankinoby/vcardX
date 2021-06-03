@@ -12,81 +12,170 @@ struct ContentView: View {
     
     @Binding var tabSelected: Int
     @ObservedObject var settings: UserSettings
-    
-    @State private var name = "Nicolas Ott"
-    @State private var emailAddress = "mail@nicolasott.de"
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
     
     @State var selector: Int = 0
-    
+
+    @State private var groupBusiness = false
+    @State private var groupPrivate = false
+    @State private var editMode = false
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Picker(selection: $selector, label: Text("")) {
-                        Text("Business").tag(0)
-                        Text("Private").tag(1)
+                        Text(loc_business).tag(0)
+                        Text(loc_private).tag(1)
                     }.pickerStyle(SegmentedPickerStyle()).labelsHidden()
                 }.padding(10)
             
-            
-                
                 if selector == 0 {
                     
+                    DisclosureGroup(
+                        isExpanded: $groupBusiness,
+                        content: {
+                            Divider()
+                            HStack {
+                            VStack(alignment: .leading) {
+                                Text(loc_firstname).font(.caption)
+                                TextField(loc_firstname, text: $settings.pFirstName)
+                                    .textContentType(.name)
+                                    .font(.headline)
+                                    //.padding(.horizontal)
+                                    //.background(Color("prime").opacity(0.5)).padding(5)
+                                }
+                                VStack(alignment: .leading) {
+                                    Text(loc_lastname).font(.caption)
+                                    TextField(loc_lastname, text: $settings.pLastName)
+                                        .textContentType(.name)
+                                        .font(.headline)
+                                        //.padding(.horizontal)
+                                        //.background(Color("prime").opacity(0.5)).padding(5)
+                                }
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_mobile).font(.caption)
+                                TextField(loc_mobile, text: $settings.pMobile)
+                                    .textContentType(.telephoneNumber)
+                                    .font(.headline)
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_landline).font(.caption)
+                                TextField(loc_landline, text: $settings.pLandline)
+                                    .textContentType(.telephoneNumber)
+                                    .font(.headline)
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_email).font(.caption)
+                                TextField(loc_email, text: $settings.pMail)
+                                    .textContentType(.emailAddress)
+                                    .font(.headline)
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_www).font(.caption)
+                                TextField(loc_www, text: $settings.pWww)
+                                    .textContentType(.URL)
+                                    .font(.headline)
+                            }
+                           
+                        },
+                        label: {
+                            Text(loc_business_data)
+                                .foregroundColor(.prime)
+                                .font(.headline)
+                        })
+                        .accentColor(.prime)
+                        .padding()
+
                     
-                    TextField("Name", text: $name)
-                        .textContentType(.name)
-                        .font(.title)
-                        .padding(.horizontal)
-                    
-                    TextField("Email address", text: $emailAddress)
-                        .textContentType(.emailAddress)
-                        .font(.title)
-                        .padding([.horizontal, .bottom])
-                    Spacer()
-                    Image(uiImage: generateQRCode(from: "\(name)\n\(emailAddress)"))
+                    Image(uiImage: generateQRCode(from: "\(settings.pFirstName)\n\(settings.pWww)"))
                         .resizable()
                         .interpolation(.none)
                         .scaledToFit()
                         .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
-                    
+                    Spacer()
                 }
                 else if selector == 1 {
                     
-                    TextField("Name", text: $name)
-                        .textContentType(.name)
-                        .font(.title)
-                        .padding(.horizontal)
+                    DisclosureGroup(
+                        isExpanded: $groupPrivate,
+                        content: {
+                            Divider()
+                            HStack {
+                            VStack(alignment: .leading) {
+                                Text(loc_firstname).font(.caption)
+                                TextField(loc_firstname, text: $settings.pFirstName)
+                                    .textContentType(.name)
+                                    .font(.headline)
+                                    //.padding(.horizontal)
+                                    //.background(Color("prime").opacity(0.5)).padding(5)
+                                }
+                                VStack(alignment: .leading) {
+                                    Text(loc_lastname).font(.caption)
+                                    TextField(loc_lastname, text: $settings.pLastName)
+                                        .textContentType(.name)
+                                        .font(.headline)
+                                        //.padding(.horizontal)
+                                        //.background(Color("prime").opacity(0.5)).padding(5)
+                                }
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_mobile).font(.caption)
+                                TextField(loc_mobile, text: $settings.pMobile)
+                                    .textContentType(.telephoneNumber)
+                                    .font(.headline)
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_landline).font(.caption)
+                                TextField(loc_landline, text: $settings.pLandline)
+                                    .textContentType(.telephoneNumber)
+                                    .font(.headline)
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_email).font(.caption)
+                                TextField(loc_email, text: $settings.pMail)
+                                    .textContentType(.emailAddress)
+                                    .font(.headline)
+                            }
+                            VStack(alignment: .leading) {
+                                Text(loc_www).font(.caption)
+                                TextField(loc_www, text: $settings.pWww)
+                                    .textContentType(.URL)
+                                    .font(.headline)
+                            }
+                           
+                        },
+                        label: {
+                            Text(loc_private_data)
+                                .foregroundColor(.prime)
+                                .font(.headline)
+                        })
+                        .accentColor(.prime)
+                        .padding()
+
                     
-                    TextField("Email address", text: $emailAddress)
-                        .textContentType(.emailAddress)
-                        .font(.title)
-                        .padding([.horizontal, .bottom])
-                    Spacer()
-                    Image(uiImage: generateQRCode(from: "\(name)\n\(emailAddress)"))
+                    Image(uiImage: generateQRCode(from: "\(settings.pFirstName)\n\(settings.pWww)"))
                         .resizable()
                         .interpolation(.none)
                         .scaledToFit()
-                        .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding()
+                    Spacer()
                     
                 }
-                Spacer()
-                Text("Handmade with ❤️ in Munich.")
-                    .font(.caption)
-                    .padding([.horizontal, .bottom])
-               
-                
             }
-            .background(Color("primeInverted"))
+            .background(Color.primeInverted)
+
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     HStack {
                         Button(action: {
                             self.tabSelected = 2
                         }) {
-                            Image(systemName: "gearshape").foregroundColor(Color("primeInverted"))
+                            Image(systemName: "gearshape").foregroundColor(Color.primeInverted)
+
                         }
                     }
                 }
@@ -96,13 +185,15 @@ struct ContentView: View {
                             self.edit()
                         }) {
                             Image(systemName: "pencil.tip.crop.circle")
-                                .foregroundColor(Color("primeInverted"))
+                                .foregroundColor(Color.primeInverted)
                         }
                     }
                 }
             }
-            .navigationBarTitle("Your vCard", displayMode: .automatic).allowsTightening(true)
-        }
+            .edgesIgnoringSafeArea(.bottom)
+            .accentColor(Color.primeInverted)
+            .navigationBarTitle(loc_vcard, displayMode: .automatic).allowsTightening(true)
+        }.accentColor(Color.primeInverted)
     }
     
     func generateQRCode(from string: String) -> UIImage {
@@ -120,6 +211,8 @@ struct ContentView: View {
     }
     
     func edit() {
-        
+        self.editMode.toggle()
+        self.groupPrivate = self.editMode
+        self.groupBusiness = self.editMode
     }
 }
