@@ -13,11 +13,20 @@
 "loc_madewithlove" = "Handmade with ❤️ in Munich.";
 
 // CONTENTVIEW
-"loc_lastname" = "Last Name";
-"loc_firstname" = "First Name";
+"loc_lastname" = "Last name ";
+"loc_firstname" = "First name";
+"loc_middlename" = "Middle name";
+"loc_nickname" = "Nick name";
+
+"loc_company" = "Company";
+"loc_position" = "Position";
+
 "loc_mobile" = "Mobile";
 "loc_landline" = "Landline";
-"loc_email" = "EMail";
+"loc_email_private" = "Email private";
+"loc_email_business" = "Email business";
+"loc_email_other" = "Email other";
+
 "loc_www" = "Website";
 "loc_business" = "Business";
 "loc_private" = "Private";
@@ -39,4 +48,5 @@
 "loc_about" = "About";
 
 // WIDGET
-
+"loc_widget_displayname" = "vcardX";
+"loc_widget_description" = "Your vCard at hand!";

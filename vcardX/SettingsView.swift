@@ -8,6 +8,7 @@ import SwiftUI
 import UIKit
 import MessageUI
 import WebKit
+import Foundation
 
 struct SettingsView: View {
     
@@ -70,7 +71,7 @@ struct SettingsView: View {
                 
             }
             .toolbar {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
                     HStack {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
@@ -82,7 +83,6 @@ struct SettingsView: View {
                 
             }
             .onAppear(perform: onAppear)
-            
             .edgesIgnoringSafeArea(.bottom)
             .accentColor(Color.primeInverted)
             .background(Color.primeInverted)

@@ -12,6 +12,17 @@
 		3600A5E22668BED900703A1D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
 		3600A5E32668BED900703A1D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DD2668BED900703A1D /* CustomView.swift */; };
 		3600A5E62668C0A700703A1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3600A5E82668C0A700703A1D /* Localizable.strings */; };
+		3611BC982668CEA30095672A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3611BC972668CEA30095672A /* WidgetKit.framework */; };
+		3611BC9A2668CEA30095672A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3611BC992668CEA30095672A /* SwiftUI.framework */; };
+		3611BC9D2668CEA30095672A /* vcardW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BC9C2668CEA30095672A /* vcardW.swift */; };
+		3611BCA02668CEA40095672A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3611BC9F2668CEA40095672A /* Assets.xcassets */; };
+		3611BCA62668CEA40095672A /* vcardWExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3611BC952668CEA30095672A /* vcardWExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3611BCAD26690CC80095672A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
+		3611BCAE26690CCD0095672A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3600A5E82668C0A700703A1D /* Localizable.strings */; };
+		3611BCB026690DA60095672A /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCAF26690DA60095672A /* vcardW.intentdefinition */; };
+		3611BCB126690DA60095672A /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCAF26690DA60095672A /* vcardW.intentdefinition */; };
+		3611BCB32669645E0095672A /* BusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB22669645E0095672A /* BusinessView.swift */; };
+		3611BCB62669680D0095672A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB52669680D0095672A /* EditView.swift */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
@@ -22,6 +33,30 @@
 		36B883D02667DB1A0028437B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883CF2667DB1A0028437B /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3611BCA42668CEA40095672A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36B883AF26676B610028437B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3611BC942668CEA30095672A;
+			remoteInfo = vcardWExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3611BCA72668CEA40095672A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3611BCA62668CEA40095672A /* vcardWExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3600A5D82668BED900703A1D /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3600A5DB2668BED900703A1D /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -29,6 +64,17 @@
 		3600A5DD2668BED900703A1D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		3600A5E72668C0A700703A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3600A5E92668C0AE00703A1D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3611BC952668CEA30095672A /* vcardWExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = vcardWExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3611BC972668CEA30095672A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3611BC992668CEA30095672A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3611BC9C2668CEA30095672A /* vcardW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcardW.swift; sourceTree = "<group>"; };
+		3611BC9F2668CEA40095672A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3611BCA12668CEA40095672A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3611BCAB26690B360095672A /* vcardWExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardWExtension.entitlements; sourceTree = "<group>"; };
+		3611BCAC26690B3A0095672A /* vcardX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardX.entitlements; sourceTree = "<group>"; };
+		3611BCAF26690DA60095672A /* vcardW.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = vcardW.intentdefinition; sourceTree = "<group>"; };
+		3611BCB22669645E0095672A /* BusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessView.swift; sourceTree = "<group>"; };
+		3611BCB52669680D0095672A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		36B883BC26676B610028437B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +88,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3611BC922668CEA30095672A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3611BC9A2668CEA30095672A /* SwiftUI.framework in Frameworks */,
+				3611BC982668CEA30095672A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36B883B426676B610028437B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,10 +134,33 @@
 			path = "Modifiers+Model";
 			sourceTree = "<group>";
 		};
+		3611BC962668CEA30095672A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3611BC972668CEA30095672A /* WidgetKit.framework */,
+				3611BC992668CEA30095672A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3611BC9B2668CEA30095672A /* vcardW */ = {
+			isa = PBXGroup;
+			children = (
+				3611BC9C2668CEA30095672A /* vcardW.swift */,
+				3611BC9F2668CEA40095672A /* Assets.xcassets */,
+				3611BCA12668CEA40095672A /* Info.plist */,
+				3611BCAB26690B360095672A /* vcardWExtension.entitlements */,
+				3611BCAF26690DA60095672A /* vcardW.intentdefinition */,
+			);
+			path = vcardW;
+			sourceTree = "<group>";
+		};
 		36B883AE26676B610028437B = {
 			isa = PBXGroup;
 			children = (
 				36B883B926676B610028437B /* vcardX */,
+				3611BC9B2668CEA30095672A /* vcardW */,
+				3611BC962668CEA30095672A /* Frameworks */,
 				36B883B826676B610028437B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				36B883B726676B610028437B /* vcardX.app */,
+				3611BC952668CEA30095672A /* vcardWExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,8 +177,11 @@
 		36B883B926676B610028437B /* vcardX */ = {
 			isa = PBXGroup;
 			children = (
+				3611BCAC26690B3A0095672A /* vcardX.entitlements */,
 				36B883BA26676B610028437B /* App.swift */,
 				36B883BC26676B610028437B /* ContentView.swift */,
+				3611BCB52669680D0095672A /* EditView.swift */,
+				3611BCB22669645E0095672A /* BusinessView.swift */,
 				36B883CB2667B3A30028437B /* SettingsView.swift */,
 				3600A5D82668BED900703A1D /* About.swift */,
 				3600A5EB2668C46B00703A1D /* Localize */,
@@ -124,6 +206,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3611BC942668CEA30095672A /* vcardWExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3611BCAA2668CEA40095672A /* Build configuration list for PBXNativeTarget "vcardWExtension" */;
+			buildPhases = (
+				3611BC912668CEA30095672A /* Sources */,
+				3611BC922668CEA30095672A /* Frameworks */,
+				3611BC932668CEA30095672A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vcardWExtension;
+			productName = vcardWExtension;
+			productReference = 3611BC952668CEA30095672A /* vcardWExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		36B883B626676B610028437B /* vcardX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B883C626676B630028437B /* Build configuration list for PBXNativeTarget "vcardX" */;
@@ -131,10 +230,12 @@
 				36B883B326676B610028437B /* Sources */,
 				36B883B426676B610028437B /* Frameworks */,
 				36B883B526676B610028437B /* Resources */,
+				3611BCA72668CEA40095672A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3611BCA52668CEA40095672A /* PBXTargetDependency */,
 			);
 			name = vcardX;
 			productName = vcardX;
@@ -150,6 +251,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					3611BC942668CEA30095672A = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					36B883B626676B610028437B = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -170,11 +274,21 @@
 			projectRoot = "";
 			targets = (
 				36B883B626676B610028437B /* vcardX */,
+				3611BC942668CEA30095672A /* vcardWExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3611BC932668CEA30095672A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3611BCA02668CEA40095672A /* Assets.xcassets in Resources */,
+				3611BCAE26690CCD0095672A /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36B883B526676B610028437B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,23 +303,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3611BC912668CEA30095672A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3611BCB126690DA60095672A /* vcardW.intentdefinition in Sources */,
+				3611BCAD26690CC80095672A /* Localization.swift in Sources */,
+				3611BC9D2668CEA30095672A /* vcardW.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36B883B326676B610028437B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				36B883CA2667B0340028437B /* ContactsView.swift in Sources */,
+				3611BCB026690DA60095672A /* vcardW.intentdefinition in Sources */,
+				3611BCB62669680D0095672A /* EditView.swift in Sources */,
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
 				3600A5E12668BED900703A1D /* Modifiers.swift in Sources */,
 				3600A5E32668BED900703A1D /* CustomView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
 				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
 				3600A5DE2668BED900703A1D /* About.swift in Sources */,
+				3611BCB32669645E0095672A /* BusinessView.swift in Sources */,
 				3600A5E22668BED900703A1D /* Localization.swift in Sources */,
 				36B883BB26676B610028437B /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3611BCA52668CEA40095672A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3611BC942668CEA30095672A /* vcardWExtension */;
+			targetProxy = 3611BCA42668CEA40095672A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3600A5E82668C0A700703A1D /* Localizable.strings */ = {
@@ -220,6 +355,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3611BCA82668CEA40095672A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = APRDSH5Y65;
+				INFOPLIST_FILE = vcardW/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX.vcardW;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3611BCA92668CEA40095672A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = APRDSH5Y65;
+				INFOPLIST_FILE = vcardW/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX.vcardW;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		36B883C426676B630028437B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -339,10 +524,12 @@
 		36B883C726676B630028437B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -355,6 +542,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -363,10 +551,12 @@
 		36B883C826676B630028437B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -379,6 +569,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -387,6 +578,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3611BCAA2668CEA40095672A /* Build configuration list for PBXNativeTarget "vcardWExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3611BCA82668CEA40095672A /* Debug */,
+				3611BCA92668CEA40095672A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		36B883B226676B610028437B /* Build configuration list for PBXProject "vcardX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

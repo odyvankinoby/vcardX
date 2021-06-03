@@ -15,9 +15,16 @@
 // CONTENTVIEW
 "loc_lastname" = "Nachname";
 "loc_firstname" = "Vorname";
+"loc_middlename" = "Zweiter Vorname";
+"loc_nickname" = "Spritzname";
+"loc_company" = "Firma";
+"loc_position" = "Position";
 "loc_mobile" = "Mobil";
 "loc_landline" = "Festnetz";
-"loc_email" = "EMail";
+"loc_email_private" = "Email privat";
+"loc_email_business" = "Email geschäftlich";
+"loc_email_other" = "Email sonstige";
+
 "loc_www" = "Website";
 "loc_business" = "Beruflich";
 "loc_private" = "Privat";
@@ -39,3 +46,5 @@
 "loc_about" = "Über";
 
 // WIDGET
+"loc_widget_displayname" = "vcardX";
+"loc_widget_description" = "Ihre vCard immer zur Hand!";

@@ -16,9 +16,18 @@ let loc_madewithlove: LocalizedStringKey = "loc_madewithlove"
 // CONTENTVIEW
 let loc_lastname: LocalizedStringKey = "loc_lastname"
 let loc_firstname: LocalizedStringKey = "loc_firstname"
+let loc_middlename: LocalizedStringKey = "loc_middlename"
+let loc_nickname: LocalizedStringKey = "loc_nickname"
+//let loc_dob
+let loc_company: LocalizedStringKey = "loc_company"
+let loc_position: LocalizedStringKey = "loc_position"
+
 let loc_mobile: LocalizedStringKey = "loc_mobile"
 let loc_landline: LocalizedStringKey = "loc_landline"
-let loc_email: LocalizedStringKey = "loc_email"
+let loc_email_private: LocalizedStringKey = "loc_email_private"
+let loc_email_business: LocalizedStringKey = "loc_email_business"
+let loc_email_other: LocalizedStringKey = "loc_email_other"
+
 let loc_www: LocalizedStringKey = "loc_www"
 let loc_business: LocalizedStringKey = "loc_business"
 let loc_private: LocalizedStringKey = "loc_private"
@@ -41,3 +50,5 @@ let loc_contact: LocalizedStringKey = "loc_contact"
 let loc_about: LocalizedStringKey = "loc_about"
 
 // WIDGET
+let loc_widget_displayname: LocalizedStringKey = "loc_widget_displayname"
+let loc_widget_description: LocalizedStringKey = "loc_widget_description"
