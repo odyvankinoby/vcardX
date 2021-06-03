@@ -10,7 +10,6 @@ import CoreImage.CIFilterBuiltins
 
 struct ContentView: View {
     
-    @Binding var tabSelected: Int
     @ObservedObject var settings: UserSettings
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
@@ -20,6 +19,8 @@ struct ContentView: View {
     @State private var groupBusiness = false
     @State private var groupPrivate = false
     @State private var editMode = false
+    @State private var showSheet = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -167,12 +168,11 @@ struct ContentView: View {
                 }
             }
             .background(Color.primeInverted)
-
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     HStack {
                         Button(action: {
-                            self.tabSelected = 2
+                            self.showSheet.toggle()
                         }) {
                             Image(systemName: "gearshape").foregroundColor(Color.primeInverted)
 
@@ -190,6 +190,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showSheet, content: {
+                SettingsView(settings: settings).accentColor(Color.primeInverted)
+                })
             .edgesIgnoringSafeArea(.bottom)
             .accentColor(Color.primeInverted)
             .navigationBarTitle(loc_vcard, displayMode: .automatic).allowsTightening(true)

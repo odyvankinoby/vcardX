@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3600A5DE2668BED900703A1D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5D82668BED900703A1D /* AboutView.swift */; };
+		3600A5DE2668BED900703A1D /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5D82668BED900703A1D /* About.swift */; };
 		3600A5E12668BED900703A1D /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DB2668BED900703A1D /* Modifiers.swift */; };
 		3600A5E22668BED900703A1D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
 		3600A5E32668BED900703A1D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DD2668BED900703A1D /* CustomView.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3600A5D82668BED900703A1D /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		3600A5D82668BED900703A1D /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3600A5DB2668BED900703A1D /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		3600A5DC2668BED900703A1D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		3600A5DD2668BED900703A1D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				36B883BA26676B610028437B /* App.swift */,
 				36B883BC26676B610028437B /* ContentView.swift */,
 				36B883CB2667B3A30028437B /* SettingsView.swift */,
-				3600A5D82668BED900703A1D /* AboutView.swift */,
+				3600A5D82668BED900703A1D /* About.swift */,
 				3600A5EB2668C46B00703A1D /* Localize */,
 				3600A5EC2668C48B00703A1D /* Modifiers+Model */,
 				36B883BE26676B630028437B /* Assets.xcassets */,
@@ -199,7 +199,7 @@
 				3600A5E32668BED900703A1D /* CustomView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
 				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
-				3600A5DE2668BED900703A1D /* AboutView.swift in Sources */,
+				3600A5DE2668BED900703A1D /* About.swift in Sources */,
 				3600A5E22668BED900703A1D /* Localization.swift in Sources */,
 				36B883BB26676B610028437B /* App.swift in Sources */,
 			);
@@ -342,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -366,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

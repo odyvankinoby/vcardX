@@ -30,13 +30,13 @@ struct vcardXApp: App {
 
     }
     
-    @State var tabSelected = 0
+    //@State var tabSelected = 0
     @ObservedObject var settings = UserSettings()
     
     var body: some Scene {
         WindowGroup {
             
-            ContentView(tabSelected: $tabSelected, settings: settings)
+            ContentView(settings: settings)
                 .accentColor(Color.primeInverted)
                 
             /*
