@@ -36,40 +36,9 @@ struct vcardXApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
             ContentView(settings: settings)
                 .accentColor(Color.primeInverted)
-                
-            /*
-            TabView(selection: $tabSelected) {
-                ContentView(tabSelected: $tabSelected, settings: settings)
-                    .tabItem {
-                        Image(systemName: tabSelected == 0 ? "qrcode.viewfinder" : "qrcode")
-                        Text(loc_vcard)
-                    }.tag(0)
-                 ContactsView(tabSelected: $tabSelected, settings: settings)
-                    .tabItem {
-                        Image(systemName: tabSelected == 1 ? "person.fill.viewfinder" : "person.fill")
-                        Text(loc_contacts)
-                    }.tag(1)
-                CustomView(tabSelected: $tabSelected, settings: settings)
-                    .tabItem {
-                        Image(systemName: tabSelected == 3 ? "doc.text.viewfinder" : "doc.text")
-                        Text(loc_custom)
-                    }.tag(3)
-                SettingsView(tabSelected: $tabSelected, settings: settings) 
-                    .tabItem {
-                        Image(systemName: tabSelected == 2 ? "gearshape.fill" : "gearshape")
-                        Text(loc_settings)
-                    }.tag(2)
-                AboutView(tabSelected: $tabSelected)
-                    .tabItem {
-                        Image(systemName: tabSelected == 3 ? "info.circle.fill" : "info.circle")
-                        Text(loc_about)
-                    }.tag(4)
-                
-            }.accentColor(Color.primeInverted)
-            */
+                .edgesIgnoringSafeArea(.bottom)
         }
     }
 }

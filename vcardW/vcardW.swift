@@ -2,7 +2,7 @@
 //  vcardW.swift
 //  vcardW
 //
-//  Created by Nicolas Ott on 03.06.21.
+//  Created by Nicolas Ott on 04.06.21.
 //
 
 import WidgetKit
@@ -44,9 +44,7 @@ struct vcardWEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text(entry.date, style: .time).foregroundColor(.prime)
-        }.background(Color.primeInverted)
+        Text(entry.date, style: .time)
     }
 }
 
@@ -58,23 +56,14 @@ struct vcardW: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             vcardWEntryView(entry: entry)
         }
-        .supportedFamilies([.systemSmall, .systemMedium])
-        .configurationDisplayName(loc_widget_displayname)
-        .description(loc_widget_description)
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
     }
 }
 
-import SwiftUI
-
-extension Color {
-    public static var prime: Color {
-        return Color("prime")
+struct vcardW_Previews: PreviewProvider {
+    static var previews: some View {
+        vcardWEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
-
-extension Color {
-    public static var primeInverted: Color {
-        return Color("primeInverted")
-    }
-}
-

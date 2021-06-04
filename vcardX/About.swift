@@ -12,6 +12,27 @@ import MessageUI
 import WebKit
 import Foundation
 
+struct GDPRView: View {
+    
+    var body: some View {
+        VStack(alignment: .center) {
+            ScrollView(.vertical) {
+                VStack {
+                    Text(loc_gdpr_header)
+                        .font(.title2).bold().foregroundColor(.white).padding(10)
+                    Text(loc_gdpr_subheader).bold().font(.headline).foregroundColor(.white).padding(5)
+                    Text(loc_gdpr_lastupdated).font(.subheadline).foregroundColor(.white).padding(5)
+                    Text(loc_gdpr_text).foregroundColor(.white).padding(.bottom, 50)
+                }.padding(10)
+                Spacer()
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            .accentColor(Color.primeInverted)
+            .background(Color.primeInverted)
+        }.navigationBarTitle(loc_gdpr, displayMode: .automatic).allowsTightening(true)
+    }
+}
+
 struct MailView: UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentation
@@ -61,27 +82,65 @@ struct MailView: UIViewControllerRepresentable {
     }
 }
 
+struct AboutvCardXView: View {
 
-
-
-struct SettingsListInstaIcon: View {
+    //@ObservedObject var settings: UserSettings
     var body: some View {
-        Image("Instagram")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .cornerRadius(6)
-            .frame(width: 20, height: 20)
-            .padding(.all,2)
+        VStack {
+            ScrollView {
+               
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .center) {
+                        Image("appstore")
+                            .resizable()
+                            .cornerRadius(15)
+                            .frame(width: 64, height: 64)
+                            .padding(.all, 10)
+                            .padding(.leading, 10)
+                            .frame(alignment: .leading)
+                        VStack(alignment: .leading) {
+                            Text("vcardX")
+                            Text("Your vCards at hand!")
+                            Text("Version \(getCurrentAppBuildVersionString())")
+                        }.padding()
+                        Spacer()
+                        
+                    }
+                }
+               
+                .cornerRadius(10)
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
+                .frame(maxWidth: .infinity)
+                
+                    
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                }
+                .padding(.horizontal, 10)
+                //.padding(.top, 5)
+                .frame(maxWidth: .infinity)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(loc_madewithlove).font(.footnote)
+                }
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
+                .frame(maxWidth: .infinity)
+            }
+        }.edgesIgnoringSafeArea(.bottom)
+        .accentColor(Color.primeInverted)
+        .background(Color.primeInverted)
+       
+        .navigationBarTitle(loc_about, displayMode: .automatic).allowsTightening(true)
+    }
+
+
+    func getCurrentAppBuildVersionString() -> String {
+        let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+        let buildString = "\(versionNumber).\(buildNumber)"
+        return String(buildString)
     }
 }
 
-struct SettingsListTwitterIcon: View {
-    var body: some View {
-        Image("Twitter")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .cornerRadius(6)
-            .frame(width: 20, height: 20)
-            .padding(.all,2)
-    }
-}

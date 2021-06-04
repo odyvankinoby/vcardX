@@ -13,6 +13,7 @@ import Contacts
 struct ContentView: View {
     
     @ObservedObject var settings: UserSettings
+    @Environment (\.presentationMode) var presentationMode
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
     
@@ -21,6 +22,7 @@ struct ContentView: View {
     @State private var groupBusiness = false
     @State private var groupPrivate = false
     @State private var showSheet = false
+    @State var navSelected: Int? = nil
     
     var body: some View {
         NavigationView {
@@ -33,63 +35,75 @@ struct ContentView: View {
                 }.padding(10)
                 
                 if selector == 0 {
-                    
-                    VStack(alignment: .trailing) {
-                        HStack {
-                            Text(loc_business_data)
-                                .foregroundColor(.prime)
-                                .font(.headline)
-                            Spacer()
-                            Button(action: {
-                                self.showSheet.toggle()
-                            }) {
-                                Image(systemName: "pencil").foregroundColor(Color.primeInverted)
-                                
-                            }
-                        }.padding(10)
-                    }
                     VStack(alignment: .center) {
-                        
-                        
                         Image(uiImage: generateQRCodeFromData(from: self.createBusinessContact()!))
                             .resizable()
                             .interpolation(.none)
                             .scaledToFit()
                             .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .padding()
+                        Spacer()
                         
+                    }
+                } else if selector == 1 {
+                    VStack(alignment: .center) {
+                        Image(uiImage: generateQRCodeFromData(from: self.createPrivateContact()!))
+                            .resizable()
+                            .interpolation(.none)
+                            .scaledToFit()
+                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding()
                         Spacer()
                     }
-                    
-                } else if selector == 1 {
-                    
-                    
+                }
+                NavigationLink(destination: EditView(settings: settings, type: "b").accentColor(Color.primeInverted)
+                                .edgesIgnoringSafeArea(.bottom), tag: 1, selection: $navSelected)
+                {
+                    EmptyView()
+                }.isDetailLink(false)
+                NavigationLink(destination: EditView(settings: settings, type: "p").accentColor(Color.primeInverted)
+                                .edgesIgnoringSafeArea(.bottom), tag: 2, selection: $navSelected)
+                {
+                    EmptyView()
+                }.isDetailLink(false)
+                NavigationLink(destination: SettingsView(settings: settings).accentColor(Color.primeInverted)
+                                .edgesIgnoringSafeArea(.bottom), tag: 3, selection: $navSelected)
+                {
+                    EmptyView()
+                }.isDetailLink(false)
+                NavigationLink(destination: EmptyView())
+                {
+                    EmptyView()
                 }
             }
-            .background(Color.primeInverted)
             .toolbar {
-                
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
                     HStack {
                         Button(action: {
-                            self.showSheet.toggle()
+                            self.navSelected = 3
                         }) {
                             Image(systemName: "gearshape").foregroundColor(Color.primeInverted)
                             
                         }
                     }
                 }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    HStack {
+                        Button(action: {
+                            if self.selector == 0 {
+                                self.navSelected = 1
+                            } else {
+                                self.navSelected = 2
+                            }
+                        }) {
+                            Image(systemName: "ellipsis.circle").foregroundColor(Color.primeInverted)
+                        }
+                    }
+                }
             }
-            .sheet(isPresented: $showSheet, content: {
-                EditView(settings: settings).accentColor(Color.primeInverted)
-            })
-            /*.sheet(isPresented: $showSheet, content: {
-             SettingsView(settings: settings).accentColor(Color.primeInverted)
-             })*/
-            .edgesIgnoringSafeArea(.bottom)
-            .accentColor(Color.primeInverted)
+            .background(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle(loc_vcard, displayMode: .automatic).allowsTightening(true)
-        }.accentColor(Color.primeInverted)
+        }.accentColor(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
     }
     
     

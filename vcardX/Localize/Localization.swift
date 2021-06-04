@@ -34,6 +34,9 @@ let loc_private: LocalizedStringKey = "loc_private"
 let loc_business_data: LocalizedStringKey = "loc_business_data"
 let loc_private_data: LocalizedStringKey = "loc_private_data"
 
+let loc_name: LocalizedStringKey = "loc_name"
+let loc_phone: LocalizedStringKey = "loc_phone"
+let loc_email: LocalizedStringKey = "loc_email"
 
 // CONTACTSVIEW
 let loc_search: LocalizedStringKey = "loc_search"
@@ -48,6 +51,11 @@ let loc_support: LocalizedStringKey = "loc_support"
 let loc_feedback: LocalizedStringKey = "loc_feedback"
 let loc_contact: LocalizedStringKey = "loc_contact"
 let loc_about: LocalizedStringKey = "loc_about"
+let loc_gdpr: LocalizedStringKey = "loc_gdpr"
+let loc_gdpr_header: LocalizedStringKey = "loc_gdpr_header"
+let loc_gdpr_subheader: LocalizedStringKey = "loc_gdpr_subheader"
+let loc_gdpr_lastupdated: LocalizedStringKey = "loc_gdpr_lastupdated"
+let loc_gdpr_text: LocalizedStringKey = "loc_gdpr_text"
 
 // WIDGET
 let loc_widget_displayname: LocalizedStringKey = "loc_widget_displayname"
