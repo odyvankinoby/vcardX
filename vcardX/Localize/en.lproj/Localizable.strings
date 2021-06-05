@@ -43,10 +43,17 @@
 "loc_contact" = "Contact";
 "loc_about" = "About";
 
+"loc_vcards" = "Show vCards";
+
 // WIDGET
+"loc_welcome" = "Welcome to vcardX!";
 "loc_widget_displayname" = "vcardX";
 "loc_widget_description" = "Your vCards at hand!";
+"loc_welcome_text" = "Share your business or private contact easily with vcardX.
 
+vcardX creates QR codes from your business and priavte contact and lets you share it inside the vcardX app or with widgets on your iPhone homescreen.
+
+Follow the easy steps on the next page to setup vcardX...";
 
 "loc_gdpr" = "Data Privacy";
 "loc_gdpr_header" = "Privacy Policy";

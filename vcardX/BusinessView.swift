@@ -10,7 +10,6 @@ import Foundation
 struct BusinessView: View {
     
     @ObservedObject var settings: UserSettings
-    @Environment (\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {

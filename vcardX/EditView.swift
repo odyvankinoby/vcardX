@@ -15,8 +15,6 @@ struct EditView: View {
     
     @ObservedObject var settings: UserSettings
     @State var type: String
-    
-    @Environment (\.presentationMode) var presentationMode
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var noMail = false
     

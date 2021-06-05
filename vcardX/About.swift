@@ -83,59 +83,94 @@ struct MailView: UIViewControllerRepresentable {
 }
 
 struct AboutvCardXView: View {
-
+    
     //@ObservedObject var settings: UserSettings
     var body: some View {
         VStack {
-            ScrollView {
-               
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(alignment: .center) {
-                        Image("appstore")
-                            .resizable()
-                            .cornerRadius(15)
-                            .frame(width: 64, height: 64)
-                            .padding(.all, 10)
-                            .padding(.leading, 10)
-                            .frame(alignment: .leading)
-                        VStack(alignment: .leading) {
-                            Text("vcardX")
-                            Text("Your vCards at hand!")
-                            Text("Version \(getCurrentAppBuildVersionString())")
-                        }.padding()
-                        Spacer()
-                        
-                    }
-                }
-               
-                .cornerRadius(10)
-                .padding(.horizontal, 10)
-                .padding(.top, 10)
-                .frame(maxWidth: .infinity)
-                
-                    
-                VStack(alignment: .leading, spacing: 10) {
+            
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(alignment: .center) {
+                    Image("appstore")
+                        .resizable()
+                        .frame(width: 64, height: 64)
+                        .padding(.all, 10)
+                        .frame(alignment: .leading)
+                    VStack(alignment: .leading) {
+                        Text("vcardX").font(.headline)
+                        Text("Your vCards at hand!").font(.subheadline)
+                        Text("Version \(getCurrentAppBuildVersionString())").font(.subheadline)
+                    }.padding()
+                    Spacer()
                     
                 }
-                .padding(.horizontal, 10)
-                //.padding(.top, 5)
-                .frame(maxWidth: .infinity)
-                
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(loc_madewithlove).font(.footnote)
-                }
-                .padding(.horizontal, 10)
-                .padding(.top, 10)
-                .frame(maxWidth: .infinity)
             }
+            .padding(.horizontal, 10)
+            .padding(.top, 10)
+            .frame(maxWidth: .infinity)
+            
+            
+            VStack(alignment: .leading, spacing: 10) {
+                
+                HStack(alignment: .center) {
+                    Image(systemName: "c.circle")
+                        .font(.largeTitle)
+                        .frame(width: 64, height: 64)
+                        .padding(.all, 10)
+                        .frame(alignment: .leading)
+                    VStack(alignment: .leading) {
+                        Text("Copyright")
+                            .font(.caption)
+                        Text("2021 Nicolas Ott").fontWeight(.semibold)
+                    }.padding()
+                    Spacer()
+                }
+                HStack(alignment: .center) {
+                    Image(systemName: "globe")
+                        .font(.largeTitle)
+                        .frame(width: 64, height: 64)
+                        .padding(.all, 10)
+                        .frame(alignment: .leading)
+                    VStack(alignment: .leading) {
+                        Text("Website")
+                            .font(.caption)
+                        Text("www.nicolasott.de").fontWeight(.semibold)
+                    }.padding()
+                    Spacer()
+                }
+                HStack(alignment: .center) {
+                    Image(systemName: "at")
+                        .font(.largeTitle)
+                        .frame(width: 64, height: 64)
+                        .padding(.all, 10)
+                        .frame(alignment: .leading)
+                    VStack(alignment: .leading) {
+                        Text("EMail")
+                            .font(.caption)
+                        Text("mail@nicolasott.de").fontWeight(.semibold)
+                    }.padding()
+                    Spacer()
+                }
+                
+            }.padding(.horizontal, 10)
+            .padding(.top, 10)
+            .frame(maxWidth: .infinity)
+            
+            Spacer()
+            VStack(alignment: .leading, spacing: 10) {
+                
+                Text(loc_madewithlove).font(.footnote)
+            }
+            .padding()
+            .padding(.bottom, 25)
+            .frame(maxWidth: .infinity)
+            
         }.edgesIgnoringSafeArea(.bottom)
         .accentColor(Color.primeInverted)
         .background(Color.primeInverted)
-       
         .navigationBarTitle(loc_about, displayMode: .automatic).allowsTightening(true)
     }
-
-
+    
+    
     func getCurrentAppBuildVersionString() -> String {
         let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""

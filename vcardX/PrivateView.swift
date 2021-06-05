@@ -11,8 +11,7 @@ import Foundation
 struct PrivateView: View {
     
     @ObservedObject var settings: UserSettings
-    @Environment (\.presentationMode) var presentationMode
-    
+      
     var body: some View {
         VStack {
             NameView(settings: settings)

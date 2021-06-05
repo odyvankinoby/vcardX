@@ -45,5 +45,9 @@ let loc_gdpr_subheader: LocalizedStringKey = "loc_gdpr_subheader"
 let loc_gdpr_lastupdated: LocalizedStringKey = "loc_gdpr_lastupdated"
 let loc_gdpr_text: LocalizedStringKey = "loc_gdpr_text"
 
+let loc_vcards: LocalizedStringKey = "loc_vcards"
+
+let loc_welcome: LocalizedStringKey = "loc_welcome"
 let loc_widget_displayname: LocalizedStringKey = "loc_widget_displayname"
 let loc_widget_description: LocalizedStringKey = "loc_widget_description"
+let loc_welcome_text: LocalizedStringKey = "loc_welcome_text"

@@ -17,7 +17,11 @@ class UserSettings: ObservableObject {
                  UserDefaults.standard.set(launchedBefore, forKey: "launchedBefore")
              }
     }
-
+    @Published var vcards: String { didSet { UserDefaults.standard.set(vcards, forKey: "vcards")
+           }
+    }
+    public var vcardsArray = ["All","Business","Private"]
+   
     // Name
     @Published var lastName: String { didSet { UserDefaults.standard.set(lastName, forKey: "lastName") } }
     @Published var firstName: String { didSet { UserDefaults.standard.set(firstName, forKey: "firstName") } }
@@ -60,6 +64,9 @@ class UserSettings: ObservableObject {
     init() {
         
         self.launchedBefore = UserDefaults.standard.object(forKey: "launchedBefore") as? Bool ?? false
+        self.vcards = UserDefaults.standard.object(forKey: "vcards") as? String ?? "All"
+    
+        
         
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""

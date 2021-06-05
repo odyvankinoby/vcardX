@@ -30,8 +30,8 @@ struct ContentView: View {
             VStack {
                 HStack {
                     Picker(selection: $selector, label: Text("")) {
-                        Text(loc_business).tag(0)
-                        Text(loc_private).tag(1)
+                        if settings.vcards == "All" || settings.vcards == "Business" { Text(loc_business).tag(0) }
+                        if settings.vcards == "All" || settings.vcards == "Private" { Text(loc_private).tag(1) }
                     }.pickerStyle(SegmentedPickerStyle()).labelsHidden()
                 }.padding(10)
                 
@@ -69,7 +69,7 @@ struct ContentView: View {
                 {
                     EmptyView()
                 }.isDetailLink(false)
-                NavigationLink(destination: SettingsView(settings: settings).accentColor(Color.primeInverted)
+                NavigationLink(destination: SettingsView(settings: settings, selector: $selector).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 3, selection: $navSelected)
                 {
                     EmptyView()
@@ -108,9 +108,7 @@ struct ContentView: View {
             .navigationBarTitle(loc_vcard, displayMode: .automatic).allowsTightening(true)
         }
         .sheet(isPresented: self.$setup) {
-           
                 SetupView(settings: settings)
-         
         }
         .accentColor(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
         .onAppear(perform: {
@@ -124,8 +122,20 @@ struct ContentView: View {
     
     
     func onAppear() {
+        
+        self.setup = true
+        
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore { self.setup = true }
+        
+        if settings.vcards == "All" {
+            self.selector = 0
+        } else if settings.vcards == "Business" {
+            self.selector = 0
+        } else {
+            self.selector = 1
+        }
+       
     }
     
     func createBusinessContact() -> Data? {

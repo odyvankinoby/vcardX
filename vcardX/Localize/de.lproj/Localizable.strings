@@ -35,7 +35,7 @@
 "loc_business_data" = "Berufliche Daten";
 "loc_private_data" = "Private Daten";
 
-// SETTINGSVIEW
+"loc_vcards" = "Zeige vCards";
 
 // ABOUTVIEW
 "loc_support" = "Support";
@@ -44,8 +44,14 @@
 "loc_about" = "Über";
 
 // WIDGET
+"loc_welcome" = "Willkommen!";
 "loc_widget_displayname" = "vcardX";
 "loc_widget_description" = "Ihre vCard immer zur Hand!";
+"loc_welcome_text" = "Teilen Sie Ihren geschäftlichen oder privaten Kontakt ganz einfach mit vcardX.
+
+vcardX erstellt QR-Codes aus Ihrem geschäftlichen und privaten Kontaktdaten und lässt Sie diese in der vcardX App oder mit Widgets auf Ihrem iPhone Homescreen teilen.
+
+Folgen Sie den einfachen Schritten auf der nächsten Seite, um vcardX einzurichten...";
 
 
 "loc_gdpr" = "Datenschutz";
