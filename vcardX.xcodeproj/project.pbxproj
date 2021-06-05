@@ -10,10 +10,10 @@
 		3600A5DE2668BED900703A1D /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5D82668BED900703A1D /* About.swift */; };
 		3600A5E12668BED900703A1D /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DB2668BED900703A1D /* Modifiers.swift */; };
 		3600A5E22668BED900703A1D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
-		3600A5E32668BED900703A1D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DD2668BED900703A1D /* CustomView.swift */; };
 		3600A5E62668C0A700703A1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3600A5E82668C0A700703A1D /* Localizable.strings */; };
 		3611BCB32669645E0095672A /* BusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB22669645E0095672A /* BusinessView.swift */; };
 		3611BCB62669680D0095672A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB52669680D0095672A /* EditView.swift */; };
+		36323EAE266B99C200041B24 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36323EAD266B99C200041B24 /* SetupView.swift */; };
 		36817CEE266A5ED3003E0CFE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3611BC972668CEA30095672A /* WidgetKit.framework */; };
 		36817CEF266A5ED3003E0CFE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3611BC992668CEA30095672A /* SwiftUI.framework */; };
 		36817CF2266A5ED3003E0CFE /* vcardW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36817CF1266A5ED3003E0CFE /* vcardW.swift */; };
@@ -25,7 +25,6 @@
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
 		36B883C226676B630028437B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883C126676B630028437B /* Preview Assets.xcassets */; };
-		36B883CA2667B0340028437B /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883C92667B0340028437B /* ContactsView.swift */; };
 		36B883CC2667B3A30028437B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883CB2667B3A30028437B /* SettingsView.swift */; };
 		36B883CE2667D5D30028437B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B883CD2667D5D30028437B /* LaunchScreen.storyboard */; };
 		36B883D02667DB1A0028437B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883CF2667DB1A0028437B /* UserSettings.swift */; };
@@ -60,7 +59,6 @@
 		3600A5D82668BED900703A1D /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3600A5DB2668BED900703A1D /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		3600A5DC2668BED900703A1D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
-		3600A5DD2668BED900703A1D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		3600A5E72668C0A700703A1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3600A5E92668C0AE00703A1D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3611BC972668CEA30095672A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -68,6 +66,7 @@
 		3611BCAC26690B3A0095672A /* vcardX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardX.entitlements; sourceTree = "<group>"; };
 		3611BCB22669645E0095672A /* BusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessView.swift; sourceTree = "<group>"; };
 		3611BCB52669680D0095672A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		36323EAD266B99C200041B24 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		366491BC266A5B93004D8014 /* vcardXRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardXRelease.entitlements; sourceTree = "<group>"; };
 		366F8514266A5F4F00D7B939 /* vcardWExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardWExtension.entitlements; sourceTree = "<group>"; };
 		36817CED266A5ED3003E0CFE /* vcardWExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = vcardWExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +80,6 @@
 		36B883BE26676B630028437B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B883C126676B630028437B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36B883C326676B630028437B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36B883C92667B0340028437B /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		36B883CB2667B3A30028437B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		36B883CD2667D5D30028437B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = vcardX/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		36B883CF2667DB1A0028437B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
@@ -108,15 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3600A5EA2668C45200703A1D /* V2 */ = {
-			isa = PBXGroup;
-			children = (
-				3600A5DD2668BED900703A1D /* CustomView.swift */,
-				36B883C92667B0340028437B /* ContactsView.swift */,
-			);
-			path = V2;
-			sourceTree = "<group>";
-		};
 		3600A5EB2668C46B00703A1D /* Localize */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +181,8 @@
 				36B883CD2667D5D30028437B /* LaunchScreen.storyboard */,
 				3611BCAC26690B3A0095672A /* vcardX.entitlements */,
 				366491BC266A5B93004D8014 /* vcardXRelease.entitlements */,
-				3600A5EA2668C45200703A1D /* V2 */,
 				36B883C026676B630028437B /* Preview Content */,
+				36323EAD266B99C200041B24 /* SetupView.swift */,
 			);
 			path = vcardX;
 			sourceTree = "<group>";
@@ -318,18 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B883CA2667B0340028437B /* ContactsView.swift in Sources */,
 				36817CF8266A5ED3003E0CFE /* vcardW.intentdefinition in Sources */,
 				36FE1CBA266A187800BA1707 /* PrivateView.swift in Sources */,
 				3611BCB62669680D0095672A /* EditView.swift in Sources */,
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
 				3600A5E12668BED900703A1D /* Modifiers.swift in Sources */,
-				3600A5E32668BED900703A1D /* CustomView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
 				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
 				3600A5DE2668BED900703A1D /* About.swift in Sources */,
 				3611BCB32669645E0095672A /* BusinessView.swift in Sources */,
 				3600A5E22668BED900703A1D /* Localization.swift in Sources */,
+				36323EAE266B99C200041B24 /* SetupView.swift in Sources */,
 				36B883BB26676B610028437B /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +352,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -389,7 +377,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -531,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -558,7 +546,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardXRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

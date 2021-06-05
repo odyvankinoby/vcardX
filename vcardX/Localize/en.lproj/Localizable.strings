@@ -37,14 +37,6 @@
 "loc_business_data" = "Business Card";
 "loc_private_data" = "Private Card";
 
-// CONTACTSVIEW
-"loc_search" = "Search term";
-
-// CUSTOMVIEW
-"loc_custom" = "Custom QR Code";
-
-// SETTINGSVIEW
-
 // ABOUTVIEW
 "loc_support" = "Support";
 "loc_feedback" = "Feedback";

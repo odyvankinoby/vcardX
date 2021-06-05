@@ -12,6 +12,12 @@ import Combine
 
 class UserSettings: ObservableObject {
     
+    @Published var launchedBefore: Bool {
+             didSet {
+                 UserDefaults.standard.set(launchedBefore, forKey: "launchedBefore")
+             }
+    }
+
     // Name
     @Published var lastName: String { didSet { UserDefaults.standard.set(lastName, forKey: "lastName") } }
     @Published var firstName: String { didSet { UserDefaults.standard.set(firstName, forKey: "firstName") } }
@@ -24,6 +30,7 @@ class UserSettings: ObservableObject {
     @Published var mobileBusiness: String { didSet { UserDefaults.standard.set(mobileBusiness, forKey: "mobileBusiness") } }
     @Published var landlineBusiness: String { didSet { UserDefaults.standard.set(landlineBusiness, forKey: "landlineBusiness") } }
     @Published var emailBusiness: String { didSet { UserDefaults.standard.set(emailBusiness, forKey: "emailBusiness") } }
+    @Published var emailBusinessOther: String { didSet { UserDefaults.standard.set(emailBusinessOther, forKey: "emailBusinessOther") } }
     @Published var wwwBusiness: String { didSet { UserDefaults.standard.set(wwwBusiness, forKey: "wwwBusiness") } }
     
     @Published var street1Business: String { didSet { UserDefaults.standard.set(street1Business, forKey: "street1Business") } }
@@ -32,11 +39,12 @@ class UserSettings: ObservableObject {
     @Published var cityBusiness: String { didSet { UserDefaults.standard.set(cityBusiness, forKey: "cityBusiness") } }
     @Published var countryBusiness: String { didSet { UserDefaults.standard.set(countryBusiness, forKey: "countryBusiness") } }
     
-    @Published var emailOther: String { didSet { UserDefaults.standard.set(emailOther, forKey: "emailOther") } }
+    
     
     @Published var mobilePrivate: String { didSet { UserDefaults.standard.set(mobilePrivate, forKey: "mobilePrivate") } }
     @Published var landlinePrivate: String { didSet { UserDefaults.standard.set(landlinePrivate, forKey: "landlinePrivate") } }
     @Published var emailPrivate: String { didSet { UserDefaults.standard.set(emailPrivate, forKey: "emailPrivate") } }
+    @Published var emailPrivateOther: String { didSet { UserDefaults.standard.set(emailPrivateOther, forKey: "emailPrivateOther") } }
     @Published var wwwPrivate: String { didSet { UserDefaults.standard.set(wwwPrivate, forKey: "wwwPrivate") } }
     
     @Published var street1Private: String { didSet { UserDefaults.standard.set(street1Private, forKey: "street1Private") } }
@@ -47,7 +55,11 @@ class UserSettings: ObservableObject {
   
     
     
+  
+    
     init() {
+        
+        self.launchedBefore = UserDefaults.standard.object(forKey: "launchedBefore") as? Bool ?? false
         
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
@@ -60,6 +72,8 @@ class UserSettings: ObservableObject {
         self.mobileBusiness = UserDefaults.standard.object(forKey: "mobileBusiness") as? String ?? ""
         self.landlineBusiness = UserDefaults.standard.object(forKey: "landlineBusiness") as? String ?? ""
         self.emailBusiness = UserDefaults.standard.object(forKey: "emailBusiness") as? String ?? ""
+        self.emailBusinessOther = UserDefaults.standard.object(forKey: "emailBusinessOther") as? String ?? ""
+        
         self.wwwBusiness = UserDefaults.standard.object(forKey: "wwwBusiness") as? String ?? ""
 
         self.street1Business = UserDefaults.standard.object(forKey: "street1Business") as? String ?? ""
@@ -68,11 +82,12 @@ class UserSettings: ObservableObject {
         self.cityBusiness = UserDefaults.standard.object(forKey: "cityBusiness") as? String ?? ""
         self.countryBusiness = UserDefaults.standard.object(forKey: "countryBusiness") as? String ?? ""
         
-        self.emailOther = UserDefaults.standard.object(forKey: "emailOther") as? String ?? ""
+        
         
         self.mobilePrivate = UserDefaults.standard.object(forKey: "mobilePrivate") as? String ?? ""
         self.landlinePrivate = UserDefaults.standard.object(forKey: "landlinePrivate") as? String ?? ""
         self.emailPrivate = UserDefaults.standard.object(forKey: "emailPrivate") as? String ?? ""
+        self.emailPrivateOther = UserDefaults.standard.object(forKey: "emailPrivateOther") as? String ?? ""
         self.wwwPrivate = UserDefaults.standard.object(forKey: "wwwPrivate") as? String ?? ""
 
         self.street1Private = UserDefaults.standard.object(forKey: "street1Private") as? String ?? ""

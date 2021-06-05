@@ -21,7 +21,7 @@ struct EditView: View {
     @State var noMail = false
     
     var body: some View {
-        VStack {
+        //VStack {
             ScrollView {
                 if type == "b" {
                     BusinessView(settings: settings)
@@ -29,7 +29,7 @@ struct EditView: View {
                     PrivateView(settings: settings)
                 }
                 
-            }
+           // }
         }.padding(10)
         .modifier(AdaptsToKeyboard())
         .accentColor(Color.primeInverted)

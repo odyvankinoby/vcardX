@@ -35,12 +35,6 @@
 "loc_business_data" = "Berufliche Daten";
 "loc_private_data" = "Private Daten";
 
-// CONTACTSVIEW
-"loc_search" = "Suchwort";
-
-// CUSTOMVIEW
-"loc_custom" = "Eigener QR Code";
-
 // SETTINGSVIEW
 
 // ABOUTVIEW

@@ -23,6 +23,7 @@ struct ContentView: View {
     @State private var groupPrivate = false
     @State private var showSheet = false
     @State var navSelected: Int? = nil
+    @State var setup = false
     
     var body: some View {
         NavigationView {
@@ -42,9 +43,9 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .padding()
-                        Spacer()
-                        
                     }
+                    BusinessPreview(settings: settings)
+                    Spacer()
                 } else if selector == 1 {
                     VStack(alignment: .center) {
                         Image(uiImage: generateQRCodeFromData(from: self.createPrivateContact()!))
@@ -53,8 +54,10 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .padding()
-                        Spacer()
+                        
                     }
+                    PrivatePreview(settings: settings)
+                    Spacer()
                 }
                 NavigationLink(destination: EditView(settings: settings, type: "b").accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 1, selection: $navSelected)
@@ -103,10 +106,27 @@ struct ContentView: View {
             }
             .background(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle(loc_vcard, displayMode: .automatic).allowsTightening(true)
-        }.accentColor(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
+        }
+        .sheet(isPresented: self.$setup) {
+           
+                SetupView(settings: settings)
+         
+        }
+        .accentColor(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
+        .onAppear(perform: {
+            onAppear()
+            //UITabBar.appearance().tintColor = UIColor(.textDark)
+            UITabBar.appearance().backgroundColor = UIColor.systemBackground
+            UITabBar.appearance().isTranslucent = true
+            
+        })
     }
     
     
+    func onAppear() {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if !launchedBefore { self.setup = true }
+    }
     
     func createBusinessContact() -> Data? {
         
@@ -119,7 +139,7 @@ struct ContentView: View {
         contact.organizationName = settings.company
         contact.jobTitle = settings.position
         contact.emailAddresses = [CNLabeledValue(label:CNLabelWork,value:NSString(string:settings.emailBusiness)),
-                                  CNLabeledValue(label:CNLabelOther,value:NSString(string:settings.emailOther))]
+                                  CNLabeledValue(label:CNLabelOther,value:NSString(string:settings.emailBusinessOther))]
         contact.phoneNumbers = [CNLabeledValue(
                                     label:CNLabelPhoneNumberMobile,
                                     value:CNPhoneNumber(stringValue:settings.mobileBusiness)),
@@ -146,7 +166,7 @@ struct ContentView: View {
         contact.nickname = settings.nickName
         
         contact.emailAddresses = [CNLabeledValue(label:CNLabelHome,value:NSString(string:settings.emailPrivate)),
-                                  CNLabeledValue(label:CNLabelOther,value:NSString(string:settings.emailOther))]
+                                  CNLabeledValue(label:CNLabelOther,value:NSString(string:settings.emailPrivateOther))]
         contact.phoneNumbers = [CNLabeledValue(
                                     label:CNLabelPhoneNumberMobile,
                                     value:CNPhoneNumber(stringValue:settings.mobileBusiness)),
