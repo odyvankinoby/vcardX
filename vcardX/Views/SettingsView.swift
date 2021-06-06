@@ -14,6 +14,7 @@ struct SettingsView: View {
     
     @ObservedObject var settings: UserSettings
     @Binding var selector: Int
+    @StateObject var storeManager: StoreManager
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var noMail = false
     
@@ -37,8 +38,18 @@ struct SettingsView: View {
                     .onChange(of: settings.vcards, perform: { value in
                         if settings.vcards == "Private" { selector = 1 } else { selector = 0 }
                     })
+                }.padding(.leading, 10).padding(.trailing, 10)
+                Divider()
+                
+                HStack {
+                    NavigationLink(destination: InAppPurchaseView(settings: settings, storeManager: storeManager).accentColor(Color.primeInverted)
+                                    .edgesIgnoringSafeArea(.bottom)) {
+                        HStack {
+                            Text(loc_premium).frame(alignment: .leading).foregroundColor(.prime)
+                            Spacer()
+                        }
+                    }
                 }.padding(.leading, 10).padding(.trailing, 10).padding(.bottom, 10)
-                //Divider()
                 
             }
              .cornerRadius(10)

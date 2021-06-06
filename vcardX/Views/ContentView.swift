@@ -9,6 +9,9 @@ import SwiftUI
 import Foundation
 import CoreImage.CIFilterBuiltins
 import Contacts
+import StoreKit
+
+
 
 struct ContentView: View {
     
@@ -16,6 +19,11 @@ struct ContentView: View {
     @Environment (\.presentationMode) var presentationMode
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
+    
+    @StateObject var storeManager = StoreManager()
+    let productIDs = [
+        "de.nicolasott.vcardX.premium"
+    ]
     
     @State var selector: Int = 0
     
@@ -69,7 +77,7 @@ struct ContentView: View {
                 {
                     EmptyView()
                 }.isDetailLink(false)
-                NavigationLink(destination: SettingsView(settings: settings, selector: $selector).accentColor(Color.primeInverted)
+                NavigationLink(destination: SettingsView(settings: settings, selector: $selector, storeManager: storeManager).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 3, selection: $navSelected)
                 {
                     EmptyView()

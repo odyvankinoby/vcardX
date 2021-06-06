@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+let loc_premium: LocalizedStringKey = "loc_premium"
 let loc_vcard: LocalizedStringKey = "loc_vcard"
 let loc_contacts: LocalizedStringKey = "loc_contacts"
 let loc_settings: LocalizedStringKey = "loc_settings"
