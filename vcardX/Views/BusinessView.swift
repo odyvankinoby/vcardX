@@ -18,10 +18,11 @@ struct BusinessView: View {
             PhoneBusinessView(settings: settings)
             EmailBusinessView(settings: settings)
             WwwBusinessView(settings: settings)
-            
+            AddressBusinessView(settings: settings)
         }.padding(.bottom, 50)
     }
 }
+
 
 struct BusinessPreview: View {
     
@@ -188,6 +189,50 @@ struct WwwBusinessView: View {
                 TextField(loc_www, text: $settings.wwwBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.URL)
+                    .font(.headline).foregroundColor(.prime)
+            }
+        }.padding(.bottom, 10)
+    }
+}
+
+struct AddressBusinessView: View {
+    
+    @ObservedObject var settings: UserSettings
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Section(header: Text(loc_address).bold()) {
+                Group {
+                Text(loc_street).font(.caption2).foregroundColor(.prime)
+                TextField(loc_street, text: $settings.street1Business)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.streetAddressLine1)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                Text(loc_street).font(.caption2).foregroundColor(.prime)
+                TextField(loc_street, text: $settings.street2Business)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.streetAddressLine2)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                }
+                Group {
+                Text(loc_zip).font(.caption2).foregroundColor(.prime)
+                TextField(loc_zip, text: $settings.zipBusiness)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.postalCode)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                Text(loc_city).font(.caption2).foregroundColor(.prime)
+                TextField(loc_city, text: $settings.cityBusiness)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.addressCity)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                }
+                Text(loc_country).font(.caption2).foregroundColor(.prime)
+                TextField(loc_country, text: $settings.countryBusiness)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.countryName)
                     .font(.headline).foregroundColor(.prime)
             }
         }.padding(.bottom, 10)

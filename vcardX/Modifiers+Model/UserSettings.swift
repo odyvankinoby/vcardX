@@ -43,8 +43,6 @@ class UserSettings: ObservableObject {
     @Published var cityBusiness: String { didSet { UserDefaults.standard.set(cityBusiness, forKey: "cityBusiness") } }
     @Published var countryBusiness: String { didSet { UserDefaults.standard.set(countryBusiness, forKey: "countryBusiness") } }
     
-    
-    
     @Published var mobilePrivate: String { didSet { UserDefaults.standard.set(mobilePrivate, forKey: "mobilePrivate") } }
     @Published var landlinePrivate: String { didSet { UserDefaults.standard.set(landlinePrivate, forKey: "landlinePrivate") } }
     @Published var emailPrivate: String { didSet { UserDefaults.standard.set(emailPrivate, forKey: "emailPrivate") } }
@@ -57,6 +55,11 @@ class UserSettings: ObservableObject {
     @Published var cityPrivate: String { didSet { UserDefaults.standard.set(cityPrivate, forKey: "cityPrivate") } }
     @Published var countryPrivate: String { didSet { UserDefaults.standard.set(countryPrivate, forKey: "countryPrivate") } }
   
+    @Published var qrImageBusiness: Any { didSet { UserDefaults.standard.set(qrImageBusiness, forKey: "qrImageBusiness") } }
+    @Published var imgBusinessSet: Bool { didSet { UserDefaults.standard.set(imgBusinessSet, forKey: "imgBusinessSet") } }
+    
+    @Published var qrImagePrivate: Any { didSet { UserDefaults.standard.set(qrImagePrivate, forKey: "qrImagePrivate") } }
+    @Published var imgPrivateSet: Bool { didSet { UserDefaults.standard.set(imgPrivateSet, forKey: "imgPrivateSet") } }
     
     
   
@@ -65,9 +68,7 @@ class UserSettings: ObservableObject {
         
         self.launchedBefore = UserDefaults.standard.object(forKey: "launchedBefore") as? Bool ?? false
         self.vcards = UserDefaults.standard.object(forKey: "vcards") as? String ?? "All"
-    
-        
-        
+
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
         self.middleName = UserDefaults.standard.object(forKey: "middleName") as? String ?? ""
@@ -89,8 +90,6 @@ class UserSettings: ObservableObject {
         self.cityBusiness = UserDefaults.standard.object(forKey: "cityBusiness") as? String ?? ""
         self.countryBusiness = UserDefaults.standard.object(forKey: "countryBusiness") as? String ?? ""
         
-        
-        
         self.mobilePrivate = UserDefaults.standard.object(forKey: "mobilePrivate") as? String ?? ""
         self.landlinePrivate = UserDefaults.standard.object(forKey: "landlinePrivate") as? String ?? ""
         self.emailPrivate = UserDefaults.standard.object(forKey: "emailPrivate") as? String ?? ""
@@ -103,6 +102,11 @@ class UserSettings: ObservableObject {
         self.cityPrivate = UserDefaults.standard.object(forKey: "cityPrivate") as? String ?? ""
         self.countryPrivate = UserDefaults.standard.object(forKey: "countryPrivate") as? String ?? ""
     
-    
+        self.qrImageBusiness = UserDefaults.standard.object(forKey: "qrImageBusiness") as Any
+        self.imgBusinessSet = UserDefaults.standard.object(forKey: "imgBusinessSet") as? Bool ?? false
+        
+        self.qrImagePrivate = UserDefaults.standard.object(forKey: "qrImagePrivate") as Any
+        self.imgPrivateSet = UserDefaults.standard.object(forKey: "imgPrivateSet") as? Bool ?? false
+        
     }
 }

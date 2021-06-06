@@ -6,6 +6,14 @@
   
 */
 
+"loc_setup" = "Setup-Bildschirm anzeigen";
+
+"loc_create_vcards" = "Erstellen Sie Ihre vcards";
+"loc_create_vcards_text" = "Tippen Sie das (...) im vcardX homescreen um Ihre Kontaktdaten hinzuzufügen.";
+
+"loc_add_widgets" = "vcardX Widget hinzufügen";
+"loc_add_widgets_text" = "Drücken Sie lange auf den iOS-Homescreen und verwenden Sie das (+)-Symbol, um vcardX-Widgets zu Ihrem iOS-Homescreen hinzuzufügen.";
+
 // VCARDX
 "loc_vcard" = "vCard";
 "loc_contacts" = "Kontakte";
@@ -29,6 +37,12 @@
 "loc_phone" = "Telefon";
 "loc_email" = "EMail";
 
+"loc_street" = "Straße";
+"loc_zip" = "PLZ";
+"loc_city" = "Stadt";
+"loc_country" = "Land";
+"loc_address" = "Adresse";
+
 "loc_www" = "Website";
 "loc_business" = "Beruflich";
 "loc_private" = "Privat";
@@ -36,6 +50,8 @@
 "loc_private_data" = "Private Daten";
 
 "loc_vcards" = "Zeige vCards";
+
+"loc_nocard" = "Kein QR-Code gefunden, bitte öffnen Sie vcardX und fügen Sie Ihre Kontaktdaten über das Icon (...) hinzu.";
 
 // ABOUTVIEW
 "loc_support" = "Support";
@@ -47,6 +63,9 @@
 "loc_welcome" = "Willkommen!";
 "loc_widget_displayname" = "vcardX";
 "loc_widget_description" = "Ihre vCard immer zur Hand!";
+"loc_widgetP_description" = "Ihre private vCard";
+"loc_widgetB_description" = "Ihre Business vCard";
+
 "loc_welcome_text" = "Teilen Sie Ihren geschäftlichen oder privaten Kontakt ganz einfach mit vcardX.
 
 vcardX erstellt QR-Codes aus Ihrem geschäftlichen und privaten Kontaktdaten und lässt Sie diese in der vcardX App oder mit Widgets auf Ihrem iPhone Homescreen teilen.

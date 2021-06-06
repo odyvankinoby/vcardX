@@ -37,7 +37,7 @@ struct ContentView: View {
                 
                 if selector == 0 {
                     VStack(alignment: .center) {
-                        Image(uiImage: generateQRCodeFromData(from: self.createBusinessContact()!))
+                        Image(uiImage: generateQRCodeFromData(from: self.createBusinessContact()!, type: "business"))
                             .resizable()
                             .interpolation(.none)
                             .scaledToFit()
@@ -48,7 +48,7 @@ struct ContentView: View {
                     Spacer()
                 } else if selector == 1 {
                     VStack(alignment: .center) {
-                        Image(uiImage: generateQRCodeFromData(from: self.createPrivateContact()!))
+                        Image(uiImage: generateQRCodeFromData(from: self.createPrivateContact()!, type: "pvt"))
                             .resizable()
                             .interpolation(.none)
                             .scaledToFit()
@@ -123,7 +123,7 @@ struct ContentView: View {
     
     func onAppear() {
         
-        self.setup = true
+        //self.setup = true
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore { self.setup = true }
@@ -148,6 +148,17 @@ struct ContentView: View {
         contact.nickname = settings.nickName
         contact.organizationName = settings.company
         contact.jobTitle = settings.position
+        
+        let address = CNMutablePostalAddress()
+        address.street = settings.street1Business
+        address.street = settings.street2Business
+        address.city = settings.cityBusiness
+        address.postalCode = settings.zipBusiness
+        address.country = settings.countryBusiness
+        let labeledAddress = CNLabeledValue<CNPostalAddress>(label: CNLabelWork, value: address)
+        
+        contact.postalAddresses = [labeledAddress]
+      
         contact.emailAddresses = [CNLabeledValue(label:CNLabelWork,value:NSString(string:settings.emailBusiness)),
                                   CNLabeledValue(label:CNLabelOther,value:NSString(string:settings.emailBusinessOther))]
         contact.phoneNumbers = [CNLabeledValue(
@@ -175,6 +186,15 @@ struct ContentView: View {
         contact.middleName = settings.middleName
         contact.nickname = settings.nickName
         
+        let address = CNMutablePostalAddress()
+        address.street = settings.street1Private
+        address.street = settings.street2Private
+        address.city = settings.cityPrivate
+        address.postalCode = settings.zipPrivate
+        address.country = settings.countryPrivate
+        let labeledAddress = CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: address)
+        
+        contact.postalAddresses = [labeledAddress]
         contact.emailAddresses = [CNLabeledValue(label:CNLabelHome,value:NSString(string:settings.emailPrivate)),
                                   CNLabeledValue(label:CNLabelOther,value:NSString(string:settings.emailPrivateOther))]
         contact.phoneNumbers = [CNLabeledValue(
@@ -193,16 +213,18 @@ struct ContentView: View {
         return contactData
     }
     
-    func generateQRCodeFromData(from data: Data) -> UIImage {
+    func generateQRCodeFromData(from data: Data, type: String) -> UIImage {
         filter.setValue(data, forKey: "inputMessage")
         if let outputImage = filter.outputImage {
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+                saveImageToUserDefaults(image: UIImage(cgImage: cgimg), type: type)
                 return UIImage(cgImage: cgimg)
             }
         }
         return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
-    
+  
+    /*
     func generateQRCodeFromString(from string: String) -> UIImage {
         let data = Data(string.utf8)
         filter.setValue(data, forKey: "inputMessage")
@@ -212,5 +234,19 @@ struct ContentView: View {
             }
         }
         return UIImage(systemName: "xmark.circle") ?? UIImage()
+    }
+    */
+    
+    func saveImageToUserDefaults(image: UIImage, type: String) {
+        
+        if type == "business" {
+            UserDefaults.standard.set(image.pngData(), forKey: "qrImageBusiness")
+            UserDefaults.standard.set(true, forKey: "imgBusinessSet")
+        } else {
+            UserDefaults.standard.set(image.pngData(), forKey: "qrImagePrivate")
+            UserDefaults.standard.set(true, forKey: "imgPrivateSet")
+        }
+        
+        WidgetUpdaterClass(settings: settings).updateValues()
     }
 }

@@ -24,6 +24,10 @@
 		3611BCB62669680D0095672A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB52669680D0095672A /* EditView.swift */; };
 		361660C5266BABD9002E3ED4 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361660C2266BABD9002E3ED4 /* SetupView.swift */; };
 		361660C6266BABD9002E3ED4 /* PrivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361660C3266BABD9002E3ED4 /* PrivateView.swift */; };
+		364F2E21266CBD300085493D /* WidgetUpdaterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */; };
+		364F2E24266CC3400085493D /* wPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E23266CC3400085493D /* wPrivate.swift */; };
+		364F2E26266CC3560085493D /* wBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E25266CC3560085493D /* wBusiness.swift */; };
+		364F2E27266CC4390085493D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		361660C2266BABD9002E3ED4 /* SetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		361660C3266BABD9002E3ED4 /* PrivateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateView.swift; sourceTree = "<group>"; };
 		361660C4266BABD9002E3ED4 /* vcardXRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = vcardXRelease.entitlements; sourceTree = "<group>"; };
+		364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUpdaterClass.swift; sourceTree = "<group>"; };
+		364F2E23266CC3400085493D /* wPrivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wPrivate.swift; sourceTree = "<group>"; };
+		364F2E25266CC3560085493D /* wBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wBusiness.swift; sourceTree = "<group>"; };
+		364F2E28266CD3B10085493D /* vcardWExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = vcardWExtension.entitlements; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		36B883BC26676B610028437B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				3611BC9C2668CEA30095672A /* vcardW.swift */,
+				364F2E25266CC3560085493D /* wBusiness.swift */,
+				364F2E23266CC3400085493D /* wPrivate.swift */,
 				3611BC9F2668CEA40095672A /* Assets.xcassets */,
 				3611BCA12668CEA40095672A /* Info.plist */,
 				3611BCAF26690DA60095672A /* vcardW.intentdefinition */,
@@ -145,9 +155,32 @@
 			path = vcardW;
 			sourceTree = "<group>";
 		};
+		364F2E22266CBD3E0085493D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		364F2E29266D1A230085493D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36B883BC26676B610028437B /* ContentView.swift */,
+				3611BCB52669680D0095672A /* EditView.swift */,
+				3611BCB22669645E0095672A /* BusinessView.swift */,
+				361660C3266BABD9002E3ED4 /* PrivateView.swift */,
+				361660C2266BABD9002E3ED4 /* SetupView.swift */,
+				36B883CB2667B3A30028437B /* SettingsView.swift */,
+				3600A5D82668BED900703A1D /* About.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		36B883AE26676B610028437B = {
 			isa = PBXGroup;
 			children = (
+				364F2E28266CD3B10085493D /* vcardWExtension.entitlements */,
 				36B883B926676B610028437B /* vcardX */,
 				3611BC9B2668CEA30095672A /* vcardW */,
 				3611BC962668CEA30095672A /* Frameworks */,
@@ -167,21 +200,16 @@
 		36B883B926676B610028437B /* vcardX */ = {
 			isa = PBXGroup;
 			children = (
-				361660C4266BABD9002E3ED4 /* vcardXRelease.entitlements */,
-				3611BCAC26690B3A0095672A /* vcardX.entitlements */,
 				36B883BA26676B610028437B /* App.swift */,
-				36B883BC26676B610028437B /* ContentView.swift */,
-				3611BCB52669680D0095672A /* EditView.swift */,
-				361660C3266BABD9002E3ED4 /* PrivateView.swift */,
-				3611BCB22669645E0095672A /* BusinessView.swift */,
-				361660C2266BABD9002E3ED4 /* SetupView.swift */,
-				36B883CB2667B3A30028437B /* SettingsView.swift */,
-				3600A5D82668BED900703A1D /* About.swift */,
+				364F2E29266D1A230085493D /* Views */,
+				364F2E22266CBD3E0085493D /* Classes */,
 				3600A5EB2668C46B00703A1D /* Localize */,
 				3600A5EC2668C48B00703A1D /* Modifiers+Model */,
 				36B883BE26676B630028437B /* Assets.xcassets */,
-				36B883C326676B630028437B /* Info.plist */,
 				36B883CD2667D5D30028437B /* LaunchScreen.storyboard */,
+				36B883C326676B630028437B /* Info.plist */,
+				361660C4266BABD9002E3ED4 /* vcardXRelease.entitlements */,
+				3611BCAC26690B3A0095672A /* vcardX.entitlements */,
 				36B883C026676B630028437B /* Preview Content */,
 			);
 			path = vcardX;
@@ -277,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3611BCA02668CEA40095672A /* Assets.xcassets in Resources */,
+				364F2E27266CC4390085493D /* Assets.xcassets in Resources */,
 				3611BCAE26690CCD0095672A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +330,9 @@
 			files = (
 				3611BCB126690DA60095672A /* vcardW.intentdefinition in Sources */,
 				3611BCAD26690CC80095672A /* Localization.swift in Sources */,
+				364F2E26266CC3560085493D /* wBusiness.swift in Sources */,
 				3611BC9D2668CEA30095672A /* vcardW.swift in Sources */,
+				364F2E24266CC3400085493D /* wPrivate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364F2E21266CBD300085493D /* WidgetUpdaterClass.swift in Sources */,
 				3611BCB026690DA60095672A /* vcardW.intentdefinition in Sources */,
 				3611BCB62669680D0095672A /* EditView.swift in Sources */,
 				361660C6266BABD9002E3ED4 /* PrivateView.swift in Sources */,
@@ -354,7 +386,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -379,7 +411,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,7 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -548,7 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

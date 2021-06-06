@@ -15,6 +15,7 @@ struct SetupView: View {
         TabView {
             Welcome(settings: settings)
             Setup(settings: settings)
+            Widget(settings: settings)
         }
         .tabViewStyle(PageTabViewStyle())
         .background(Color.prime)
@@ -76,36 +77,50 @@ struct Setup: View {
                 }
             }
             ScrollView  {
-                
                 VStack(alignment: .center) {
-                    Text("Setup").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    //Text(loc_widget_displayname).font(.title2).foregroundColor(.white)
-                    Text(loc_vcard).font(.title3).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                }.padding()
-               
-                HStack(alignment: .top) {
+                    Text(loc_create_vcards).font(.title).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     Image("setup")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 200)
                         .padding(10)
-                    VStack(alignment: .leading) {
-                        Text("Tap the 􀍡 icon on top right of homescreen to edit the currently displayed contact business or private.").foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    }
-                    .padding(.top, 10)
-                    .padding(.trailing, 10)
+                    Text(loc_create_vcards_text).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/).padding(10)
+                    Spacer()
+                }.padding()
+            }
+        }
+        .background(Color.prime)
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct Widget: View {
+    
+    @ObservedObject var settings: UserSettings
+    @Environment (\.presentationMode) var presentationMode
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: { self.presentationMode.wrappedValue.dismiss() } )
+                {
+                    Image(systemName: "xmark").padding().foregroundColor(.primeInverted)
                 }
-               
-                
-                VStack(alignment: .leading) {
+            }
+            ScrollView  {
+                VStack(alignment: .center) {
+                    Text(loc_add_widgets).font(.title).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    Image("widget")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(10)
+                    Text(loc_add_widgets_text).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/).padding(10)
+                    Spacer()
                     Button(action: { self.presentationMode.wrappedValue.dismiss() } )
                     {
                         Text("Start vcardX")
                     }.customButton()
-                }
-                .padding(.leading, 20)
-                .padding(.top, 20)
-                .padding(.trailing, 20)
+                }.padding()
             }
         }
         .background(Color.prime)

@@ -18,7 +18,7 @@ struct PrivateView: View {
             PhoneView(settings: settings)
             EmailView(settings: settings)
             WwwView(settings: settings)
-            
+            AddressPrivateView(settings: settings)
         }.padding(.bottom, 50)
     }
 }
@@ -106,3 +106,48 @@ struct WwwView: View {
         }.padding(.bottom, 10)
     }
 }
+
+struct AddressPrivateView: View {
+    
+    @ObservedObject var settings: UserSettings
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Section(header: Text(loc_address).bold()) {
+                Group {
+                Text(loc_street).font(.caption2).foregroundColor(.prime)
+                TextField(loc_street, text: $settings.street1Private)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.streetAddressLine1)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                Text(loc_street).font(.caption2).foregroundColor(.prime)
+                TextField(loc_street, text: $settings.street2Private)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.streetAddressLine2)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                }
+                Group {
+                Text(loc_zip).font(.caption2).foregroundColor(.prime)
+                TextField(loc_zip, text: $settings.zipPrivate)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.postalCode)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                Text(loc_city).font(.caption2).foregroundColor(.prime)
+                TextField(loc_city, text: $settings.cityPrivate)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.addressCity)
+                    .font(.headline).foregroundColor(.prime)
+                Divider()
+                }
+                Text(loc_country).font(.caption2).foregroundColor(.prime)
+                TextField(loc_country, text: $settings.countryPrivate)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.countryName)
+                    .font(.headline).foregroundColor(.prime)
+            }
+        }.padding(.bottom, 10)
+    }
+}
+

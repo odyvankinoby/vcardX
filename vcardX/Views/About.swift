@@ -90,7 +90,7 @@ struct AboutvCardXView: View {
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack(alignment: .center) {
-                    Image("appstore")
+                    Image("AppIcon_dark")
                         .resizable()
                         .frame(width: 64, height: 64)
                         .padding(.all, 10)

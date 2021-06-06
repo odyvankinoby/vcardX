@@ -9,7 +9,45 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+@main
+struct widgetBundle: WidgetBundle {
+    var body: some Widget {
+        
+        vcardBusiness()
+        vcardPrivate()
+        
+    }
+}
+
+struct vcardBusiness: Widget {
+    let kind: String = "vcardBusiness"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+            wBusiness(entry: entry)
+        }
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .configurationDisplayName(loc_widget_displayname)
+        .description(loc_widgetB_description)
+    }
+}
+
+struct vcardPrivate: Widget {
+    let kind: String = "vcardPrivate"
+
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+            wPrivate(entry: entry)
+        }
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .configurationDisplayName(loc_widget_displayname)
+        .description(loc_widgetP_description)
+    }
+}
+
+
 struct Provider: IntentTimelineProvider {
+    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
     }
@@ -19,7 +57,7 @@ struct Provider: IntentTimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
@@ -36,34 +74,22 @@ struct Provider: IntentTimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
+    
     let date: Date
+    let bSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "businessSet"))
+    let imgB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgBusiness")!)
+    let pSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "privateSet"))
+    let imgP: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgPrivate")!)
+    let name: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "name") ?? "")
+    let position: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "position") ?? "")
+    let company: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "company") ?? "")
+    let mobilePrivate: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "mobilePrivate") ?? "")
+    let emailPrivate: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "emailPrivate") ?? "")
+    let wwwPrivate: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "wwwPrivate") ?? "")
+    let mobileBusiness: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "mobileBusiness") ?? "")
+    let emailBusiness: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "emailBusiness") ?? "")
+    let wwwBusiness: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "wwwBusiness") ?? "")
+    
     let configuration: ConfigurationIntent
-}
-
-struct vcardWEntryView : View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        Text(entry.date, style: .time)
-    }
-}
-
-@main
-struct vcardW: Widget {
-    let kind: String = "vcardW"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            vcardWEntryView(entry: entry)
-        }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-    }
-}
-
-struct vcardW_Previews: PreviewProvider {
-    static var previews: some View {
-        vcardWEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
+    
 }

@@ -50,12 +50,10 @@ struct SettingsView: View {
                     Text(loc_support).foregroundColor(.white).font(.headline).padding(.all, 10)
                     Spacer()
                 }.background(RoundedCorners(color: Color.prime, tl: 10, tr: 10, bl: 0, br: 0))
-                
                 HStack {
                     NavigationLink(destination: MailView(result: self.$result).accentColor(Color.primeInverted)
                                     .edgesIgnoringSafeArea(.bottom)) {
                         HStack {
-                            
                             Text(loc_feedback).frame(alignment: .leading).foregroundColor(noMail ? .gray : .prime)
                             Spacer()
                         }
