@@ -18,8 +18,6 @@
 		3611BCA62668CEA40095672A /* vcardWExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3611BC952668CEA30095672A /* vcardWExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3611BCAD26690CC80095672A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
 		3611BCAE26690CCD0095672A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3600A5E82668C0A700703A1D /* Localizable.strings */; };
-		3611BCB026690DA60095672A /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCAF26690DA60095672A /* vcardW.intentdefinition */; };
-		3611BCB126690DA60095672A /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCAF26690DA60095672A /* vcardW.intentdefinition */; };
 		3611BCB32669645E0095672A /* BusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB22669645E0095672A /* BusinessView.swift */; };
 		3611BCB62669680D0095672A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB52669680D0095672A /* EditView.swift */; };
 		361660C5266BABD9002E3ED4 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361660C2266BABD9002E3ED4 /* SetupView.swift */; };
@@ -31,7 +29,8 @@
 		364F2E2B266D331F0085493D /* StoreManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E2A266D331F0085493D /* StoreManagerClass.swift */; };
 		364F2E2D266D338C0085493D /* IAP_ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 364F2E2C266D338C0085493D /* IAP_ProductIDs.plist */; };
 		364F2E2F266D33FA0085493D /* InAppPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E2E266D33FA0085493D /* InAppPurchaseView.swift */; };
-		364F2E31266D344D0085493D /* ConfettiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E30266D344D0085493D /* ConfettiClass.swift */; };
+		364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
+		364F2E3B266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
@@ -78,7 +77,6 @@
 		3611BC9F2668CEA40095672A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3611BCA12668CEA40095672A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3611BCAC26690B3A0095672A /* vcardX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardX.entitlements; sourceTree = "<group>"; };
-		3611BCAF26690DA60095672A /* vcardW.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = vcardW.intentdefinition; sourceTree = "<group>"; };
 		3611BCB22669645E0095672A /* BusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessView.swift; sourceTree = "<group>"; };
 		3611BCB52669680D0095672A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		361660C2266BABD9002E3ED4 /* SetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -91,7 +89,9 @@
 		364F2E2A266D331F0085493D /* StoreManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManagerClass.swift; sourceTree = "<group>"; };
 		364F2E2C266D338C0085493D /* IAP_ProductIDs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IAP_ProductIDs.plist; sourceTree = "<group>"; };
 		364F2E2E266D33FA0085493D /* InAppPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseView.swift; sourceTree = "<group>"; };
-		364F2E30266D344D0085493D /* ConfettiClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiClass.swift; sourceTree = "<group>"; };
+		364F2E3C266D3B090085493D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/vcardW.intentdefinition; sourceTree = "<group>"; };
+		364F2E3F266D3B0C0085493D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/vcardW.strings; sourceTree = "<group>"; };
+		364F2E41266D3B0F0085493D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/vcardW.strings; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		36B883BC26676B610028437B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 				364F2E23266CC3400085493D /* wPrivate.swift */,
 				3611BC9F2668CEA40095672A /* Assets.xcassets */,
 				3611BCA12668CEA40095672A /* Info.plist */,
-				3611BCAF26690DA60095672A /* vcardW.intentdefinition */,
+				364F2E3D266D3B090085493D /* vcardW.intentdefinition */,
 			);
 			path = vcardW;
 			sourceTree = "<group>";
@@ -166,7 +166,6 @@
 		364F2E22266CBD3E0085493D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				364F2E30266D344D0085493D /* ConfettiClass.swift */,
 				364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */,
 				364F2E2A266D331F0085493D /* StoreManagerClass.swift */,
 			);
@@ -341,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3611BCB126690DA60095672A /* vcardW.intentdefinition in Sources */,
+				364F2E3B266D3B090085493D /* vcardW.intentdefinition in Sources */,
 				3611BCAD26690CC80095672A /* Localization.swift in Sources */,
 				364F2E26266CC3560085493D /* wBusiness.swift in Sources */,
 				3611BC9D2668CEA30095672A /* vcardW.swift in Sources */,
@@ -353,11 +352,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				364F2E31266D344D0085493D /* ConfettiClass.swift in Sources */,
 				364F2E2B266D331F0085493D /* StoreManagerClass.swift in Sources */,
 				364F2E2F266D33FA0085493D /* InAppPurchaseView.swift in Sources */,
 				364F2E21266CBD300085493D /* WidgetUpdaterClass.swift in Sources */,
-				3611BCB026690DA60095672A /* vcardW.intentdefinition in Sources */,
+				364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */,
 				3611BCB62669680D0095672A /* EditView.swift in Sources */,
 				361660C6266BABD9002E3ED4 /* PrivateView.swift in Sources */,
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
@@ -390,6 +388,16 @@
 				3600A5E92668C0AE00703A1D /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		364F2E3D266D3B090085493D /* vcardW.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				364F2E3C266D3B090085493D /* Base */,
+				364F2E3F266D3B0C0085493D /* en */,
+				364F2E41266D3B0F0085493D /* de */,
+			);
+			name = vcardW.intentdefinition;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

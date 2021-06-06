@@ -38,9 +38,18 @@ struct SettingsView: View {
                     .onChange(of: settings.vcards, perform: { value in
                         if settings.vcards == "Private" { selector = 1 } else { selector = 0 }
                     })
-                }.padding(.leading, 10).padding(.trailing, 10)
-                Divider()
-                
+                }.padding(.leading, 10).padding(.trailing, 10).padding(.bottom, 10)
+              
+            }
+             .cornerRadius(10)
+             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.5), lineWidth: 0.5))
+             .padding(10)
+            
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Text(loc_premium).foregroundColor(.white).font(.headline).padding(.all, 10)
+                    Spacer()
+                }.background(RoundedCorners(color: Color.prime, tl: 10, tr: 10, bl: 0, br: 0))
                 HStack {
                     NavigationLink(destination: InAppPurchaseView(settings: settings, storeManager: storeManager).accentColor(Color.primeInverted)
                                     .edgesIgnoringSafeArea(.bottom)) {
@@ -50,11 +59,10 @@ struct SettingsView: View {
                         }
                     }
                 }.padding(.leading, 10).padding(.trailing, 10).padding(.bottom, 10)
-                
             }
-             .cornerRadius(10)
-             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.5), lineWidth: 0.5))
-             .padding(10)
+            .cornerRadius(10)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.5), lineWidth: 0.5))
+            .padding(10)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack {

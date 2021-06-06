@@ -9,6 +9,11 @@
 "loc_premium" = "vcardX Premium";
 "loc_setup" = "Show Setup Screen";
 
+"loc_iap_text" = "You want to use your vCards as Widgets? Activate vcardX Premium now, one-time purchase, no subscription!";
+"loc_iap_success" = "That went well, thank you very much for your support!";
+"loc_iap_failure" = "Oops, something went wrong here. Maybe try again?";
+"loc_purchased" = "Purchased";
+
 "loc_create_vcards" = "Create your vcards";
 "loc_create_vcards_text" = "Tap the (...) icon on top right on the homescreen to edit the currently displayed contact, business or private.";
 

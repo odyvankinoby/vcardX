@@ -62,9 +62,15 @@ class UserSettings: ObservableObject {
     @Published var imgPrivateSet: Bool { didSet { UserDefaults.standard.set(imgPrivateSet, forKey: "imgPrivateSet") } }
     
     
-  
+    @Published var purchased: Bool {
+             didSet {
+                 UserDefaults.standard.set(purchased, forKey: "de.nicolasott.vcardX.premium")
+             }
+    }
+
     
     init() {
+        self.purchased = UserDefaults.standard.object(forKey: "de.nicolasott.vcardX.premium") as? Bool ?? false
         
         self.launchedBefore = UserDefaults.standard.object(forKey: "launchedBefore") as? Bool ?? false
         self.vcards = UserDefaults.standard.object(forKey: "vcards") as? String ?? "All"
