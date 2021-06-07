@@ -5,8 +5,11 @@
   Created by Nicolas Ott on 03.06.21.
   
 */
+"loc_buy" = "Um die vcardX Widgets nutzen zu können, kaufen Sie bitte vcardX Premium unter Einstellungen >> vcardX Premium.";
+
 "loc_premium" = "vcardX Premium";
 "loc_setup" = "Setup-Bildschirm anzeigen";
+
 "loc_iap_text" = "Du möchtest deine vCards als Widgets nutzen? Schalte jetzt vcardX Premium frei, Einmalkauf, kein Abo!";
 "loc_iap_success" = "Das hat funktioniert, vielen Dank für Deine Unterstützung!";
 "loc_iap_restored" = "Das hat funktioniert, Kauf wiederhergestellt, vielen Dank für Deine Unterstützung!"; 

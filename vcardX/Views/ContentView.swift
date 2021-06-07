@@ -121,10 +121,8 @@ struct ContentView: View {
         .accentColor(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
         .onAppear(perform: {
             onAppear()
-            //UITabBar.appearance().tintColor = UIColor(.textDark)
             UITabBar.appearance().backgroundColor = UIColor.systemBackground
             UITabBar.appearance().isTranslucent = true
-            
         })
     }
     
@@ -132,6 +130,7 @@ struct ContentView: View {
     func onAppear() {
         
         //self.setup = true
+        //settings.purchased = true
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore { self.setup = true }
@@ -139,6 +138,8 @@ struct ContentView: View {
         // IAP
         SKPaymentQueue.default().add(storeManager)
         storeManager.getProducts(productIDs: productIDs)
+        
+        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.purchased, forKey: "purchased")
         
         if settings.vcards == "All" {
             self.selector = 0

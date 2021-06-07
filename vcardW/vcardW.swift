@@ -76,6 +76,7 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     
     let date: Date
+    let purchased: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "purchased"))
     let bSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "businessSet"))
     let imgB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgBusiness")!)
     let pSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "privateSet"))
