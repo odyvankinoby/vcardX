@@ -78,9 +78,9 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let purchased: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "purchased"))
     let bSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "businessSet"))
-    let imgB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgBusiness")!)
+    let imgB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgBusiness") ?? Data())
     let pSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "privateSet"))
-    let imgP: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgPrivate")!)
+    let imgP: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgPrivate") ?? Data()) 
     let name: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "name") ?? "")
     let position: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "position") ?? "")
     let company: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "company") ?? "")

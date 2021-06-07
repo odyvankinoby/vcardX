@@ -66,7 +66,7 @@ struct wBusiness : View {
                                     .interpolation(.none)
                                     .scaledToFit()
                                     .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .padding(.all, 10)
+                                    .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
                             } else {
                                 Text(loc_nocard)
                             }
@@ -80,7 +80,7 @@ struct wBusiness : View {
                                 Text(entry.wwwBusiness).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
                                 Divider()
                                 Text(loc_business).font(.caption2).foregroundColor(.white).allowsTightening(true)
-                            }.padding(.trailing, 10).padding(.top, 10).padding(.bottom, 10)
+                            }.padding(.all, 10)
                         }.background(Color("prime"))
                         
                     }.background(Color("prime"))

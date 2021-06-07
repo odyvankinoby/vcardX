@@ -66,7 +66,7 @@ struct wPrivate : View {
                                     .interpolation(.none)
                                     .scaledToFit()
                                     .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .padding(.all, 10)
+                                    .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
                             } else {
                                 Text(loc_nocard)
                             }
@@ -79,7 +79,7 @@ struct wPrivate : View {
                                 Spacer()
                                 Divider()
                                 Text(loc_private).font(.caption2).foregroundColor(.white).allowsTightening(true)
-                            }.padding(.trailing, 10).padding(.top, 10).padding(.bottom, 10)
+                            }.padding(.all, 10)
                         }.background(Color("primeInverted"))
                         
                     }.background(Color("primeInverted"))

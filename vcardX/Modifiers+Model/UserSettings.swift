@@ -113,6 +113,6 @@ class UserSettings: ObservableObject {
         
         self.qrImagePrivate = UserDefaults.standard.object(forKey: "qrImagePrivate") as Any
         self.imgPrivateSet = UserDefaults.standard.object(forKey: "imgPrivateSet") as? Bool ?? false
-        
+    
     }
 }

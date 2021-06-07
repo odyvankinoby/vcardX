@@ -127,6 +127,14 @@ struct ContentView: View {
     
     func onAppear() {
         
+        let createB = generateQRCodeFromData(from: self.createBusinessContact()!, type: "business")
+        let createP = generateQRCodeFromData(from: self.createPrivateContact()!, type: "pvt")
+        
+        // TESTING
+        settings.purchased = true
+        //showSheet = true
+        // TESTING END
+        
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore { self.setup = true }
         
