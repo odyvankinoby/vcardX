@@ -9,8 +9,10 @@
 "loc_setup" = "Setup-Bildschirm anzeigen";
 "loc_iap_text" = "Du möchtest deine vCards als Widgets nutzen? Schalte jetzt vcardX Premium frei, Einmalkauf, kein Abo!";
 "loc_iap_success" = "Das hat funktioniert, vielen Dank für Deine Unterstützung!";
+"loc_iap_restored" = "Das hat funktioniert, Kauf wiederhergestellt, vielen Dank für Deine Unterstützung!"; 
 "loc_iap_failure" = "Ups, hier ist etwas schief gelaufen. Vielleicht noch einmal versuchen?";
 "loc_purchased" = "Gekauft";
+"loc_iap_restore" = "Kauf wiederherstellen";
 
 "loc_create_vcards" = "Erstellen Sie Ihre vcards";
 "loc_create_vcards_text" = "Tippen Sie das (...) im vcardX homescreen um Ihre Kontaktdaten hinzuzufügen.";
@@ -122,7 +124,7 @@ Sozialer Mediendienst von Dritten bezieht sich auf jede Website oder jede Websit
 
 Nutzungsdaten beziehen sich auf automatisch gesammelte Daten, die entweder durch die Nutzung des Dienstes oder durch die Infrastruktur des Dienstes selbst erzeugt werden (z.B. die Dauer eines Seitenbesuchs).
 
-Die Website bezieht sich auf vcardX - Your vCards at hand!, erreichbar unter 'https://nicolasott.de'.
+Die Website bezieht sich auf vcardX - Your vCards at hand!, erreichbar unter 'https://www.nicolasott.de'.
 
 Sie meinen die Person, die auf den Dienst zugreift oder ihn nutzt, oder das Unternehmen oder die andere juristische Person, in deren Namen diese Person auf den Dienst zugreift oder ihn nutzt.
 

@@ -19,11 +19,11 @@ struct ContentView: View {
     @Environment (\.presentationMode) var presentationMode
     let context = CIContext()
     let filter = CIFilter.qrCodeGenerator()
-    
-    @StateObject var storeManager = StoreManager()
+
     let productIDs = [
         "de.nicolasott.vcardX.premium"
     ]
+    @StateObject var storeManager = StoreManager()
     
     @State var selector: Int = 0
     
@@ -135,6 +135,10 @@ struct ContentView: View {
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore { self.setup = true }
+        
+        // IAP
+        SKPaymentQueue.default().add(storeManager)
+        storeManager.getProducts(productIDs: productIDs)
         
         if settings.vcards == "All" {
             self.selector = 0

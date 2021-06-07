@@ -5,7 +5,7 @@
 //  Created by Nicolas Ott on 06.06.21.
 //
 
-import Foundation
+import SwiftUI
 import StoreKit
 
 class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
@@ -14,7 +14,8 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     var request: SKProductsRequest!
     
     @Published var myProducts = [SKProduct]()
-    
+    @Published var show = false
+  
     func getProducts(productIDs: [String]) {
         //NSLog("Start requesting products ...")
         let request = SKProductsRequest(productIdentifiers: Set(productIDs))
@@ -82,18 +83,22 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
             switch transaction.transactionState {
             case .purchasing:
                 transactionState = .purchasing
+                show = true
             case .purchased:
                 UserDefaults.standard.setValue(true, forKey: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .purchased
+                show = true
             case .restored:
                 UserDefaults.standard.setValue(true, forKey: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .restored
+                show = true
             case .failed, .deferred:
                 NSLog("Payment Queue Error: \(String(describing: transaction.error))")
                 queue.finishTransaction(transaction)
                 transactionState = .failed
+                show = true
             default:
                 queue.finishTransaction(transaction)
             }

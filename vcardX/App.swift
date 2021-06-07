@@ -28,7 +28,11 @@ struct vcardXApp: App {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.prime)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color.prime)], for: .normal)
-
+      
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = UIColor(Color.primeInverted)
+        UITableView.appearance().backgroundColor = UIColor(Color.primeInverted)
+        
     }
     
     //@State var tabSelected = 0

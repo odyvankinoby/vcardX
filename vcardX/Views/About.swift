@@ -70,7 +70,7 @@ struct MailView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
-        vc.setToRecipients(["mail@nicolasott.de"])
+        vc.setToRecipients(["vcardx@nicolasott.de"])
         vc.setSubject("vcardX Support")
         vc.mailComposeDelegate = context.coordinator
         return vc
@@ -147,7 +147,7 @@ struct AboutvCardXView: View {
                     VStack(alignment: .leading) {
                         Text("EMail")
                             .font(.caption)
-                        Text("mail@nicolasott.de").fontWeight(.semibold)
+                        Text("vcardx@nicolasott.de").fontWeight(.semibold)
                     }.padding()
                     Spacer()
                 }
