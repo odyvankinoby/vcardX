@@ -129,9 +129,6 @@ struct ContentView: View {
     
     func onAppear() {
         
-        //self.setup = true
-        //settings.purchased = true
-        
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if !launchedBefore { self.setup = true }
         

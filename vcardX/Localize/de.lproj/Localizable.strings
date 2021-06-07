@@ -6,7 +6,7 @@
   
 */
 "loc_buy" = "Um die vcardX Widgets nutzen zu können, kaufen Sie bitte vcardX Premium unter Einstellungen >> vcardX Premium.";
-
+"loc_req_premium" = "(mit  vcardX Premium)";
 "loc_premium" = "vcardX Premium";
 "loc_setup" = "Setup-Bildschirm anzeigen";
 

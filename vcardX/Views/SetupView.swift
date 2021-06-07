@@ -110,6 +110,7 @@ struct Widget: View {
             ScrollView  {
                 VStack(alignment: .center) {
                     Text(loc_add_widgets).font(.title).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    Text(loc_req_premium).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     Image("widget")
                         .resizable()
                         .scaledToFit()
