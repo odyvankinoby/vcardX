@@ -19,7 +19,7 @@ struct SettingsView: View {
     @State var noMail = false
     
     var body: some View {
-        VStack {
+        ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Text(loc_settings).foregroundColor(.white).font(.headline).padding(.all, 10)

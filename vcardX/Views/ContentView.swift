@@ -11,8 +11,6 @@ import CoreImage.CIFilterBuiltins
 import Contacts
 import StoreKit
 
-
-
 struct ContentView: View {
     
     @ObservedObject var settings: UserSettings
@@ -180,9 +178,7 @@ struct ContentView: View {
         contact.urlAddresses = [CNLabeledValue(
                                     label:CNLabelURLAddressHomePage,
                                     value:NSString(string:settings.wwwBusiness))]
-        // contact.imageData = NSData() as Data // The profile picture as a NSData object
-        // contact.postalAddresses =
-        // contact.birthday =
+       
         let contactData = try? CNContactVCardSerialization.data(with: [contact])
         return contactData
     }
