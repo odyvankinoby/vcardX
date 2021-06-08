@@ -17,12 +17,12 @@ struct wBusiness : View {
     
     var body: some View {
         VStack {
-            if entry.purchased == false {
+            if entry.purchased == false || image == nil {
                 HStack {
                     Spacer()
                     VStack {
                         Spacer()
-                        Text(loc_buy).font(.footnote).foregroundColor(.white).padding(5)
+                        Text(entry.purchased == false ? loc_buy : loc_nocard).font(.footnote).foregroundColor(.white).padding(5)
                         Spacer()
                     }
                     Spacer()
@@ -30,26 +30,15 @@ struct wBusiness : View {
             } else {
                 if widgetFamily == .systemSmall {
                     VStack(alignment: .center) {
-                        if image != nil {
-                            image?
-                                .resizable()
-                                .interpolation(.none)
-                                .scaledToFit()
-                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding(.leading, 5)
-                                .padding(.trailing, 5)
-                                .padding(.top, 10)
-                        } else {
-                            HStack {
-                                Spacer()
-                                VStack {
-                                    Spacer()
-                                    Text(loc_nocard).font(.footnote).foregroundColor(.white).padding(5)
-                                    Spacer()
-                                }
-                                Spacer()
-                            }
-                        }
+                        image?
+                            .resizable()
+                            .interpolation(.none)
+                            .scaledToFit()
+                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 5)
+                            .padding(.trailing, 5)
+                            .padding(.top, 10)
+                        
                         HStack {
                             Spacer()
                             Text(loc_business).font(.caption2).foregroundColor(.white)
@@ -60,16 +49,14 @@ struct wBusiness : View {
                 else if widgetFamily == .systemMedium {
                     VStack(alignment: .center) {
                         HStack {
-                            if image != nil {
-                                image?
-                                    .resizable()
-                                    .interpolation(.none)
-                                    .scaledToFit()
-                                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
-                            } else {
-                                Text(loc_nocard)
-                            }
+                            
+                            image?
+                                .resizable()
+                                .interpolation(.none)
+                                .scaledToFit()
+                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
+                            
                             VStack(alignment: .leading) {
                                 Text(entry.name).font(.footnote).bold().foregroundColor(Color("primeInverted")).allowsTightening(true)
                                 Text(entry.position).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
@@ -84,21 +71,19 @@ struct wBusiness : View {
                         }.background(Color("prime"))
                         
                     }.background(Color("prime"))
-                
+                    
                 } else {
                     VStack(alignment: .center) {
-                        if image != nil {
-                            image?
-                                .resizable()
-                                .interpolation(.none)
-                                .scaledToFit()
-                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding(.leading, 10)
-                                .padding(.trailing, 10)
-                                .padding(.top, 15)
-                        } else {
-                            Text(loc_nocard)
-                        }
+
+                        image?
+                            .resizable()
+                            .interpolation(.none)
+                            .scaledToFit()
+                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                            .padding(.top, 15)
+                        
                         HStack {
                             Spacer()
                             Text(loc_business).font(.caption2).foregroundColor(.white)
@@ -117,6 +102,6 @@ struct wBusiness : View {
             image = Image(uiImage: inputImage!)
         }
     }
-   
+    
 }
 

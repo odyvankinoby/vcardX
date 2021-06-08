@@ -16,12 +16,12 @@ struct wPrivate : View {
     
     var body: some View {
         VStack {
-            if entry.purchased == false {
+            if entry.purchased == false || image == nil {
                 HStack {
                     Spacer()
                     VStack {
                         Spacer()
-                        Text(loc_buy).font(.footnote).foregroundColor(.white).padding(5)
+                        Text(entry.purchased == false ? loc_buy : loc_nocard).font(.footnote).foregroundColor(.white).padding(5)
                         Spacer()
                     }
                     Spacer()
@@ -30,26 +30,14 @@ struct wPrivate : View {
                 if widgetFamily == .systemSmall {
                     
                     VStack(alignment: .center) {
-                        if image != nil {
-                            image?
-                                .resizable()
-                                .interpolation(.none)
-                                .scaledToFit()
-                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding(.leading, 5)
-                                .padding(.trailing, 5)
-                                .padding(.top, 10)
-                        } else {
-                            HStack {
-                                Spacer()
-                                VStack {
-                                    Spacer()
-                                    Text(loc_nocard).font(.footnote).foregroundColor(.white).padding(5)
-                                    Spacer()
-                                }
-                                Spacer()
-                            }
-                        }
+                        image?
+                            .resizable()
+                            .interpolation(.none)
+                            .scaledToFit()
+                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 5)
+                            .padding(.trailing, 5)
+                            .padding(.top, 10)
                         HStack {
                             Spacer()
                             Text(loc_private).font(.caption2).foregroundColor(.white)
@@ -60,16 +48,13 @@ struct wPrivate : View {
                 else if widgetFamily == .systemMedium {
                     VStack(alignment: .center) {
                         HStack {
-                            if image != nil {
-                                image?
-                                    .resizable()
-                                    .interpolation(.none)
-                                    .scaledToFit()
-                                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
-                            } else {
-                                Text(loc_nocard)
-                            }
+                            image?
+                                .resizable()
+                                .interpolation(.none)
+                                .scaledToFit()
+                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
+                            
                             VStack(alignment: .leading) {
                                 Text(entry.name).font(.footnote).bold().foregroundColor(Color("prime")).allowsTightening(true)
                                 Divider()
@@ -86,18 +71,14 @@ struct wPrivate : View {
                 
                 } else {
                     VStack(alignment: .center) {
-                        if image != nil {
-                            image?
-                                .resizable()
-                                .interpolation(.none)
-                                .scaledToFit()
-                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding(.leading, 10)
-                                .padding(.trailing, 10)
-                                .padding(.top, 15)
-                        } else {
-                            Text(loc_nocard)
-                        }
+                        image?
+                            .resizable()
+                            .interpolation(.none)
+                            .scaledToFit()
+                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                            .padding(.top, 15)
                         HStack {
                             Spacer()
                             Text(loc_private).font(.caption2).foregroundColor(.white)
