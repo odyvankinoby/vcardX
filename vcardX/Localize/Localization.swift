@@ -15,6 +15,7 @@ let loc_iap_restored: LocalizedStringKey = "loc_iap_restored"
 let loc_iap_text: LocalizedStringKey = "loc_iap_text"
 let loc_purchased: LocalizedStringKey = "loc_purchased"
 let loc_iap_restore: LocalizedStringKey = "loc_iap_restore"
+let loc_help: LocalizedStringKey = "loc_help"
 
 let loc_premium: LocalizedStringKey = "loc_premium"
 let loc_vcard: LocalizedStringKey = "loc_vcard"

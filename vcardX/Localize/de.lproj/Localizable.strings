@@ -9,7 +9,7 @@
 "loc_req_premium" = "(mit  vcardX Premium)";
 "loc_premium" = "vcardX Premium";
 "loc_setup" = "Setup-Bildschirm anzeigen";
-
+"loc_help" = "Hilfe & Support";
 "loc_iap_text" = "Du möchtest deine vCards als Widgets nutzen? Schalte jetzt vcardX Premium frei, Einmalkauf, kein Abo!";
 "loc_iap_success" = "Das hat funktioniert, vielen Dank für Deine Unterstützung!";
 "loc_iap_restored" = "Das hat funktioniert, Kauf wiederhergestellt, vielen Dank für Deine Unterstützung!"; 
@@ -326,6 +326,6 @@ Wir empfehlen Ihnen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu
 Kontakt
 Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, können Sie uns kontaktieren:
 
-Per E-Mail: mail@nicolasott.de
+Per E-Mail: vcardx@nicolasott.de
 
 Besuchen Sie diese Seite auf unserer Website: 'https://www.nicolasott.de/'";

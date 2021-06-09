@@ -25,7 +25,7 @@ struct SettingsView: View {
                     Text(loc_settings).foregroundColor(.white).font(.headline).padding(.all, 10)
                     Spacer()
                 }.background(RoundedCorners(color: Color.prime, tl: 10, tr: 10, bl: 0, br: 0))
-                
+            
                 VStack(alignment: .leading, spacing: 10) {
                     Text(loc_vcards).font(.caption)
                     Picker(selection: $settings.vcards, label: Text("")) {
@@ -69,6 +69,16 @@ struct SettingsView: View {
                     Text(loc_support).foregroundColor(.white).font(.headline).padding(.all, 10)
                     Spacer()
                 }.background(RoundedCorners(color: Color.prime, tl: 10, tr: 10, bl: 0, br: 0))
+                HStack {
+                    Text(loc_help).frame(alignment: .leading).foregroundColor(.prime)
+                    Spacer()
+                }.padding(.leading, 10)
+                 .frame(alignment: .leading).onTapGesture(perform: {
+                     if let url = URL(string: "https://www.nicolasott.de/en/vcardx/support/index.html") {
+                        UIApplication.shared.open(url)
+                    }
+                 })
+                Divider()
                 HStack {
                     NavigationLink(destination: MailView(result: self.$result).accentColor(Color.primeInverted)
                                     .edgesIgnoringSafeArea(.bottom)) {
