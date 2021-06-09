@@ -127,6 +127,11 @@ struct ContentView: View {
     
     func onAppear() {
         
+        // Updated:
+        // - Updated labels for Street lines 1 and 2
+        // - Keyboard adapts to input field values for email, www, phone, zip
+        // - Support & Help link added to Settings
+        
         let createB = generateQRCodeFromData(from: self.createBusinessContact()!, type: "business")
         let createP = generateQRCodeFromData(from: self.createPrivateContact()!, type: "pvt")
         

@@ -24,7 +24,7 @@
 "loc_add_widgets_text" = "Drücken Sie lange auf den iOS-Homescreen und verwenden Sie das (+)-Symbol, um vcardX-Widgets zu Ihrem iOS-Homescreen hinzuzufügen.";
 
 // VCARDX
-"loc_vcard" = "vCard";
+"loc_vcard" = "vCards";
 "loc_contacts" = "Kontakte";
 "loc_settings" = "Einstellungen";
 "loc_madewithlove" = "Handgemacht mit ❤️ in München.";
@@ -46,7 +46,8 @@
 "loc_phone" = "Telefon";
 "loc_email" = "EMail";
 
-"loc_street" = "Straße";
+"loc_street" = "Straße, Hausnummer";
+"loc_street2" = "Straße Zeile 2 (optional)";
 "loc_zip" = "PLZ";
 "loc_city" = "Stadt";
 "loc_country" = "Land";

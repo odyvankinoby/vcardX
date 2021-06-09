@@ -81,6 +81,7 @@ struct NameView: View {
                         TextField(loc_firstname, text: $settings.firstName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .textContentType(.givenName)
+                            .keyboardType(.default)
                             .font(.headline).foregroundColor(.prime)
                     }
                     VStack(alignment: .leading) {
@@ -88,6 +89,7 @@ struct NameView: View {
                         TextField(loc_middlename, text: $settings.middleName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .textContentType(.middleName)
+                            .keyboardType(.default)
                             .font(.headline).foregroundColor(.prime)
                     }
                 }//.padding(.leading, 10).padding(.trailing, 10)
@@ -98,6 +100,7 @@ struct NameView: View {
                         TextField(loc_lastname, text: $settings.lastName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .textContentType(.familyName)
+                            .keyboardType(.default)
                             .font(.headline).foregroundColor(.prime)
                     }
                     VStack(alignment: .leading) {
@@ -105,6 +108,7 @@ struct NameView: View {
                         TextField(loc_nickname, text: $settings.nickName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .textContentType(.nickname)
+                            .keyboardType(.default)
                             .font(.headline).foregroundColor(.prime)
                     }
                 }
@@ -123,12 +127,14 @@ struct CompanyView: View {
                 TextField(loc_company, text: $settings.company)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.organizationName)
+                    .keyboardType(.default)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
                 Text(loc_position).font(.caption2).foregroundColor(.prime)
                 TextField(loc_position, text: $settings.position)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.organizationName)
+                    .keyboardType(.default)
                     .font(.headline).foregroundColor(.prime)
             }
         }.padding(.bottom, 10)
@@ -145,12 +151,14 @@ struct PhoneBusinessView: View {
                 TextField(loc_mobile, text: $settings.mobileBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.telephoneNumber)
+                    .keyboardType(.namePhonePad)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
                 Text(loc_landline).font(.caption2).foregroundColor(.prime)
                 TextField(loc_landline, text: $settings.landlineBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.telephoneNumber)
+                    .keyboardType(.namePhonePad)
                     .font(.headline).foregroundColor(.prime)
             }
         }.padding(.bottom, 10)
@@ -167,12 +175,14 @@ struct EmailBusinessView: View {
                 TextField(loc_email_business, text: $settings.emailBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
                 Text(loc_email_other).font(.caption2).foregroundColor(.prime)
                 TextField(loc_email_other, text: $settings.emailBusinessOther)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
                     .font(.headline).foregroundColor(.prime)
             }
         }.padding(.bottom, 10)
@@ -189,6 +199,7 @@ struct WwwBusinessView: View {
                 TextField(loc_www, text: $settings.wwwBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.URL)
+                    .keyboardType(.URL)
                     .font(.headline).foregroundColor(.prime)
             }
         }.padding(.bottom, 10)
@@ -206,12 +217,14 @@ struct AddressBusinessView: View {
                 TextField(loc_street, text: $settings.street1Business)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.streetAddressLine1)
+                    .keyboardType(.default)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
-                Text(loc_street).font(.caption2).foregroundColor(.prime)
-                TextField(loc_street, text: $settings.street2Business)
+                Text(loc_street2).font(.caption2).foregroundColor(.prime)
+                TextField(loc_street2, text: $settings.street2Business)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.streetAddressLine2)
+                    .keyboardType(.default)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
                 }
@@ -220,12 +233,14 @@ struct AddressBusinessView: View {
                 TextField(loc_zip, text: $settings.zipBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.postalCode)
+                    .keyboardType(.numberPad)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
                 Text(loc_city).font(.caption2).foregroundColor(.prime)
                 TextField(loc_city, text: $settings.cityBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.addressCity)
+                    .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
                 }
@@ -233,6 +248,7 @@ struct AddressBusinessView: View {
                 TextField(loc_country, text: $settings.countryBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.countryName)
+                    .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                     .font(.headline).foregroundColor(.prime)
             }
         }.padding(.bottom, 10)

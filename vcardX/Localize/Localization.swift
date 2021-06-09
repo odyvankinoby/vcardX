@@ -37,6 +37,7 @@ let loc_email_business: LocalizedStringKey = "loc_email_business"
 let loc_email_other: LocalizedStringKey = "loc_email_other"
 
 let loc_street: LocalizedStringKey = "loc_street"
+let loc_street2: LocalizedStringKey = "loc_street2"
 let loc_zip: LocalizedStringKey = "loc_zip"
 let loc_city: LocalizedStringKey = "loc_city"
 let loc_country: LocalizedStringKey = "loc_country"

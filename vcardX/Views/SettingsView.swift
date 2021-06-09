@@ -105,7 +105,7 @@ struct SettingsView: View {
                     Spacer()
                 }.padding(.leading, 10).padding(.bottom, 10)
                 .frame(alignment: .leading).onTapGesture(perform: {
-                    if let url = URL(string: "https://twitter.com/nicolas_ott") {
+                    if let url = URL(string: "https://twitter.com/trax_tracker") {
                         UIApplication.shared.open(url)
                     }
                 })
