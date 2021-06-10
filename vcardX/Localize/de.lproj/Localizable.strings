@@ -5,6 +5,10 @@
   Created by Nicolas Ott on 03.06.21.
   
 */
+"loc_rn" = "Releasefeatures";
+"loc_new" = "Neue Funktionen";
+"loc_whatsnew" = "Was ist neu?";
+"loc_go" = "Los gehts!";
 "loc_buy" = "Um die vcardX Widgets nutzen zu können, kaufen Sie bitte vcardX Premium unter Einstellungen >> vcardX Premium.";
 "loc_req_premium" = "(mit  vcardX Premium)";
 "loc_premium" = "vcardX Premium";
@@ -24,7 +28,7 @@
 "loc_add_widgets_text" = "Drücken Sie lange auf den iOS-Homescreen und verwenden Sie das (+)-Symbol, um vcardX-Widgets zu Ihrem iOS-Homescreen hinzuzufügen.";
 
 // VCARDX
-"loc_vcard" = "vCards";
+"loc_vcard" = "Ihre Karten";
 "loc_contacts" = "Kontakte";
 "loc_settings" = "Einstellungen";
 "loc_madewithlove" = "Handgemacht mit ❤️ in München.";

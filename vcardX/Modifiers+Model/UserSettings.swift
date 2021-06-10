@@ -67,12 +67,23 @@ class UserSettings: ObservableObject {
                  UserDefaults.standard.set(purchased, forKey: "de.nicolasott.vcardX.premium")
              }
     }
+    @Published var appVersion: String { didSet { UserDefaults.standard.set(appVersion, forKey: "appVersion") } }
+    
+    @Published var appBuild: String { didSet { UserDefaults.standard.set(appBuild, forKey: "sysAppBuildVersion") } }
+    
+    @Published var appVersionString: String { didSet { UserDefaults.standard.set(appVersionString, forKey: "sysAppVersionBuildString") } }
+
 
     
     init() {
         self.purchased = UserDefaults.standard.object(forKey: "de.nicolasott.vcardX.premium") as? Bool ?? false
-        
         self.launchedBefore = UserDefaults.standard.object(forKey: "launchedBefore") as? Bool ?? false
+        
+        self.appVersion = UserDefaults.standard.object(forKey: "appVersion") as? String ?? ""
+        self.appBuild = UserDefaults.standard.object(forKey: "appBuild") as? String ?? ""
+        self.appVersionString = UserDefaults.standard.object(forKey: "appVersionString") as? String ?? ""
+       
+            
         self.vcards = UserDefaults.standard.object(forKey: "vcards") as? String ?? "All"
 
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""

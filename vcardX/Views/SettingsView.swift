@@ -136,8 +136,34 @@ struct SettingsView: View {
                             Text(loc_gdpr).frame(alignment: .leading).foregroundColor(.prime)
                             Spacer()
                         }
-                    }.padding(.leading, 10).padding(.bottom, 10)
+                    }.padding(.leading, 10)
                 }
+                Divider()
+                HStack {
+                    NavigationLink(destination: UpdateView(settings: settings).accentColor(Color.primeInverted)
+                                    .edgesIgnoringSafeArea(.bottom)) {
+                        HStack {
+                            Text(loc_new).frame(alignment: .leading).foregroundColor(.prime)
+                            Spacer()
+                        }
+                    }
+                }.padding(.leading, 10)
+                .padding(.trailing, 10)
+                Divider()
+                HStack {
+                    //SettingsListIcon(image: "v.circle")
+                    Text("App Version").frame(alignment: .leading).foregroundColor(.prime)
+                    Spacer()
+                    Text(settings.appVersionString).frame(alignment: .trailing).foregroundColor(.prime)
+                }.padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 10)
+                
+                
+               
+                
+                
+                
             }
             .cornerRadius(10)
             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white.opacity(0.5), lineWidth: 0.5))

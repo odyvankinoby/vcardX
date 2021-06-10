@@ -1,21 +1,21 @@
 //
-//  SetupView.swift
+//  UpdateView.swift
 //  vcardX
 //
-//  Created by Nicolas Ott on 05.06.21.
+//  Created by Nicolas Ott on 10.06.21.
 //
 
 import SwiftUI
 
-struct SetupView: View {
+struct UpdateView: View {
     
     @ObservedObject var settings: UserSettings
     
     var body: some View {
         TabView {
-            Welcome(settings: settings)
-            Setup(settings: settings)
-            Widget(settings: settings)
+            New(settings: settings)
+            //Setup(settings: settings)
+            //Widget(settings: settings)
         }
         .tabViewStyle(PageTabViewStyle())
         .background(Color.prime)
@@ -26,7 +26,7 @@ struct SetupView: View {
     }
 }
 
-struct Welcome: View {
+struct New_: View {
     
     @ObservedObject var settings: UserSettings
     @Environment (\.presentationMode) var presentationMode
@@ -62,7 +62,7 @@ struct Welcome: View {
     }
 }
 
-struct Setup: View {
+struct New: View {
     
     @ObservedObject var settings: UserSettings
     @Environment (\.presentationMode) var presentationMode
@@ -77,52 +77,36 @@ struct Setup: View {
                 }
             }
             ScrollView  {
-                VStack(alignment: .center) {
-                    Text(loc_create_vcards).font(.title).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    Image("setup")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(10)
-                    Text(loc_create_vcards_text).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/).padding(10)
-                    Spacer()
-                }.padding()
-            }
-        }
-        .background(Color.prime)
-        .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct Widget: View {
-    
-    @ObservedObject var settings: UserSettings
-    @Environment (\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Spacer()
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .center) {
+                        Image("AppIcon_dark")
+                            .resizable()
+                            .cornerRadius(12)
+                            .frame(width: 64, height: 64)
+                            .padding(.all, 10)
+                            .frame(alignment: .leading)
+                        VStack(alignment: .leading) {
+                            Text(loc_whatsnew).font(.headline).foregroundColor(.primeInverted)
+                        
+                            Text("vcardX - Your vCards at hand!").font(.subheadline).foregroundColor(.primeInverted)
+                        
+                            Text("Version \(settings.appVersion)").font(.subheadline).foregroundColor(.primeInverted)
+                        
+                        }.padding()
+                    }
+                }
+                .padding()
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(loc_new).font(.headline).foregroundColor(.primeInverted)
+                    Text(loc_rn).font(.subheadline).foregroundColor(.primeInverted)
+                }
+                .padding()
+               
                 Button(action: { self.presentationMode.wrappedValue.dismiss() } )
                 {
-                    Image(systemName: "xmark").padding().foregroundColor(.primeInverted)
-                }
-            }
-            ScrollView  {
-                VStack(alignment: .center) {
-                    Text(loc_add_widgets).font(.title).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    Text(loc_req_premium).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    Image("widget")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(10)
-                    Text(loc_add_widgets_text).foregroundColor(.white).allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/).padding(10)
-                    Spacer()
-                    Button(action: { self.presentationMode.wrappedValue.dismiss() } )
-                    {
-                        Text(loc_go)
-                    }.customButton()
-                }.padding()
-            }
+                    Text(loc_go)
+                }.customButton()
+            }.padding()
         }
         .background(Color.prime)
         .edgesIgnoringSafeArea(.all)

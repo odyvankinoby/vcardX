@@ -175,7 +175,7 @@ struct AboutvCardXView: View {
     func getCurrentAppBuildVersionString() -> String {
         let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
-        let buildString = "\(versionNumber).\(buildNumber)"
+        let buildString = "\(versionNumber) (\(buildNumber))"
         return String(buildString)
     }
 }

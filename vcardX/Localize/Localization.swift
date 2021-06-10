@@ -7,7 +7,11 @@
 
 import SwiftUI
 
+let loc_whatsnew: LocalizedStringKey = "loc_whatsnew"
+let loc_new: LocalizedStringKey = "loc_new"
+let loc_rn: LocalizedStringKey = "loc_rn"
 let loc_buy: LocalizedStringKey = "loc_buy"
+let loc_go: LocalizedStringKey = "loc_go"
 let loc_req_premium: LocalizedStringKey = "loc_req_premium"
 let loc_iap_failure: LocalizedStringKey = "loc_iap_failure"
 let loc_iap_success: LocalizedStringKey = "loc_iap_success"

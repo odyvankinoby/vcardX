@@ -31,6 +31,7 @@
 		364F2E2F266D33FA0085493D /* InAppPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E2E266D33FA0085493D /* InAppPurchaseView.swift */; };
 		364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		364F2E3B266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
+		36532D4C2671FCB8002B1544 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36532D4B2671FCB8002B1544 /* UpdateView.swift */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
@@ -92,6 +93,7 @@
 		364F2E3C266D3B090085493D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/vcardW.intentdefinition; sourceTree = "<group>"; };
 		364F2E3F266D3B0C0085493D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/vcardW.strings; sourceTree = "<group>"; };
 		364F2E41266D3B0F0085493D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/vcardW.strings; sourceTree = "<group>"; };
+		36532D4B2671FCB8002B1544 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		36B883BC26676B610028437B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				361660C3266BABD9002E3ED4 /* PrivateView.swift */,
 				361660C2266BABD9002E3ED4 /* SetupView.swift */,
 				36B883CB2667B3A30028437B /* SettingsView.swift */,
+				36532D4B2671FCB8002B1544 /* UpdateView.swift */,
 				3600A5D82668BED900703A1D /* About.swift */,
 				364F2E2E266D33FA0085493D /* InAppPurchaseView.swift */,
 			);
@@ -361,6 +364,7 @@
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
 				3600A5E12668BED900703A1D /* Modifiers.swift in Sources */,
 				361660C5266BABD9002E3ED4 /* SetupView.swift in Sources */,
+				36532D4C2671FCB8002B1544 /* UpdateView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
 				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
 				3600A5DE2668BED900703A1D /* About.swift in Sources */,
@@ -413,6 +417,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,6 +443,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,7 +588,7 @@
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = vcardX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +615,7 @@
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = vcardX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

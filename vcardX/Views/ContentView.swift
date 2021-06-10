@@ -24,12 +24,11 @@ struct ContentView: View {
     @StateObject var storeManager = StoreManager()
     
     @State var selector: Int = 0
-    
-    @State private var groupBusiness = false
-    @State private var groupPrivate = false
+   
     @State private var showSheet = false
     @State var navSelected: Int? = nil
-    @State var setup = false
+    @State private var setup = false
+    @State private var update = false
     
     var body: some View {
         NavigationView {
@@ -113,8 +112,12 @@ struct ContentView: View {
             .background(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle(loc_vcard, displayMode: .automatic).allowsTightening(true)
         }
-        .sheet(isPresented: self.$setup) {
+        .sheet(isPresented: self.$showSheet) {
+            if self.setup {
                 SetupView(settings: settings)
+            } else {
+                UpdateView(settings: settings)
+            }
         }
         .accentColor(Color.primeInverted).edgesIgnoringSafeArea(.bottom)
         .onAppear(perform: {
@@ -140,8 +143,8 @@ struct ContentView: View {
         // showSheet = true
         // TESTING END
         
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        if !launchedBefore { self.setup = true }
+        //  let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        // if !launchedBefore { self.setup = true }
         
         // IAP
         SKPaymentQueue.default().add(storeManager)
@@ -157,6 +160,7 @@ struct ContentView: View {
             self.selector = 1
         }
        
+        onStartUp()
     }
     
     func createBusinessContact() -> Data? {
@@ -267,5 +271,50 @@ struct ContentView: View {
         }
         
         WidgetUpdaterClass(settings: settings).updateValues()
+    }
+    
+    
+    func onStartUp() {
+        // App launched before?
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+       
+        let newVersion = getCurrentAppVersion()
+        let newBuild = getCurrentAppBuildVersion()
+        let newAppBuildString = getCurrentAppBuildVersionString()
+        
+        let savedVersion = settings.appVersion
+        let savedBuild = settings.appBuild
+       
+        settings.appVersion = newVersion
+        settings.appBuild = newBuild
+        settings.appVersionString = newAppBuildString
+      
+        if !launchedBefore {
+            self.setup = true
+            self.showSheet = true
+        } else {
+            if savedVersion != newVersion || savedBuild != newBuild {
+                self.update = true
+                self.showSheet = true
+            }
+        }
+    }
+    
+    // Get current Version of the App
+    func getCurrentAppVersion() -> String {
+        let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        return String(versionNumber)
+    }
+    
+    func getCurrentAppBuildVersion() -> String {
+        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+        return String(buildNumber)
+    }
+    
+    func getCurrentAppBuildVersionString() -> String {
+        let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+        let buildString = "\(versionNumber) (\(buildNumber))"
+        return String(buildString)
     }
 }
