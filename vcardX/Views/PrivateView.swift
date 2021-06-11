@@ -11,10 +11,13 @@ import Foundation
 struct PrivateView: View {
     
     @ObservedObject var settings: UserSettings
-      
+    // Images
+    @Binding var image: Image?
+    @Binding var inputImage: UIImage?
+    
     var body: some View {
         VStack {
-            NameView(settings: settings)
+            NameView(settings: settings, image: $image, inputImage: $inputImage, type: "p")
             PhoneView(settings: settings)
             EmailView(settings: settings)
             WwwView(settings: settings)

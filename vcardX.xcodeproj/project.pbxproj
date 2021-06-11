@@ -32,6 +32,8 @@
 		364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		364F2E3B266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		36532D4C2671FCB8002B1544 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36532D4B2671FCB8002B1544 /* UpdateView.swift */; };
+		3696FDA92673C08B009A585A /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDA82673C08B009A585A /* NameView.swift */; };
+		3696FDAB2673C77A009A585A /* ImageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDAA2673C77A009A585A /* ImageClass.swift */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
 		36B883BF26676B630028437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B883BE26676B630028437B /* Assets.xcassets */; };
@@ -94,6 +96,8 @@
 		364F2E3F266D3B0C0085493D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/vcardW.strings; sourceTree = "<group>"; };
 		364F2E41266D3B0F0085493D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/vcardW.strings; sourceTree = "<group>"; };
 		36532D4B2671FCB8002B1544 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		3696FDA82673C08B009A585A /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		3696FDAA2673C77A009A585A /* ImageClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClass.swift; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		36B883BC26676B610028437B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			children = (
 				364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */,
 				364F2E2A266D331F0085493D /* StoreManagerClass.swift */,
+				3696FDAA2673C77A009A585A /* ImageClass.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				36532D4B2671FCB8002B1544 /* UpdateView.swift */,
 				3600A5D82668BED900703A1D /* About.swift */,
 				364F2E2E266D33FA0085493D /* InAppPurchaseView.swift */,
+				3696FDA82673C08B009A585A /* NameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,10 +363,12 @@
 			files = (
 				364F2E2B266D331F0085493D /* StoreManagerClass.swift in Sources */,
 				364F2E2F266D33FA0085493D /* InAppPurchaseView.swift in Sources */,
+				3696FDAB2673C77A009A585A /* ImageClass.swift in Sources */,
 				364F2E21266CBD300085493D /* WidgetUpdaterClass.swift in Sources */,
 				364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */,
 				3611BCB62669680D0095672A /* EditView.swift in Sources */,
 				361660C6266BABD9002E3ED4 /* PrivateView.swift in Sources */,
+				3696FDA92673C08B009A585A /* NameView.swift in Sources */,
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
 				3600A5E12668BED900703A1D /* Modifiers.swift in Sources */,
 				361660C5266BABD9002E3ED4 /* SetupView.swift in Sources */,
@@ -414,7 +422,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -440,7 +448,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -583,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -610,7 +618,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

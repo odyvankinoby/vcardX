@@ -140,8 +140,10 @@ struct SettingsView: View {
                 }
                 Divider()
                 HStack {
-                    NavigationLink(destination: UpdateView(settings: settings).accentColor(Color.primeInverted)
-                                    .edgesIgnoringSafeArea(.bottom)) {
+                    NavigationLink(destination: UpdateViewWrapper(settings: settings)
+                                    .accentColor(Color.primeInverted)
+                                    .edgesIgnoringSafeArea(.bottom))
+                    {
                         HStack {
                             Text(loc_new).frame(alignment: .leading).foregroundColor(.prime)
                             Spacer()

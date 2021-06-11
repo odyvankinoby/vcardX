@@ -19,14 +19,14 @@ class WidgetUpdaterClass {
     
     func updateValues() {
         
-        if settings.imgBusinessSet {
+        if settings.qrBusinessSet {
             UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrImageBusiness, forKey: "imgBusiness")
-            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgBusinessSet, forKey: "businessSet")
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrBusinessSet, forKey: "businessSet")
         }
         
-        if settings.imgPrivateSet {
+        if settings.qrPrivateSet {
             UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrImagePrivate, forKey: "imgPrivate")
-            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgPrivateSet, forKey: "privateSet")
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrPrivateSet, forKey: "privateSet")
         }
         
         let name = "\(settings.firstName) \(settings.lastName)"
@@ -40,7 +40,7 @@ class WidgetUpdaterClass {
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.mobileBusiness, forKey: "mobileBusiness")
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.emailBusiness, forKey: "emailBusiness")
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.wwwBusiness, forKey: "wwwBusiness")
-        
+        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.purchased, forKey: "purchased")
         WidgetCenter.shared.reloadAllTimelines()
     }
 }

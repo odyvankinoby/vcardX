@@ -10,10 +10,13 @@ import Foundation
 struct BusinessView: View {
     
     @ObservedObject var settings: UserSettings
+    // Images
+    @Binding var image: Image?
+    @Binding var inputImage: UIImage?
     
     var body: some View {
         VStack {
-            NameView(settings: settings)
+            NameView(settings: settings, image: $image, inputImage: $inputImage, type: "b")
             CompanyView(settings: settings)
             PhoneBusinessView(settings: settings)
             EmailBusinessView(settings: settings)
@@ -27,6 +30,7 @@ struct BusinessView: View {
 struct BusinessPreview: View {
     
     @ObservedObject var settings: UserSettings
+    // Images
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -69,53 +73,6 @@ struct BusinessPreview: View {
     }
 }
 
-struct NameView: View {
-    
-    @ObservedObject var settings: UserSettings
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Section(header: Text(loc_name).bold()) {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(loc_firstname).font(.caption2).foregroundColor(.prime)
-                        TextField(loc_firstname, text: $settings.firstName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .textContentType(.givenName)
-                            .keyboardType(.default)
-                            .font(.headline).foregroundColor(.prime)
-                    }
-                    VStack(alignment: .leading) {
-                        Text(loc_middlename).font(.caption2).foregroundColor(.prime)
-                        TextField(loc_middlename, text: $settings.middleName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .textContentType(.middleName)
-                            .keyboardType(.default)
-                            .font(.headline).foregroundColor(.prime)
-                    }
-                }//.padding(.leading, 10).padding(.trailing, 10)
-                Divider()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(loc_lastname).font(.caption2).foregroundColor(.prime)
-                        TextField(loc_lastname, text: $settings.lastName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .textContentType(.familyName)
-                            .keyboardType(.default)
-                            .font(.headline).foregroundColor(.prime)
-                    }
-                    VStack(alignment: .leading) {
-                        Text(loc_nickname).font(.caption2).foregroundColor(.prime)
-                        TextField(loc_nickname, text: $settings.nickName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .textContentType(.nickname)
-                            .keyboardType(.default)
-                            .font(.headline).foregroundColor(.prime)
-                    }
-                }
-            }
-        }.padding(.bottom, 10)
-    }
-}
 
 struct CompanyView: View {
     

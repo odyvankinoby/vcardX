@@ -14,21 +14,22 @@ import Foundation
 struct EditView: View {
     
     @ObservedObject var settings: UserSettings
-    @Environment (\.presentationMode) var presentationMode
     @State var type: String
+    @Binding var image: Image?
+    @Binding var inputImage: UIImage?
+    
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var noMail = false
     
+    @Environment (\.presentationMode) var presentationMode
     var body: some View {
         //VStack {
             ScrollView {
                 if type == "b" {
-                    BusinessView(settings: settings)
+                    BusinessView(settings: settings, image: $image, inputImage: $inputImage)
                 } else {
-                    PrivateView(settings: settings)
+                    PrivateView(settings: settings, image: $image, inputImage: $inputImage)
                 }
-                
-           // }
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {

@@ -30,6 +30,12 @@ struct ContentView: View {
     @State private var setup = false
     @State private var update = false
     
+    // Images
+    @State var bcImage: Image? = nil
+    @State var bcInputImage: UIImage?
+    @State var pcImage: Image? = nil
+    @State var pcInputImage: UIImage?
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -64,12 +70,12 @@ struct ContentView: View {
                     PrivatePreview(settings: settings)
                     Spacer()
                 }
-                NavigationLink(destination: EditView(settings: settings, type: "b").accentColor(Color.primeInverted)
+                NavigationLink(destination: EditView(settings: settings, type: "b", image: $bcImage, inputImage: $bcInputImage).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 1, selection: $navSelected)
                 {
                     EmptyView()
                 }.isDetailLink(false)
-                NavigationLink(destination: EditView(settings: settings, type: "p").accentColor(Color.primeInverted)
+                NavigationLink(destination: EditView(settings: settings, type: "p", image: $pcImage, inputImage: $pcInputImage).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 2, selection: $navSelected)
                 {
                     EmptyView()
@@ -115,7 +121,7 @@ struct ContentView: View {
         .sheet(isPresented: self.$showSheet) {
             if self.setup {
                 SetupView(settings: settings)
-            } else {
+            } else if self.update {
                 UpdateView(settings: settings)
             }
         }
@@ -129,11 +135,6 @@ struct ContentView: View {
     
     
     func onAppear() {
-        
-        // Updated:
-        // - Updated labels for Street lines 1 and 2
-        // - Keyboard adapts to input field values for email, www, phone, zip
-        // - Support & Help link added to Settings
         
         let createB = generateQRCodeFromData(from: self.createBusinessContact()!, type: "business")
         let createP = generateQRCodeFromData(from: self.createPrivateContact()!, type: "pvt")
@@ -229,8 +230,9 @@ struct ContentView: View {
         contact.urlAddresses = [CNLabeledValue(
                                     label:CNLabelURLAddressHomePage,
                                     value:NSString(string:settings.wwwBusiness))]
-        // contact.imageData = NSData() as Data // The profile picture as a NSData object
-        // contact.postalAddresses =
+        
+        contact.imageData = NSData() as Data // The profile picture as a NSData object
+        
         // contact.birthday =
         let contactData = try? CNContactVCardSerialization.data(with: [contact])
         return contactData
@@ -264,12 +266,11 @@ struct ContentView: View {
         
         if type == "business" {
             UserDefaults.standard.set(image.pngData(), forKey: "qrImageBusiness")
-            UserDefaults.standard.set(true, forKey: "imgBusinessSet")
+            UserDefaults.standard.set(true, forKey: "qrBusinessSet")
         } else {
             UserDefaults.standard.set(image.pngData(), forKey: "qrImagePrivate")
-            UserDefaults.standard.set(true, forKey: "imgPrivateSet")
+            UserDefaults.standard.set(true, forKey: "qrPrivateSet")
         }
-        
         WidgetUpdaterClass(settings: settings).updateValues()
     }
     
@@ -289,14 +290,34 @@ struct ContentView: View {
         settings.appBuild = newBuild
         settings.appVersionString = newAppBuildString
       
-        if !launchedBefore {
-            self.setup = true
-            self.showSheet = true
-        } else {
+        if launchedBefore {
             if savedVersion != newVersion || savedBuild != newBuild {
                 self.update = true
                 self.showSheet = true
             }
+        } else {
+            self.setup = true
+            self.showSheet = true
+        }
+        
+        // Get Images
+        if settings.imgPrivateSet == true {
+            loadImageFromUserDefault(key: "imgPrivate")
+        }
+        // Get Images
+        if settings.imgBusinessSet == true {
+            loadImageFromUserDefault(key: "imgBusiness")
+        }
+    }
+    
+    func loadImageFromUserDefault(key: String) {
+        guard let imageData = UserDefaults.standard.object(forKey: key) as? Data else { return }
+        if key == "imgPrivate" {
+            pcInputImage = UIImage(data: imageData)
+            pcImage = Image(uiImage: pcInputImage!)
+        } else {
+            bcInputImage = UIImage(data: imageData)
+            bcImage = Image(uiImage: bcInputImage!)
         }
     }
     

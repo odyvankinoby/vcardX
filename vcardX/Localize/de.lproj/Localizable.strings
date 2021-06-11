@@ -5,10 +5,16 @@
   Created by Nicolas Ott on 03.06.21.
   
 */
-"loc_rn" = "Releasefeatures";
+"loc_image" = "Foto";
+"loc_rn" = "
+- Neue Beschriftung für Straßenfelder Zeile 1 und 2
+- Tastaturtyp passt sich an Felder für E-Mail, www, Telefon und PLZ an
+- Link 'Support & Hilfe' zu den Einstellungen hinzugefügt
+- Abschnitt 'Was ist neu?' zu den Einstellungen hinzugefügt";
 "loc_new" = "Neue Funktionen";
 "loc_whatsnew" = "Was ist neu?";
 "loc_go" = "Los gehts!";
+
 "loc_buy" = "Um die vcardX Widgets nutzen zu können, kaufen Sie bitte vcardX Premium unter Einstellungen >> vcardX Premium.";
 "loc_req_premium" = "(mit  vcardX Premium)";
 "loc_premium" = "vcardX Premium";

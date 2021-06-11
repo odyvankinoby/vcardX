@@ -5,10 +5,16 @@
   Created by Nicolas Ott on 03.06.21.
   
 */
-"loc_rn" = "Releasefeatures";
+"loc_image" = "Photo";
+"loc_rn" = "
+- Updated labels for Street fields lines 1 and 2
+- Keyboard type adapts to input field values for email, www, phone and zip
+- Support & Help link added to Settings
+- What's new? section added to Settings";
 "loc_new" = "New Features";
 "loc_whatsnew" = "What's new?";
 "loc_go" = "Let's go!";
+
 "loc_buy" = "In order to use the vcardX widgets please purchase vcardX Premium in Settings >> vcardX Premium.";
 "loc_req_premium" = "(requires vcardX Premium)";
 "loc_premium" = "vcardX Premium";

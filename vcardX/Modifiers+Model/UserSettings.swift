@@ -56,25 +56,23 @@ class UserSettings: ObservableObject {
     @Published var countryPrivate: String { didSet { UserDefaults.standard.set(countryPrivate, forKey: "countryPrivate") } }
   
     @Published var qrImageBusiness: Any { didSet { UserDefaults.standard.set(qrImageBusiness, forKey: "qrImageBusiness") } }
-    @Published var imgBusinessSet: Bool { didSet { UserDefaults.standard.set(imgBusinessSet, forKey: "imgBusinessSet") } }
+    @Published var qrBusinessSet: Bool { didSet { UserDefaults.standard.set(qrBusinessSet, forKey: "qrBusinessSet") } }
     
     @Published var qrImagePrivate: Any { didSet { UserDefaults.standard.set(qrImagePrivate, forKey: "qrImagePrivate") } }
+    @Published var qrPrivateSet: Bool { didSet { UserDefaults.standard.set(qrPrivateSet, forKey: "qrPrivateSet") } }
+    
+    @Published var imgBusiness: Any { didSet { UserDefaults.standard.set(imgBusiness, forKey: "imgBusiness") } }
+    @Published var imgBusinessSet: Bool { didSet { UserDefaults.standard.set(imgBusinessSet, forKey: "imgBusinessSet") } }
+    
+    @Published var imgPrivate: Any { didSet { UserDefaults.standard.set(imgPrivate, forKey: "imgPrivate") } }
     @Published var imgPrivateSet: Bool { didSet { UserDefaults.standard.set(imgPrivateSet, forKey: "imgPrivateSet") } }
     
+    @Published var purchased: Bool { didSet { UserDefaults.standard.set(purchased, forKey: "de.nicolasott.vcardX.premium") } }
     
-    @Published var purchased: Bool {
-             didSet {
-                 UserDefaults.standard.set(purchased, forKey: "de.nicolasott.vcardX.premium")
-             }
-    }
     @Published var appVersion: String { didSet { UserDefaults.standard.set(appVersion, forKey: "appVersion") } }
-    
-    @Published var appBuild: String { didSet { UserDefaults.standard.set(appBuild, forKey: "sysAppBuildVersion") } }
-    
-    @Published var appVersionString: String { didSet { UserDefaults.standard.set(appVersionString, forKey: "sysAppVersionBuildString") } }
+    @Published var appBuild: String { didSet { UserDefaults.standard.set(appBuild, forKey: "appBuild") } }
+    @Published var appVersionString: String { didSet { UserDefaults.standard.set(appVersionString, forKey: "appVersionString") } }
 
-
-    
     init() {
         self.purchased = UserDefaults.standard.object(forKey: "de.nicolasott.vcardX.premium") as? Bool ?? false
         self.launchedBefore = UserDefaults.standard.object(forKey: "launchedBefore") as? Bool ?? false
@@ -83,7 +81,6 @@ class UserSettings: ObservableObject {
         self.appBuild = UserDefaults.standard.object(forKey: "appBuild") as? String ?? ""
         self.appVersionString = UserDefaults.standard.object(forKey: "appVersionString") as? String ?? ""
        
-            
         self.vcards = UserDefaults.standard.object(forKey: "vcards") as? String ?? "All"
 
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
@@ -120,10 +117,15 @@ class UserSettings: ObservableObject {
         self.countryPrivate = UserDefaults.standard.object(forKey: "countryPrivate") as? String ?? ""
     
         self.qrImageBusiness = UserDefaults.standard.object(forKey: "qrImageBusiness") as Any
-        self.imgBusinessSet = UserDefaults.standard.object(forKey: "imgBusinessSet") as? Bool ?? false
+        self.qrBusinessSet = UserDefaults.standard.object(forKey: "qrBusinessSet") as? Bool ?? false
         
         self.qrImagePrivate = UserDefaults.standard.object(forKey: "qrImagePrivate") as Any
-        self.imgPrivateSet = UserDefaults.standard.object(forKey: "imgPrivateSet") as? Bool ?? false
+        self.qrPrivateSet = UserDefaults.standard.object(forKey: "qrPrivateSet") as? Bool ?? false
     
+        self.imgBusiness = UserDefaults.standard.object(forKey: "imgBusiness") as Any
+        self.imgBusinessSet = UserDefaults.standard.object(forKey: "imgBusinessSet") as? Bool ?? false
+        
+        self.imgPrivate = UserDefaults.standard.object(forKey: "imgPrivate") as Any
+        self.imgPrivateSet = UserDefaults.standard.object(forKey: "imgPrivateSet") as? Bool ?? false
     }
 }
