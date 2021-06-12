@@ -22,6 +22,8 @@ class UserSettings: ObservableObject {
     }
     public var vcardsArray = ["All","Business","Private"]
    
+    @Published var showUserPic: Bool { didSet { UserDefaults.standard.set(showUserPic, forKey: "showUserPic") } }
+    
     // Name
     @Published var lastName: String { didSet { UserDefaults.standard.set(lastName, forKey: "lastName") } }
     @Published var firstName: String { didSet { UserDefaults.standard.set(firstName, forKey: "firstName") } }
@@ -82,7 +84,8 @@ class UserSettings: ObservableObject {
         self.appVersionString = UserDefaults.standard.object(forKey: "appVersionString") as? String ?? ""
        
         self.vcards = UserDefaults.standard.object(forKey: "vcards") as? String ?? "All"
-
+        self.showUserPic = UserDefaults.standard.object(forKey: "showUserPic") as? Bool ?? true
+        
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
         self.middleName = UserDefaults.standard.object(forKey: "middleName") as? String ?? ""

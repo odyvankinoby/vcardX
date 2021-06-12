@@ -5,6 +5,8 @@
   Created by Nicolas Ott on 03.06.21.
   
 */
+
+"loc_showpic" = "Show Profile Image in Widget";
 "loc_image" = "Photo";
 "loc_rn" = "
 - Updated labels for Street fields lines 1 and 2

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+let loc_showpic: LocalizedStringKey = "loc_showpic"
 let loc_image: LocalizedStringKey = "loc_image"
 let loc_whatsnew: LocalizedStringKey = "loc_whatsnew"
 let loc_new: LocalizedStringKey = "loc_new"

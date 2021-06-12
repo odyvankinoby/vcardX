@@ -13,6 +13,7 @@ struct wPrivate : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var widgetFamily
     @State var image: Image? = nil
+    @State var user: Image? = nil
     
     var body: some View {
         VStack {
@@ -46,17 +47,32 @@ struct wPrivate : View {
                     }.background(Color("primeInverted"))
                 }
                 else if widgetFamily == .systemMedium {
-                    VStack(alignment: .center) {
-                        HStack {
-                            image?
-                                .resizable()
-                                .interpolation(.none)
-                                .scaledToFit()
-                                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
-                            
+                        VStack(alignment: .center) {
+                            HStack {
+                                image?
+                                    .resizable()
+                                    .interpolation(.none)
+                                    .scaledToFit()
+                                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
                             VStack(alignment: .leading) {
-                                Text(entry.name).font(.footnote).bold().foregroundColor(Color("prime")).allowsTightening(true)
+                                HStack(alignment: .top) {
+                                    VStack(alignment: .leading) {
+                                        Text(entry.name).font(.footnote).bold().foregroundColor(Color("prime")).allowsTightening(true)
+                                    }
+                                    Spacer()
+                                    user?
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                        .overlay(Circle()
+                                                    .stroke(Color.white, lineWidth: 1)
+                                                    .frame(width: 36, height: 36, alignment: .trailing))
+                                        .frame(width: 36, height: 36, alignment: .trailing)
+                                        .shadow(radius: 1)
+                                        .padding(.top, 2)
+                                    
+                                }
                                 Divider()
                                 Text(entry.mobilePrivate).font(.caption2).foregroundColor(Color("prime")).allowsTightening(true)
                                 Text(entry.emailPrivate).font(.caption2).foregroundColor(Color("prime")).allowsTightening(true)
@@ -66,9 +82,7 @@ struct wPrivate : View {
                                 Text(loc_private).font(.caption2).foregroundColor(.white).allowsTightening(true)
                             }.padding(.all, 10)
                         }.background(Color("primeInverted"))
-                        
                     }.background(Color("primeInverted"))
-                
                 } else {
                     VStack(alignment: .center) {
                         image?
@@ -91,12 +105,18 @@ struct wPrivate : View {
     }
     
     func onAppear() {
-        if entry.pSet {
-            let imageData = entry.imgP
+        
+        if entry.qrPSet {
+            let imageData = entry.qrP
             let inputImage = UIImage(data: imageData)
             image = Image(uiImage: inputImage!)
         }
+        
+        if entry.showUserPic && entry.userImgPSet {
+            let imageData = entry.userImgP
+            let inputImage = UIImage(data: imageData)
+            user = Image(uiImage: inputImage!)
+        }
     }
-   
 }
 

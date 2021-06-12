@@ -38,7 +38,19 @@ struct SettingsView: View {
                     .onChange(of: settings.vcards, perform: { value in
                         if settings.vcards == "Private" { selector = 1 } else { selector = 0 }
                     })
-                }.padding(.leading, 10).padding(.trailing, 10).padding(.bottom, 10)
+                }.padding(.leading, 10).padding(.trailing, 10)
+                
+                Divider()
+                HStack {
+                    Toggle(isOn: $settings.showUserPic) {
+                        Text(loc_showpic).frame(alignment: .leading).foregroundColor(.prime)
+                    }
+                    .onChange(of: settings.showUserPic, perform: { value in
+                        WidgetUpdaterClass(settings: settings).updateValues()
+                    })
+                }.padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 10)
               
             }
              .cornerRadius(10)

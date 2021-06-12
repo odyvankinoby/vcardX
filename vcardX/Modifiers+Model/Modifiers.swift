@@ -20,6 +20,21 @@ extension Color {
     }
 }
 
+struct NavButton: View {
+    var action: () -> ()
+    var image: String
+    //let checked: Bool? = false
+    var disabled: Bool? = false
+    var body: some View {
+        Button(action: {
+                self.action()
+        }) {
+            Image(systemName: image)
+                .foregroundColor(disabled ?? false ? .gray : .white)
+        }.disabled(disabled ?? false)
+    }
+}
+
 struct SettingsListAppIcon: View {
     var body: some View {
         Image("appstore")

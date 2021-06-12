@@ -14,6 +14,7 @@ struct wBusiness : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var widgetFamily
     @State var image: Image? = nil
+    @State var user: Image? = nil
     
     var body: some View {
         VStack {
@@ -49,18 +50,34 @@ struct wBusiness : View {
                 else if widgetFamily == .systemMedium {
                     VStack(alignment: .center) {
                         HStack {
-                            
                             image?
                                 .resizable()
                                 .interpolation(.none)
                                 .scaledToFit()
                                 .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .padding(.top, 10).padding(.bottom, 10).padding(.leading, 15)
-                            
                             VStack(alignment: .leading) {
-                                Text(entry.name).font(.footnote).bold().foregroundColor(Color("primeInverted")).allowsTightening(true)
-                                Text(entry.position).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
-                                Text(entry.company).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
+                                HStack(alignment: .top) {
+                                    VStack(alignment: .leading) {
+                                        Text(entry.name).font(.footnote).bold().foregroundColor(Color("primeInverted")).allowsTightening(true)
+                                        Text(entry.position).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
+                                        Text(entry.company).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
+                                    }
+                                    Spacer()
+                                    
+                                    user?
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                        .overlay(Circle()
+                                                    .stroke(Color.white, lineWidth: 1)
+                                                    .frame(width: 36, height: 36, alignment: .trailing))
+                                        .frame(width: 36, height: 36, alignment: .trailing)
+                                        .shadow(radius: 1)
+                                        .padding(.top, 2)
+                                            
+                                    
+                                }
                                 Divider()
                                 Text(entry.mobileBusiness).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
                                 Text(entry.emailBusiness).font(.caption2).foregroundColor(Color("primeInverted")).allowsTightening(true)
@@ -69,9 +86,7 @@ struct wBusiness : View {
                                 Text(loc_business).font(.caption2).foregroundColor(.white).allowsTightening(true)
                             }.padding(.all, 10)
                         }.background(Color("prime"))
-                        
                     }.background(Color("prime"))
-                    
                 } else {
                     VStack(alignment: .center) {
 
@@ -96,10 +111,17 @@ struct wBusiness : View {
     }
     
     func onAppear() {
-        if entry.bSet {
-            let imageData = entry.imgB
+        
+        if entry.qrBSet {
+            let imageData = entry.qrB
             let inputImage = UIImage(data: imageData)
             image = Image(uiImage: inputImage!)
+        }
+        
+        if entry.showUserPic && entry.userImgBSet {
+            let imageData = entry.userImgB
+            let inputImage = UIImage(data: imageData)
+            user = Image(uiImage: inputImage!)
         }
     }
     

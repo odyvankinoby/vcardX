@@ -14,10 +14,11 @@ struct PrivateView: View {
     // Images
     @Binding var image: Image?
     @Binding var inputImage: UIImage?
+    @Binding var edit: Bool
     
     var body: some View {
         VStack {
-            NameView(settings: settings, image: $image, inputImage: $inputImage, type: "p")
+            NameView(settings: settings)
             PhoneView(settings: settings)
             EmailView(settings: settings)
             WwwView(settings: settings)
@@ -26,33 +27,10 @@ struct PrivateView: View {
     }
 }
 
-struct PrivatePreview: View {
-    
-    @ObservedObject var settings: UserSettings
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("\(settings.firstName) \(settings.lastName)")
-                .foregroundColor(.prime)
-                .font(.headline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            Divider()
-            Text("\(settings.mobilePrivate)").foregroundColor(.prime)
-                .font(.subheadline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            Text("\(settings.emailPrivate)").foregroundColor(.prime)
-                .font(.subheadline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            Text("\(settings.wwwPrivate)").foregroundColor(.prime)
-                .font(.subheadline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-        }.padding()
-    }
-}
-
 struct PhoneView: View {
     
     @ObservedObject var settings: UserSettings
+     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Section(header: Text(loc_phone).bold()) {

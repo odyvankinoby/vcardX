@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import CoreImage
 import CoreImage.CIFilterBuiltins
 import Contacts
 import StoreKit
@@ -35,7 +36,7 @@ struct ContentView: View {
     @State var bcInputImage: UIImage?
     @State var pcImage: Image? = nil
     @State var pcInputImage: UIImage?
-    
+ 
     var body: some View {
         NavigationView {
             VStack {
@@ -55,7 +56,7 @@ struct ContentView: View {
                             .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .padding()
                     }
-                    BusinessPreview(settings: settings)
+                    BusinessPreview(settings: settings, image: $bcImage)
                     Spacer()
                 } else if selector == 1 {
                     VStack(alignment: .center) {
@@ -67,24 +68,27 @@ struct ContentView: View {
                             .padding()
                         
                     }
-                    PrivatePreview(settings: settings)
+                    PrivatePreview(settings: settings, image: $pcImage)
                     Spacer()
                 }
-                NavigationLink(destination: EditView(settings: settings, type: "b", image: $bcImage, inputImage: $bcInputImage).accentColor(Color.primeInverted)
+                NavigationLink(destination: ContactView(settings: settings, type: "b", image: $bcImage, inputImage: $bcInputImage).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 1, selection: $navSelected)
                 {
                     EmptyView()
                 }.isDetailLink(false)
-                NavigationLink(destination: EditView(settings: settings, type: "p", image: $pcImage, inputImage: $pcInputImage).accentColor(Color.primeInverted)
+                
+                NavigationLink(destination: ContactView(settings: settings, type: "p", image: $pcImage, inputImage: $pcInputImage).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 2, selection: $navSelected)
                 {
                     EmptyView()
                 }.isDetailLink(false)
+                
                 NavigationLink(destination: SettingsView(settings: settings, selector: $selector, storeManager: storeManager).accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 3, selection: $navSelected)
                 {
                     EmptyView()
                 }.isDetailLink(false)
+                
                 NavigationLink(destination: EmptyView())
                 {
                     EmptyView()
@@ -196,7 +200,11 @@ struct ContentView: View {
         contact.urlAddresses = [CNLabeledValue(
                                     label:CNLabelURLAddressHomePage,
                                     value:NSString(string:settings.wwwBusiness))]
-       
+        
+        //if settings.imgBusinessSet {
+        let image: UIImage = UIImage(imageLiteralResourceName: "profile") //loadImageUserForQRCode(key: "imgBusiness")
+            contact.imageData = image.pngData()! as Data
+        //}
         let contactData = try? CNContactVCardSerialization.data(with: [contact])
         return contactData
     }
@@ -230,10 +238,13 @@ struct ContentView: View {
         contact.urlAddresses = [CNLabeledValue(
                                     label:CNLabelURLAddressHomePage,
                                     value:NSString(string:settings.wwwBusiness))]
-        
-        contact.imageData = NSData() as Data // The profile picture as a NSData object
-        
+    
+        if settings.imgPrivateSet {
+            let image: UIImage = loadImageUserForQRCode(key: "imgPrivate")
+            contact.imageData = image.pngData()! as Data
+        }
         // contact.birthday =
+        
         let contactData = try? CNContactVCardSerialization.data(with: [contact])
         return contactData
     }
@@ -249,19 +260,7 @@ struct ContentView: View {
         return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
   
-    /*
-    func generateQRCodeFromString(from string: String) -> UIImage {
-        let data = Data(string.utf8)
-        filter.setValue(data, forKey: "inputMessage")
-        if let outputImage = filter.outputImage {
-            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
-                return UIImage(cgImage: cgimg)
-            }
-        }
-        return UIImage(systemName: "xmark.circle") ?? UIImage()
-    }
-    */
-    
+  
     func saveImageToUserDefaults(image: UIImage, type: String) {
         
         if type == "business" {
@@ -299,7 +298,7 @@ struct ContentView: View {
             self.setup = true
             self.showSheet = true
         }
-        
+
         // Get Images
         if settings.imgPrivateSet == true {
             loadImageFromUserDefault(key: "imgPrivate")
@@ -308,6 +307,17 @@ struct ContentView: View {
         if settings.imgBusinessSet == true {
             loadImageFromUserDefault(key: "imgBusiness")
         }
+    }
+    
+    func loadImageUserForQRCode(key: String)->UIImage {
+        guard let imageData = UserDefaults.standard.object(forKey: key) as? Data else { return UIImage()}
+        var img = UIImage()
+        if key == "imgPrivate" {
+            img = UIImage(data: imageData) ?? UIImage()
+        } else {
+            img = UIImage(data: imageData) ?? UIImage()
+        }
+        return img
     }
     
     func loadImageFromUserDefault(key: String) {
@@ -339,3 +349,5 @@ struct ContentView: View {
         return String(buildString)
     }
 }
+
+

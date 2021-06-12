@@ -13,10 +13,11 @@ struct BusinessView: View {
     // Images
     @Binding var image: Image?
     @Binding var inputImage: UIImage?
-    
+    @Binding var edit: Bool
+  
     var body: some View {
         VStack {
-            NameView(settings: settings, image: $image, inputImage: $inputImage, type: "b")
+            NameView(settings: settings)
             CompanyView(settings: settings)
             PhoneBusinessView(settings: settings)
             EmailBusinessView(settings: settings)
@@ -26,60 +27,12 @@ struct BusinessView: View {
     }
 }
 
-
-struct BusinessPreview: View {
-    
-    @ObservedObject var settings: UserSettings
-    // Images
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("\(settings.firstName) \(settings.lastName)")
-                .foregroundColor(.prime)
-                .font(.headline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            HStack {
-                if settings.position != "" {
-                    Text("\(settings.position)")
-                        .foregroundColor(.prime)
-                        .font(.subheadline)
-                        .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                }
-                if settings.position != "" && settings.company != "" {
-                    Text("@").foregroundColor(.prime)
-                        .font(.subheadline)
-                        .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                }
-                if settings.company != "" {
-                    Text("\(settings.company)").foregroundColor(.prime)
-                        .font(.subheadline)
-                        .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                }
-            }
-            
-            Divider()
-            Text("\(settings.mobileBusiness)").foregroundColor(.prime)
-                .font(.subheadline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            
-            Text("\(settings.emailBusiness)").foregroundColor(.prime)
-                .font(.subheadline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            
-            Text("\(settings.wwwBusiness)").foregroundColor(.prime)
-                .font(.subheadline)
-                .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-        }.padding()
-    }
-}
-
-
 struct CompanyView: View {
     
     @ObservedObject var settings: UserSettings
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Section(header: Text(loc_company).bold()) {
+            Text(loc_company).foregroundColor(.prime).bold()
                 Text(loc_company).font(.caption2).foregroundColor(.prime)
                 TextField(loc_company, text: $settings.company)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -93,7 +46,7 @@ struct CompanyView: View {
                     .textContentType(.organizationName)
                     .keyboardType(.default)
                     .font(.headline).foregroundColor(.prime)
-            }
+            
         }.padding(.bottom, 10)
     }
 }
@@ -103,7 +56,7 @@ struct PhoneBusinessView: View {
     @ObservedObject var settings: UserSettings
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Section(header: Text(loc_phone).bold()) {
+            Text(loc_phone).foregroundColor(.prime).bold()
                 Text(loc_mobile).font(.caption2).foregroundColor(.prime)
                 TextField(loc_mobile, text: $settings.mobileBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -117,7 +70,7 @@ struct PhoneBusinessView: View {
                     .textContentType(.telephoneNumber)
                     .keyboardType(.namePhonePad)
                     .font(.headline).foregroundColor(.prime)
-            }
+            
         }.padding(.bottom, 10)
     }
 }
@@ -127,7 +80,7 @@ struct EmailBusinessView: View {
     @ObservedObject var settings: UserSettings
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Section(header: Text(loc_email).bold()) {
+            Text(loc_email).foregroundColor(.prime).bold()
                 Text(loc_email_business).font(.caption2).foregroundColor(.prime)
                 TextField(loc_email_business, text: $settings.emailBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -141,7 +94,7 @@ struct EmailBusinessView: View {
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
                     .font(.headline).foregroundColor(.prime)
-            }
+            
         }.padding(.bottom, 10)
     }
 }
@@ -151,14 +104,14 @@ struct WwwBusinessView: View {
     @ObservedObject var settings: UserSettings
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Section(header: Text(loc_www).bold()) {
+            Text(loc_www).foregroundColor(.prime).bold()
                 Text(loc_www).font(.caption2).foregroundColor(.prime)
                 TextField(loc_www, text: $settings.wwwBusiness)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.URL)
                     .keyboardType(.URL)
                     .font(.headline).foregroundColor(.prime)
-            }
+            
         }.padding(.bottom, 10)
     }
 }
@@ -168,7 +121,7 @@ struct AddressBusinessView: View {
     @ObservedObject var settings: UserSettings
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Section(header: Text(loc_address).bold()) {
+            Text(loc_address).foregroundColor(.prime).bold()
                 Group {
                 Text(loc_street).font(.caption2).foregroundColor(.prime)
                 TextField(loc_street, text: $settings.street1Business)
@@ -207,7 +160,7 @@ struct AddressBusinessView: View {
                     .textContentType(.countryName)
                     .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                     .font(.headline).foregroundColor(.prime)
-            }
+            
         }.padding(.bottom, 10)
     }
 }

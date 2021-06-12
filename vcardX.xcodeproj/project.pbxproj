@@ -19,9 +19,13 @@
 		3611BCAD26690CC80095672A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600A5DC2668BED900703A1D /* Localization.swift */; };
 		3611BCAE26690CCD0095672A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3600A5E82668C0A700703A1D /* Localizable.strings */; };
 		3611BCB32669645E0095672A /* BusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB22669645E0095672A /* BusinessView.swift */; };
-		3611BCB62669680D0095672A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB52669680D0095672A /* EditView.swift */; };
+		3611BCB62669680D0095672A /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611BCB52669680D0095672A /* ContactView.swift */; };
 		361660C5266BABD9002E3ED4 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361660C2266BABD9002E3ED4 /* SetupView.swift */; };
 		361660C6266BABD9002E3ED4 /* PrivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361660C3266BABD9002E3ED4 /* PrivateView.swift */; };
+		3640B5542674E314008EE9B7 /* BusinessPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640B5532674E314008EE9B7 /* BusinessPreview.swift */; };
+		3640B5582674E37A008EE9B7 /* PrivatePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640B5572674E37A008EE9B7 /* PrivatePreview.swift */; };
+		3640B55A2674E7CA008EE9B7 /* BusinessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640B5592674E7CA008EE9B7 /* BusinessData.swift */; };
+		3640B55C2674EAE5008EE9B7 /* PrivateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640B55B2674EAE5008EE9B7 /* PrivateData.swift */; };
 		364F2E21266CBD300085493D /* WidgetUpdaterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */; };
 		364F2E24266CC3400085493D /* wPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E23266CC3400085493D /* wPrivate.swift */; };
 		364F2E26266CC3560085493D /* wBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E25266CC3560085493D /* wBusiness.swift */; };
@@ -32,7 +36,7 @@
 		364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		364F2E3B266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		36532D4C2671FCB8002B1544 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36532D4B2671FCB8002B1544 /* UpdateView.swift */; };
-		3696FDA92673C08B009A585A /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDA82673C08B009A585A /* NameView.swift */; };
+		3696FDA92673C08B009A585A /* GenericViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDA82673C08B009A585A /* GenericViews.swift */; };
 		3696FDAB2673C77A009A585A /* ImageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDAA2673C77A009A585A /* ImageClass.swift */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
 		36B883BD26676B610028437B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BC26676B610028437B /* ContentView.swift */; };
@@ -81,10 +85,14 @@
 		3611BCA12668CEA40095672A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3611BCAC26690B3A0095672A /* vcardX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vcardX.entitlements; sourceTree = "<group>"; };
 		3611BCB22669645E0095672A /* BusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessView.swift; sourceTree = "<group>"; };
-		3611BCB52669680D0095672A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		3611BCB52669680D0095672A /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		361660C2266BABD9002E3ED4 /* SetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		361660C3266BABD9002E3ED4 /* PrivateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateView.swift; sourceTree = "<group>"; };
 		361660C4266BABD9002E3ED4 /* vcardXRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = vcardXRelease.entitlements; sourceTree = "<group>"; };
+		3640B5532674E314008EE9B7 /* BusinessPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPreview.swift; sourceTree = "<group>"; };
+		3640B5572674E37A008EE9B7 /* PrivatePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivatePreview.swift; sourceTree = "<group>"; };
+		3640B5592674E7CA008EE9B7 /* BusinessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessData.swift; sourceTree = "<group>"; };
+		3640B55B2674EAE5008EE9B7 /* PrivateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateData.swift; sourceTree = "<group>"; };
 		364F2E20266CBD300085493D /* WidgetUpdaterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUpdaterClass.swift; sourceTree = "<group>"; };
 		364F2E23266CC3400085493D /* wPrivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wPrivate.swift; sourceTree = "<group>"; };
 		364F2E25266CC3560085493D /* wBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wBusiness.swift; sourceTree = "<group>"; };
@@ -96,7 +104,7 @@
 		364F2E3F266D3B0C0085493D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/vcardW.strings; sourceTree = "<group>"; };
 		364F2E41266D3B0F0085493D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/vcardW.strings; sourceTree = "<group>"; };
 		36532D4B2671FCB8002B1544 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
-		3696FDA82673C08B009A585A /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		3696FDA82673C08B009A585A /* GenericViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViews.swift; sourceTree = "<group>"; };
 		3696FDAA2673C77A009A585A /* ImageClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClass.swift; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B883BA26676B610028437B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -169,6 +177,26 @@
 			path = vcardW;
 			sourceTree = "<group>";
 		};
+		3640B5552674E337008EE9B7 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				3611BCB22669645E0095672A /* BusinessView.swift */,
+				3640B5532674E314008EE9B7 /* BusinessPreview.swift */,
+				3640B5592674E7CA008EE9B7 /* BusinessData.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		3640B5562674E36C008EE9B7 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				361660C3266BABD9002E3ED4 /* PrivateView.swift */,
+				3640B5572674E37A008EE9B7 /* PrivatePreview.swift */,
+				3640B55B2674EAE5008EE9B7 /* PrivateData.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		364F2E22266CBD3E0085493D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,15 +211,15 @@
 			isa = PBXGroup;
 			children = (
 				36B883BC26676B610028437B /* ContentView.swift */,
-				3611BCB52669680D0095672A /* EditView.swift */,
-				3611BCB22669645E0095672A /* BusinessView.swift */,
-				361660C3266BABD9002E3ED4 /* PrivateView.swift */,
+				3611BCB52669680D0095672A /* ContactView.swift */,
+				3696FDA82673C08B009A585A /* GenericViews.swift */,
+				3640B5552674E337008EE9B7 /* Business */,
+				3640B5562674E36C008EE9B7 /* Private */,
 				361660C2266BABD9002E3ED4 /* SetupView.swift */,
 				36B883CB2667B3A30028437B /* SettingsView.swift */,
 				36532D4B2671FCB8002B1544 /* UpdateView.swift */,
 				3600A5D82668BED900703A1D /* About.swift */,
 				364F2E2E266D33FA0085493D /* InAppPurchaseView.swift */,
-				3696FDA82673C08B009A585A /* NameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,21 +390,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				364F2E2B266D331F0085493D /* StoreManagerClass.swift in Sources */,
+				3640B55C2674EAE5008EE9B7 /* PrivateData.swift in Sources */,
 				364F2E2F266D33FA0085493D /* InAppPurchaseView.swift in Sources */,
 				3696FDAB2673C77A009A585A /* ImageClass.swift in Sources */,
 				364F2E21266CBD300085493D /* WidgetUpdaterClass.swift in Sources */,
 				364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */,
-				3611BCB62669680D0095672A /* EditView.swift in Sources */,
+				3611BCB62669680D0095672A /* ContactView.swift in Sources */,
 				361660C6266BABD9002E3ED4 /* PrivateView.swift in Sources */,
-				3696FDA92673C08B009A585A /* NameView.swift in Sources */,
+				3696FDA92673C08B009A585A /* GenericViews.swift in Sources */,
+				3640B5582674E37A008EE9B7 /* PrivatePreview.swift in Sources */,
 				36B883CC2667B3A30028437B /* SettingsView.swift in Sources */,
 				3600A5E12668BED900703A1D /* Modifiers.swift in Sources */,
 				361660C5266BABD9002E3ED4 /* SetupView.swift in Sources */,
 				36532D4C2671FCB8002B1544 /* UpdateView.swift in Sources */,
 				36B883BD26676B610028437B /* ContentView.swift in Sources */,
+				3640B55A2674E7CA008EE9B7 /* BusinessData.swift in Sources */,
 				36B883D02667DB1A0028437B /* UserSettings.swift in Sources */,
 				3600A5DE2668BED900703A1D /* About.swift in Sources */,
 				3611BCB32669645E0095672A /* BusinessView.swift in Sources */,
+				3640B5542674E314008EE9B7 /* BusinessPreview.swift in Sources */,
 				3600A5E22668BED900703A1D /* Localization.swift in Sources */,
 				36B883BB26676B610028437B /* App.swift in Sources */,
 			);
@@ -422,7 +454,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -448,7 +480,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -591,7 +623,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -618,7 +650,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

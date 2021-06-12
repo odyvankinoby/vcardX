@@ -77,10 +77,17 @@ struct SimpleEntry: TimelineEntry {
     
     let date: Date
     let purchased: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "purchased"))
-    let bSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "businessSet"))
-    let imgB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgBusiness") ?? Data())
-    let pSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "privateSet"))
-    let imgP: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgPrivate") ?? Data()) 
+    let showUserPic: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "showUserPic"))
+    let qrBSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "qrBusinessSet"))
+    let qrB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "qrImageBusiness") ?? Data())
+    let qrPSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "qrPrivateSet"))
+    let qrP: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "qrImagePrivate") ?? Data())
+    
+    let userImgBSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "imgBusinessSet"))
+    let userImgB: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgBusiness") ?? Data())
+    let userImgPSet: Bool = Bool(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.bool(forKey: "imgPrivateSet"))
+    let userImgP: Data = Data(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.data(forKey: "imgPrivate") ?? Data())
+
     let name: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "name") ?? "")
     let position: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "position") ?? "")
     let company: String = String(UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.string(forKey: "company") ?? "")
