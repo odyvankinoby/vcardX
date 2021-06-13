@@ -255,20 +255,7 @@ struct ContentView: View {
         }
         WidgetUpdaterClass(settings: settings).updateValues()
     }
-    
-    func saveUserImageToUserDefaults(image: UIImage, type: String) {
-        
-        if type == "business" && settings.imgBusinessSet {
-            UserDefaults.standard.set(image.pngData(), forKey: "imgBusiness")
-            UserDefaults.standard.set(true, forKey: "imgBusinessSet")
-        } else if type == "private" && settings.imgPrivateSet {
-            UserDefaults.standard.set(image.pngData(), forKey: "imgPrivate")
-            UserDefaults.standard.set(true, forKey: "imgPrivateSet")
-        }
-        WidgetUpdaterClass(settings: settings).updateValues()
-    }
-    
-    
+
     func onStartUp() {
         // App launched before?
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
@@ -294,6 +281,7 @@ struct ContentView: View {
             self.showSheet = true
         }
 
+        
         // Get Images
         if settings.imgPrivateSet == true {
             loadImageFromUserDefault(key: "imgPrivate")
@@ -305,17 +293,6 @@ struct ContentView: View {
         
         WidgetUpdaterClass(settings: settings).updateValues()
         
-    }
-    
-    func loadImageUserForQRCode(key: String)->UIImage {
-        guard let imageData = UserDefaults.standard.object(forKey: key) as? Data else { return UIImage()}
-        var img = UIImage()
-        if key == "imgPrivate" {
-            img = UIImage(data: imageData) ?? UIImage()
-        } else {
-            img = UIImage(data: imageData) ?? UIImage()
-        }
-        return img
     }
     
     func loadImageFromUserDefault(key: String) {

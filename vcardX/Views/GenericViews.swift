@@ -131,7 +131,6 @@ struct ProfileImage: View {
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(uiImage: self.$inputImage,
-                            image: self.$image,
                             imageKey: $imageKey,
                             isSetKey: $isSetKey,
                             ImagePickerSource: self.ImagePickerSource)
