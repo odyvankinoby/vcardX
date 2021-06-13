@@ -6,6 +6,9 @@
   
 */
 
+"loc_image_widgets" = "In case your profile image does not get displayed or updated:
+- End vcardX app by sliding up from bottom and end the app
+- After restart your images should be displayed correctly";
 "loc_showpic" = "Show Profile Image in Widget";
 "loc_image" = "Photo";
 "loc_rn" = "

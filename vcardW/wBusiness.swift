@@ -18,7 +18,7 @@ struct wBusiness : View {
     
     var body: some View {
         VStack {
-            if entry.purchased == false || image == nil {
+            if entry.purchased == false || entry.qrBSet == false {
                 HStack {
                     Spacer()
                     VStack {
@@ -107,7 +107,8 @@ struct wBusiness : View {
                     }.background(Color("prime"))
                 }
             }
-        }.onAppear(perform: onAppear).background(Color("prime"))
+        }.onAppear(perform: onAppear)
+        .background(Color("prime"))
     }
     
     func onAppear() {
@@ -124,6 +125,5 @@ struct wBusiness : View {
             user = Image(uiImage: inputImage!)
         }
     }
-    
 }
 

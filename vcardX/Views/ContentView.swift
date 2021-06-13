@@ -71,13 +71,15 @@ struct ContentView: View {
                     PrivatePreview(settings: settings, image: $pcImage)
                     Spacer()
                 }
-                NavigationLink(destination: ContactView(settings: settings, type: "b", image: $bcImage, inputImage: $bcInputImage).accentColor(Color.primeInverted)
+                NavigationLink(destination: ContactView(settings: settings, type: "b", image: $bcImage, inputImage: $bcInputImage)
+                                .accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 1, selection: $navSelected)
                 {
                     EmptyView()
                 }.isDetailLink(false)
                 
-                NavigationLink(destination: ContactView(settings: settings, type: "p", image: $pcImage, inputImage: $pcInputImage).accentColor(Color.primeInverted)
+                NavigationLink(destination: ContactView(settings: settings, type: "p", image: $pcImage, inputImage: $pcInputImage)
+                                .accentColor(Color.primeInverted)
                                 .edgesIgnoringSafeArea(.bottom), tag: 2, selection: $navSelected)
                 {
                     EmptyView()
@@ -143,18 +145,9 @@ struct ContentView: View {
         let createB = generateQRCodeFromData(from: self.createBusinessContact()!, type: "business")
         let createP = generateQRCodeFromData(from: self.createPrivateContact()!, type: "pvt")
         
-        // TESTING
-        // settings.purchased = true
-        // showSheet = true
-        // TESTING END
-        
-        //  let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        // if !launchedBefore { self.setup = true }
-        
-        // IAP
         SKPaymentQueue.default().add(storeManager)
         storeManager.getProducts(productIDs: productIDs)
-        
+
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.purchased, forKey: "purchased")
         
         if settings.vcards == "All" {
@@ -201,10 +194,6 @@ struct ContentView: View {
                                     label:CNLabelURLAddressHomePage,
                                     value:NSString(string:settings.wwwBusiness))]
         
-        //if settings.imgBusinessSet {
-        let image: UIImage = UIImage(imageLiteralResourceName: "profile") //loadImageUserForQRCode(key: "imgBusiness")
-            contact.imageData = image.pngData()! as Data
-        //}
         let contactData = try? CNContactVCardSerialization.data(with: [contact])
         return contactData
     }
@@ -239,12 +228,6 @@ struct ContentView: View {
                                     label:CNLabelURLAddressHomePage,
                                     value:NSString(string:settings.wwwBusiness))]
     
-        if settings.imgPrivateSet {
-            let image: UIImage = loadImageUserForQRCode(key: "imgPrivate")
-            contact.imageData = image.pngData()! as Data
-        }
-        // contact.birthday =
-        
         let contactData = try? CNContactVCardSerialization.data(with: [contact])
         return contactData
     }
@@ -269,6 +252,18 @@ struct ContentView: View {
         } else {
             UserDefaults.standard.set(image.pngData(), forKey: "qrImagePrivate")
             UserDefaults.standard.set(true, forKey: "qrPrivateSet")
+        }
+        WidgetUpdaterClass(settings: settings).updateValues()
+    }
+    
+    func saveUserImageToUserDefaults(image: UIImage, type: String) {
+        
+        if type == "business" && settings.imgBusinessSet {
+            UserDefaults.standard.set(image.pngData(), forKey: "imgBusiness")
+            UserDefaults.standard.set(true, forKey: "imgBusinessSet")
+        } else if type == "private" && settings.imgPrivateSet {
+            UserDefaults.standard.set(image.pngData(), forKey: "imgPrivate")
+            UserDefaults.standard.set(true, forKey: "imgPrivateSet")
         }
         WidgetUpdaterClass(settings: settings).updateValues()
     }
@@ -307,6 +302,9 @@ struct ContentView: View {
         if settings.imgBusinessSet == true {
             loadImageFromUserDefault(key: "imgBusiness")
         }
+        
+        WidgetUpdaterClass(settings: settings).updateValues()
+        
     }
     
     func loadImageUserForQRCode(key: String)->UIImage {

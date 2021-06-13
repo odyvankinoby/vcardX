@@ -22,7 +22,6 @@ struct Header: View {
     }
 }
 
-
 struct NameView: View {
     
     @ObservedObject var settings: UserSettings
@@ -131,14 +130,15 @@ struct ProfileImage: View {
                 }
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                ImagePicker(image: self.$inputImage,
+                ImagePicker(uiImage: self.$inputImage,
+                            image: self.$image,
                             imageKey: $imageKey,
                             isSetKey: $isSetKey,
                             ImagePickerSource: self.ImagePickerSource)
             }
 
     }
-    
+
     func pickerInit() {
         self.showingImagePicker = true
         self.ImagePickerSource = .photoLibrary

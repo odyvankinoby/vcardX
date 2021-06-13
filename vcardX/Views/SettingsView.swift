@@ -17,7 +17,7 @@ struct SettingsView: View {
     @StateObject var storeManager: StoreManager
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var noMail = false
-    
+    //@State var updateWidgets = false
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -41,16 +41,34 @@ struct SettingsView: View {
                 }.padding(.leading, 10).padding(.trailing, 10)
                 
                 Divider()
+                
+                    VStack(alignment: .leading, spacing: 10) {
+                        Toggle(isOn: $settings.showUserPic) {
+                            Text(loc_showpic).frame(alignment: .leading).foregroundColor(.prime)
+                        }
+                        .onChange(of: settings.showUserPic, perform: { value in
+                            WidgetUpdaterClass(settings: settings).updateValues()
+                        })
+                        if settings.showUserPic {
+                            Text(loc_image_widgets).font(.caption)
+                        }
+                    
+                }.padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 10)
+                
+                
+                /* Divider()
                 HStack {
-                    Toggle(isOn: $settings.showUserPic) {
-                        Text(loc_showpic).frame(alignment: .leading).foregroundColor(.prime)
+                    Toggle(isOn: $updateWidgets) {
+                        Text("Update Widgets").frame(alignment: .leading).foregroundColor(.prime)
                     }
-                    .onChange(of: settings.showUserPic, perform: { value in
+                    .onChange(of: updateWidgets, perform: { value in
                         WidgetUpdaterClass(settings: settings).updateValues()
                     })
                 }.padding(.leading, 10)
                 .padding(.trailing, 10)
-                .padding(.bottom, 10)
+                .padding(.bottom, 10) */
               
             }
              .cornerRadius(10)

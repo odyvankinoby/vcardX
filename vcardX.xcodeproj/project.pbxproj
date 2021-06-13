@@ -306,6 +306,8 @@
 				3611BCA52668CEA40095672A /* PBXTargetDependency */,
 			);
 			name = vcardX;
+			packageProductDependencies = (
+			);
 			productName = vcardX;
 			productReference = 36B883B726676B610028437B /* vcardX.app */;
 			productType = "com.apple.product-type.application";
@@ -337,6 +339,8 @@
 				de,
 			);
 			mainGroup = 36B883AE26676B610028437B;
+			packageReferences = (
+			);
 			productRefGroup = 36B883B826676B610028437B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -454,7 +458,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -480,7 +484,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -623,7 +627,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -650,7 +654,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;

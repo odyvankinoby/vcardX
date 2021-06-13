@@ -87,10 +87,18 @@ struct ContactView: View {
                 }  else {
                     ScrollView {
                         if type == "b" {
-                            BusinessView(settings: settings, image: $image, inputImage: $inputImage, edit: $edit).foregroundColor(Color.primeInverted.opacity(1.0))
+                            BusinessView(settings: settings, image: $image, inputImage: $inputImage, edit: $edit)
+                                .onDisappear(perform: {
+                                    WidgetUpdaterClass(settings: settings).updateValues()
+                                })
+                                .foregroundColor(Color.primeInverted.opacity(1.0))
                                 .padding()
                         } else {
-                            PrivateView(settings: settings, image: $image, inputImage: $inputImage, edit: $edit).foregroundColor(Color.primeInverted.opacity(1.0))
+                            PrivateView(settings: settings, image: $image, inputImage: $inputImage, edit: $edit)
+                                .onDisappear(perform: {
+                                    WidgetUpdaterClass(settings: settings).updateValues()
+                                })
+                                .foregroundColor(Color.primeInverted.opacity(1.0))
                                 .padding()
                         }
                     }
