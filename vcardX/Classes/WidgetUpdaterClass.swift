@@ -20,24 +20,24 @@ class WidgetUpdaterClass {
     func updateValues() {
         
         
-        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrBusinessSet, forKey: "qrBusinessSet")
-        if settings.qrBusinessSet {
+        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgBusinessSet, forKey: "imgBusinessSet")
+        if settings.imgBusinessSet {
             UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrImageBusiness, forKey: "qrImageBusiness")
-        }
-        
-        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrPrivateSet, forKey: "qrPrivateSet")
-        if settings.qrPrivateSet {
-            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrImagePrivate, forKey: "qrImagePrivate")
         }
         
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgPrivateSet, forKey: "imgPrivateSet")
         if settings.imgPrivateSet {
-            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgPrivate, forKey: "imgPrivate")
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrImagePrivate, forKey: "qrImagePrivate")
+        }
+        
+        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.userImagePrivateSet, forKey: "userImagePrivateSet")
+        if settings.userImagePrivateSet {
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.userImagePrivate, forKey: "userImagePrivate")
         }
        
-        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgBusinessSet, forKey: "imgBusinessSet")
-        if settings.imgBusinessSet {
-            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgBusiness, forKey: "imgBusiness")
+        UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.userImageBusinessSet, forKey: "userImageBusinessSet")
+        if settings.userImageBusinessSet {
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.userImageBusiness, forKey: "userImageBusiness")
         }
         
         let name = "\(settings.firstName) \(settings.lastName)"

@@ -248,10 +248,10 @@ struct ContentView: View {
         
         if type == "business" {
             UserDefaults.standard.set(image.pngData(), forKey: "qrImageBusiness")
-            UserDefaults.standard.set(true, forKey: "qrBusinessSet")
+            UserDefaults.standard.set(true, forKey: "imgBusinessSet")
         } else {
             UserDefaults.standard.set(image.pngData(), forKey: "qrImagePrivate")
-            UserDefaults.standard.set(true, forKey: "qrPrivateSet")
+            UserDefaults.standard.set(true, forKey: "imgPrivateSet")
         }
         WidgetUpdaterClass(settings: settings).updateValues()
     }
@@ -283,12 +283,12 @@ struct ContentView: View {
 
         
         // Get Images
-        if settings.imgPrivateSet == true {
-            loadImageFromUserDefault(key: "imgPrivate")
+        if settings.userImagePrivateSet == true {
+            loadImageFromUserDefault(key: "userImagePrivate")
         }
         // Get Images
-        if settings.imgBusinessSet == true {
-            loadImageFromUserDefault(key: "imgBusiness")
+        if settings.userImageBusinessSet == true {
+            loadImageFromUserDefault(key: "userImageBusiness")
         }
         
         WidgetUpdaterClass(settings: settings).updateValues()
@@ -297,7 +297,7 @@ struct ContentView: View {
     
     func loadImageFromUserDefault(key: String) {
         guard let imageData = UserDefaults.standard.object(forKey: key) as? Data else { return }
-        if key == "imgPrivate" {
+        if key == "userImagePrivate" {
             pcInputImage = UIImage(data: imageData)
             pcImage = Image(uiImage: pcInputImage!)
         } else {

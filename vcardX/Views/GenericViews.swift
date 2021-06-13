@@ -146,25 +146,25 @@ struct ProfileImage: View {
     func setKeys() {
         // Get Images
         if type == "p" {
-            imageKey = "imgPrivate"
-            isSetKey = "imgPrivateSet"
+            imageKey = "userImagePrivate"
+            isSetKey = "userImagePrivateSet"
         }
         // Get Images
         if type == "b" {
-            imageKey = "imgBusiness"
-            isSetKey = "imgBusinessSet"
+            imageKey = "userImageBusiness"
+            isSetKey = "userImageBusinessSet"
         }
     }
     
     func resetUserImage() {
         if type == "p" {
-            settings.imgPrivateSet = false
-            settings.imgPrivate = Data()
+            settings.userImagePrivateSet = false
+            settings.userImagePrivate = Data()
         }
         // Get Images
         if type == "b" {
-            settings.imgBusinessSet = false
-            settings.imgBusiness = Data()
+            settings.userImageBusinessSet = false
+            settings.userImageBusiness = Data()
         }
         image = nil
     }

@@ -8,6 +8,10 @@
 	<array>
 		<string>group.de.nicolasott.vcardX</string>
 	</array>
+	<key>com.apple.security.assets.pictures.read-only</key>
+	<true/>
+	<key>com.apple.security.device.camera</key>
+	<true/>
 	<key>com.apple.security.personal-information.addressbook</key>
 	<true/>
 </dict>

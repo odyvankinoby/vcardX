@@ -58,16 +58,23 @@ class UserSettings: ObservableObject {
     @Published var countryPrivate: String { didSet { UserDefaults.standard.set(countryPrivate, forKey: "countryPrivate") } }
   
     @Published var qrImageBusiness: Any { didSet { UserDefaults.standard.set(qrImageBusiness, forKey: "qrImageBusiness") } }
-    @Published var qrBusinessSet: Bool { didSet { UserDefaults.standard.set(qrBusinessSet, forKey: "qrBusinessSet") } }
-    
-    @Published var qrImagePrivate: Any { didSet { UserDefaults.standard.set(qrImagePrivate, forKey: "qrImagePrivate") } }
-    @Published var qrPrivateSet: Bool { didSet { UserDefaults.standard.set(qrPrivateSet, forKey: "qrPrivateSet") } }
-    
-    @Published var imgBusiness: Any { didSet { UserDefaults.standard.set(imgBusiness, forKey: "imgBusiness") } }
     @Published var imgBusinessSet: Bool { didSet { UserDefaults.standard.set(imgBusinessSet, forKey: "imgBusinessSet") } }
     
-    @Published var imgPrivate: Any { didSet { UserDefaults.standard.set(imgPrivate, forKey: "imgPrivate") } }
+    @Published var qrImagePrivate: Any { didSet { UserDefaults.standard.set(qrImagePrivate, forKey: "qrImagePrivate") } }
     @Published var imgPrivateSet: Bool { didSet { UserDefaults.standard.set(imgPrivateSet, forKey: "imgPrivateSet") } }
+    
+    @Published var userImageBusiness: Any { didSet { UserDefaults.standard.set(userImageBusiness, forKey: "userImageBusiness") } }
+    @Published var userImageBusinessSet: Bool { didSet { UserDefaults.standard.set(userImageBusinessSet, forKey: "userImageBusinessSet") } }
+    
+    @Published var userImagePrivate: Any { didSet { UserDefaults.standard.set(userImagePrivate, forKey: "userImagePrivate") } }
+    @Published var userImagePrivateSet: Bool { didSet { UserDefaults.standard.set(userImagePrivateSet, forKey: "userImagePrivateSet") } }
+    /*
+    @Published var userImageBusiness: Any { didSet { UserDefaults.standard.set(userImageBusiness, forKey: "userImageBusiness") } }
+    @Published var userImageBusinessSet: Bool { didSet { UserDefaults.standard.set(userImageBusinessSet, forKey: "userImageBusinessSet") } }
+    
+    @Published var userImagePrivate: Any { didSet { UserDefaults.standard.set(userImagePrivate, forKey: "userImagePrivate") } }
+    @Published var userImagePrivateSet: Bool { didSet { UserDefaults.standard.set(userImagePrivateSet, forKey: "userImagePrivateSet") } }
+    */
     
     @Published var purchased: Bool { didSet { UserDefaults.standard.set(purchased, forKey: "de.nicolasott.vcardX.premium") } }
     
@@ -120,15 +127,15 @@ class UserSettings: ObservableObject {
         self.countryPrivate = UserDefaults.standard.object(forKey: "countryPrivate") as? String ?? ""
     
         self.qrImageBusiness = UserDefaults.standard.object(forKey: "qrImageBusiness") as Any
-        self.qrBusinessSet = UserDefaults.standard.object(forKey: "qrBusinessSet") as? Bool ?? false
-        
-        self.qrImagePrivate = UserDefaults.standard.object(forKey: "qrImagePrivate") as Any
-        self.qrPrivateSet = UserDefaults.standard.object(forKey: "qrPrivateSet") as? Bool ?? false
-    
-        self.imgBusiness = UserDefaults.standard.object(forKey: "imgBusiness") as Any
         self.imgBusinessSet = UserDefaults.standard.object(forKey: "imgBusinessSet") as? Bool ?? false
         
-        self.imgPrivate = UserDefaults.standard.object(forKey: "imgPrivate") as Any
+        self.qrImagePrivate = UserDefaults.standard.object(forKey: "qrImagePrivate") as Any
         self.imgPrivateSet = UserDefaults.standard.object(forKey: "imgPrivateSet") as? Bool ?? false
+    
+        self.userImageBusiness = UserDefaults.standard.object(forKey: "userImageBusiness") as Any
+        self.userImageBusinessSet = UserDefaults.standard.object(forKey: "userImageBusinessSet") as? Bool ?? false
+        
+        self.userImagePrivate = UserDefaults.standard.object(forKey: "userImagePrivate") as Any
+        self.userImagePrivateSet = UserDefaults.standard.object(forKey: "userImagePrivateSet") as? Bool ?? false
     }
 }
