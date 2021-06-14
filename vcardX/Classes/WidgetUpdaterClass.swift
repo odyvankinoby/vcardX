@@ -17,9 +17,12 @@ class WidgetUpdaterClass {
         self.settings = settings
     }
     
+    func updateWidget() {
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
     func updateValues() {
-        
-        
+
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.imgBusinessSet, forKey: "imgBusinessSet")
         if settings.imgBusinessSet {
             UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.qrImageBusiness, forKey: "qrImageBusiness")

@@ -38,12 +38,20 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         
         if let uiImage = info[.editedImage] as? UIImage {
             parent.uiImage = uiImage
-            
+          
+            /*
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(true, forKey: parent.isSetKey)
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(uiImage.pngData(), forKey: parent.imageKey)
+            */
             UserDefaults.standard.set(uiImage.pngData(), forKey: parent.imageKey)
             UserDefaults.standard.set(true, forKey: parent.isSetKey)
+            
         } else if let uiImage = info[.originalImage] as? UIImage {
             parent.uiImage = uiImage
-            
+            /*
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(true, forKey: parent.isSetKey)
+            UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(uiImage.pngData(), forKey: parent.imageKey)
+            */
             UserDefaults.standard.set(uiImage.pngData(), forKey: parent.imageKey)
             UserDefaults.standard.set(true, forKey: parent.isSetKey)
         }

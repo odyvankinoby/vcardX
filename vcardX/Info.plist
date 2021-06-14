@@ -20,12 +20,12 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSCameraUsageDescription</key>
-    <string>vcardX would like to access your Camera to allow adding profile pictures to your business and private contact.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>vcardX would like to access your Photo Library to allow adding profile pictures to your business and private contact.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>vcardX would like to access your Camera to allow adding profile pictures to your business and private contact.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>vcardX needs to access your contacts in order to get the contact data for your vcardX QR code and widget.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>vcardX would like to access your Photo Library to allow adding profile pictures to your business and private contact.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>

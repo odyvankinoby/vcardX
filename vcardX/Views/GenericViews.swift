@@ -134,6 +134,9 @@ struct ProfileImage: View {
                             imageKey: $imageKey,
                             isSetKey: $isSetKey,
                             ImagePickerSource: self.ImagePickerSource)
+                    .onDisappear(perform: {
+                                WidgetUpdaterClass.init(settings: settings).updateWidget()
+                            })
             }
 
     }
@@ -144,12 +147,12 @@ struct ProfileImage: View {
     }
     
     func setKeys() {
-        // Get Images
+        // Get Images: Profile Private
         if type == "p" {
             imageKey = "userImagePrivate"
             isSetKey = "userImagePrivateSet"
         }
-        // Get Images
+        // Get Images: Profile Business
         if type == "b" {
             imageKey = "userImageBusiness"
             isSetKey = "userImageBusinessSet"
