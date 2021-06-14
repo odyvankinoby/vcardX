@@ -147,7 +147,7 @@ struct ContentView: View {
         
         SKPaymentQueue.default().add(storeManager)
         storeManager.getProducts(productIDs: productIDs)
-
+        //settings.purchased = true
         UserDefaults(suiteName: "group.de.nicolasott.vcardX")!.set(settings.purchased, forKey: "purchased")
         
         if settings.vcards == "All" {
