@@ -11,12 +11,8 @@
 "loc_showpic" = "Profilbild in Widgets anzeigen";
 "loc_image" = "Foto";
 "loc_rn" = "
-- Profilbilder zum geschäftlichen und privaten Kontakt hinzugefügt
-- Option zum Anzeigen der Profilbilder in den mittel großen Widgets
-- Neue Beschriftung für Straßenfelder Zeile 1 und 2
-- Tastaturtyp passt sich an Felder für E-Mail, www, Telefon und PLZ an
-- Link 'Support & Hilfe' zu den Einstellungen hinzugefügt
-- Abschnitt 'Was ist neu?' zu den Einstellungen hinzugefügt";
+- Kleinere Fehlerbehebungen
+- Straße wurde nicht korrekt in QR-Code kodiert";
 "loc_new" = "Neue Funktionen";
 "loc_whatsnew" = "Was ist neu?";
 "loc_go" = "Los gehts!";
@@ -63,7 +59,6 @@
 "loc_email" = "EMail";
 
 "loc_street" = "Straße, Hausnummer";
-"loc_street2" = "Straße Zeile 2 (optional)";
 "loc_zip" = "PLZ";
 "loc_city" = "Stadt";
 "loc_country" = "Land";

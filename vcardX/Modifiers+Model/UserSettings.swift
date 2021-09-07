@@ -40,7 +40,7 @@ class UserSettings: ObservableObject {
     @Published var wwwBusiness: String { didSet { UserDefaults.standard.set(wwwBusiness, forKey: "wwwBusiness") } }
     
     @Published var street1Business: String { didSet { UserDefaults.standard.set(street1Business, forKey: "street1Business") } }
-    @Published var street2Business: String { didSet { UserDefaults.standard.set(street2Business, forKey: "street2Business") } }
+
     @Published var zipBusiness: String { didSet { UserDefaults.standard.set(zipBusiness, forKey: "zipBusiness") } }
     @Published var cityBusiness: String { didSet { UserDefaults.standard.set(cityBusiness, forKey: "cityBusiness") } }
     @Published var countryBusiness: String { didSet { UserDefaults.standard.set(countryBusiness, forKey: "countryBusiness") } }
@@ -52,7 +52,7 @@ class UserSettings: ObservableObject {
     @Published var wwwPrivate: String { didSet { UserDefaults.standard.set(wwwPrivate, forKey: "wwwPrivate") } }
     
     @Published var street1Private: String { didSet { UserDefaults.standard.set(street1Private, forKey: "street1Private") } }
-    @Published var street2Private: String { didSet { UserDefaults.standard.set(street2Private, forKey: "street2Private") } }
+   
     @Published var zipPrivate: String { didSet { UserDefaults.standard.set(zipPrivate, forKey: "zipPrivate") } }
     @Published var cityPrivate: String { didSet { UserDefaults.standard.set(cityPrivate, forKey: "cityPrivate") } }
     @Published var countryPrivate: String { didSet { UserDefaults.standard.set(countryPrivate, forKey: "countryPrivate") } }
@@ -109,7 +109,7 @@ class UserSettings: ObservableObject {
         self.wwwBusiness = UserDefaults.standard.object(forKey: "wwwBusiness") as? String ?? ""
 
         self.street1Business = UserDefaults.standard.object(forKey: "street1Business") as? String ?? ""
-        self.street2Business = UserDefaults.standard.object(forKey: "street2Business") as? String ?? ""
+      
         self.zipBusiness = UserDefaults.standard.object(forKey: "zipBusiness") as? String ?? ""
         self.cityBusiness = UserDefaults.standard.object(forKey: "cityBusiness") as? String ?? ""
         self.countryBusiness = UserDefaults.standard.object(forKey: "countryBusiness") as? String ?? ""
@@ -121,7 +121,7 @@ class UserSettings: ObservableObject {
         self.wwwPrivate = UserDefaults.standard.object(forKey: "wwwPrivate") as? String ?? ""
 
         self.street1Private = UserDefaults.standard.object(forKey: "street1Private") as? String ?? ""
-        self.street2Private = UserDefaults.standard.object(forKey: "street2Private") as? String ?? ""
+       
         self.zipPrivate = UserDefaults.standard.object(forKey: "zipPrivate") as? String ?? ""
         self.cityPrivate = UserDefaults.standard.object(forKey: "cityPrivate") as? String ?? ""
         self.countryPrivate = UserDefaults.standard.object(forKey: "countryPrivate") as? String ?? ""

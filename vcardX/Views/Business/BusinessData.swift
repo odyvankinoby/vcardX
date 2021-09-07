@@ -45,10 +45,6 @@ struct BusinessData: View {
                     Text(loc_street).font(.caption2).foregroundColor(.prime)
                     Text(settings.street1Business).font(.subheadline).foregroundColor(.prime).bold()
                     }
-                    if settings.street2Business != "" {
-                    Text(loc_street2).font(.caption2).foregroundColor(.prime)
-                    Text(settings.street2Business).font(.subheadline).foregroundColor(.prime).bold()
-                    }
                     if settings.zipBusiness != "" {
                     Text(loc_zip).font(.caption2).foregroundColor(.prime)
                     Text(settings.zipBusiness).font(.subheadline).foregroundColor(.prime).bold()

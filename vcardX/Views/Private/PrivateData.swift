@@ -46,10 +46,6 @@ struct PrivateData: View {
                     Text(loc_street).font(.caption2).foregroundColor(.prime)
                     Text(settings.street1Private).font(.subheadline).foregroundColor(.prime).bold()
                     }
-                    if settings.street2Private != "" {
-                    Text(loc_street2).font(.caption2).foregroundColor(.prime)
-                    Text(settings.street2Private).font(.subheadline).foregroundColor(.prime).bold()
-                    }
                     if settings.zipPrivate != "" {
                     Text(loc_zip).font(.caption2).foregroundColor(.prime)
                     Text(settings.zipPrivate).font(.subheadline).foregroundColor(.prime).bold()

@@ -12,12 +12,8 @@
 "loc_showpic" = "Show Profile Image in Widget";
 "loc_image" = "Photo";
 "loc_rn" = "
-- Added profil images to business and private conatct
-- Option to show contact images in medum size widgets
-- Updated labels for Street fields lines 1 and 2
-- Keyboard type adapts to input field values for email, www, phone and zip
-- Support & Help link added to Settings
-- What's new? section added to Settings";
+- Minor Bugfixes
+- Street was not encoded correctly into QR code";
 "loc_new" = "New Features";
 "loc_whatsnew" = "What's new?";
 "loc_go" = "Let's go!";
@@ -54,8 +50,7 @@
 "loc_company" = "Company";
 "loc_position" = "Position";
 
-"loc_street" = "Street/Address 1";
-"loc_street2" = "Street/Address 2";
+"loc_street" = "Street/Address";
 "loc_zip" = "ZIP";
 "loc_city" = "City";
 "loc_country" = "Country";

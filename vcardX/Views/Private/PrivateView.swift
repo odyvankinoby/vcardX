@@ -107,13 +107,6 @@ struct AddressPrivateView: View {
                     .keyboardType(.default)
                     .font(.headline).foregroundColor(.prime)
                 Divider()
-                Text(loc_street2).font(.caption2).foregroundColor(.prime)
-                TextField(loc_street2, text: $settings.street2Private)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .textContentType(.streetAddressLine2)
-                    .keyboardType(.default)
-                    .font(.headline).foregroundColor(.prime)
-                Divider()
                 }
                 Group {
                 Text(loc_zip).font(.caption2).foregroundColor(.prime)

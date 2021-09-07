@@ -174,7 +174,7 @@ struct ContentView: View {
         
         let address = CNMutablePostalAddress()
         address.street = settings.street1Business
-        address.street = settings.street2Business
+        //address.street = settings.street2Business
         address.city = settings.cityBusiness
         address.postalCode = settings.zipBusiness
         address.country = settings.countryBusiness
@@ -209,7 +209,7 @@ struct ContentView: View {
         
         let address = CNMutablePostalAddress()
         address.street = settings.street1Private
-        address.street = settings.street2Private
+        //address.street = settings.street2Private
         address.city = settings.cityPrivate
         address.postalCode = settings.zipPrivate
         address.country = settings.countryPrivate
