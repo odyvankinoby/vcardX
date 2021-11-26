@@ -42,7 +42,7 @@ struct Welcome: View {
             }
             ScrollView  {
                 HStack(alignment: .center) {
-                    Image("AppIcon_lite")
+                    Image("AppIcons")
                         .resizable()
                         .cornerRadius(18)
                         .frame(width: 96, height: 96, alignment: .center)

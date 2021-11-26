@@ -189,12 +189,22 @@ struct SettingsView: View {
                     Text(settings.appVersionString).frame(alignment: .trailing).foregroundColor(.prime)
                 }.padding(.leading, 10)
                 .padding(.trailing, 10)
-                .padding(.bottom, 10)
                 
                 
-               
+                Divider()
+                HStack {
+                    Text(loc_more_apps).frame(alignment: .leading).foregroundColor(.prime)
+                    Spacer()
+                }.padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.bottom, 10)
+                .frame(alignment: .leading).onTapGesture(perform: {
+                    if let url = URL(string: "https://apps.apple.com/developer/nicolas-ott/id1527796947") {
+                        UIApplication.shared.open(url)
+                    }
+                })
                 
-                
+              
                 
             }
             .cornerRadius(10)
@@ -219,7 +229,7 @@ struct SettingsView: View {
         .background(Color.primeInverted)
         .navigationBarTitle(loc_settings, displayMode: .automatic).allowsTightening(true)
     }
-    
+        
     func onAppear() {
         if !MFMailComposeViewController.canSendMail() {
             self.noMail = true

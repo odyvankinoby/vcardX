@@ -36,6 +36,7 @@
 		364F2E3A266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		364F2E3B266D3B090085493D /* vcardW.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 364F2E3D266D3B090085493D /* vcardW.intentdefinition */; };
 		36532D4C2671FCB8002B1544 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36532D4B2671FCB8002B1544 /* UpdateView.swift */; };
+		3658D1BB2741167B00531C44 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3658D1BA2741167B00531C44 /* StoreKit.framework */; };
 		3696FDA92673C08B009A585A /* GenericViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDA82673C08B009A585A /* GenericViews.swift */; };
 		3696FDAB2673C77A009A585A /* ImageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696FDAA2673C77A009A585A /* ImageClass.swift */; };
 		36B883BB26676B610028437B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B883BA26676B610028437B /* App.swift */; };
@@ -104,6 +105,7 @@
 		364F2E3F266D3B0C0085493D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/vcardW.strings; sourceTree = "<group>"; };
 		364F2E41266D3B0F0085493D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/vcardW.strings; sourceTree = "<group>"; };
 		36532D4B2671FCB8002B1544 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		3658D1BA2741167B00531C44 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3696FDA82673C08B009A585A /* GenericViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViews.swift; sourceTree = "<group>"; };
 		3696FDAA2673C77A009A585A /* ImageClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClass.swift; sourceTree = "<group>"; };
 		36B883B726676B610028437B /* vcardX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vcardX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3658D1BB2741167B00531C44 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +161,7 @@
 		3611BC962668CEA30095672A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3658D1BA2741167B00531C44 /* StoreKit.framework */,
 				3611BC972668CEA30095672A /* WidgetKit.framework */,
 				3611BC992668CEA30095672A /* SwiftUI.framework */,
 			);
@@ -458,7 +462,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -467,7 +471,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX.vcardW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -484,7 +488,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = vcardWExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				INFOPLIST_FILE = vcardW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -493,7 +497,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX.vcardW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -627,7 +631,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -637,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -654,7 +658,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = vcardX/vcardX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vcardX/Preview Content\"";
 				DEVELOPMENT_TEAM = APRDSH5Y65;
 				ENABLE_PREVIEWS = YES;
@@ -664,7 +668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = de.nicolasott.vcardX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

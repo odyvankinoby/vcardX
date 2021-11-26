@@ -46,7 +46,7 @@ struct UpdateView: View {
                 }
                 VStack(alignment: .leading) {
                     HStack(alignment: .center) {
-                        Image(self.btn ?? true ? "AppIcon_dark" : "AppIcon_lite")
+                        Image(self.btn ?? true ? "AppIcons" : "AppIcons")
                             .resizable()
                             .cornerRadius(18)
                             .frame(width: 96, height: 96)

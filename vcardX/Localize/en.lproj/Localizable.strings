@@ -11,9 +11,10 @@
 - After restart your images should be displayed correctly";
 "loc_showpic" = "Show Profile Image in Widget";
 "loc_image" = "Photo";
+
 "loc_rn" = "
-- Minor Bugfixes
-- Street was not encoded correctly into QR code";
+- ";
+
 "loc_new" = "New Features";
 "loc_whatsnew" = "What's new?";
 "loc_go" = "Let's go!";
@@ -72,6 +73,7 @@
 "loc_business_data" = "Business Card";
 "loc_private_data" = "Private Card";
 
+"loc_more_apps" = "More Apps";
 "loc_support" = "Support";
 "loc_feedback" = "Feedback";
 "loc_contact" = "Contact";

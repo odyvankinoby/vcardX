@@ -324,5 +324,3 @@ struct ContentView: View {
         return String(buildString)
     }
 }
-
-

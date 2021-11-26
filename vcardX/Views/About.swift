@@ -90,7 +90,7 @@ struct AboutvCardXView: View {
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack(alignment: .center) {
-                    Image("AppIcon_dark")
+                    Image("AppIcons")
                         .resizable()
                         .cornerRadius(12)
                         .frame(width: 64, height: 64)
@@ -134,10 +134,11 @@ struct AboutvCardXView: View {
                     VStack(alignment: .leading) {
                         Text("Website")
                             .font(.caption)
-                        Text("www.nicolasott.de").fontWeight(.semibold)
+                        Text("NicolasOtt.de").fontWeight(.semibold)
                     }.padding()
                     Spacer()
                 }
+               
                 HStack(alignment: .center) {
                     Image(systemName: "at")
                         .font(.largeTitle)
@@ -147,7 +148,7 @@ struct AboutvCardXView: View {
                     VStack(alignment: .leading) {
                         Text("EMail")
                             .font(.caption)
-                        Text("vcardx@nicolasott.de").fontWeight(.semibold)
+                        Text("vcardx(at)nicolasott.de").fontWeight(.semibold)
                     }.padding()
                     Spacer()
                 }

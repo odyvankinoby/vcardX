@@ -5,16 +5,21 @@
   Created by Nicolas Ott on 03.06.21.
   
 */
+
+
+"loc_rn" = "
+- ";
+
+"loc_new" = "Neue Funktionen";
+"loc_whatsnew" = "Was ist neu?";
+
+
+
 "loc_image_widgets" = "Falls Ihr Profilbild nicht angezeigt oder aktualisiert wird:
 - Beenden Sie die vcardX-App, indem Sie von unten nach oben wischen und die App beenden
 - Nach dem Neustart sollten Ihre Bilder korrekt angezeigt werden";
 "loc_showpic" = "Profilbild in Widgets anzeigen";
 "loc_image" = "Foto";
-"loc_rn" = "
-- Kleinere Fehlerbehebungen
-- Straße wurde nicht korrekt in QR-Code kodiert";
-"loc_new" = "Neue Funktionen";
-"loc_whatsnew" = "Was ist neu?";
 "loc_go" = "Los gehts!";
 
 "loc_buy" = "Um die vcardX Widgets nutzen zu können, kaufen Sie bitte vcardX Premium unter Einstellungen >> vcardX Premium.";
@@ -79,6 +84,7 @@
 "loc_feedback" = "Feedback";
 "loc_contact" = "Kontakt";
 "loc_about" = "Über";
+"loc_more_apps" = "Weitere Apps";
 
 // WIDGET
 "loc_welcome" = "Willkommen!";
